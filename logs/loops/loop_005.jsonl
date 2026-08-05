@@ -1,0 +1,3 @@
+{"v": "1.2", "ts": "2026-08-05T19:23:49+09:00", "project": "command-type", "loop_id": "loop_005", "event": "loop_start", "data": {"goal": "P1 完了の文書同期: SPEC/README のフェーズ状態更新と HC-001 のクローズ判定", "spec_refs": ["P1"], "scaffold_version": "1.6.1", "agent": "claude-code", "model": "claude-fable-5"}}
+{"v": "1.2", "ts": "2026-08-05T19:24:23+09:00", "project": "command-type", "loop_id": "loop_005", "event": "commit", "data": {"sha": "614bba8", "kind": "docs", "note": "フェーズ状態の同期 + HC-001 クローズ"}}
+{"v": "1.2", "ts": "2026-08-05T19:24:23+09:00", "project": "command-type", "loop_id": "loop_005", "event": "loop_end", "data": {"outcome": "success", "failure_count": 0, "summary": "P1 の文書同期完了。HC-001 は両シェル + フル verify 連続 PASS を根拠に Closed"}}
