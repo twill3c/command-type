@@ -11,8 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "verify": "bash scripts/verify.sh",
-    "verify:fast": "VERIFY_SKIP_BUILD=1 bash scripts/verify.sh"
+    "verify": "node scripts/verify.mjs",
+    "verify:fast": "node scripts/verify.mjs --fast"
   },
   "dependencies": {
     "next": "^15.1.6",

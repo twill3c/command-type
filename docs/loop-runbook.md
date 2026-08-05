@@ -43,9 +43,10 @@ python harness/wtctl.py close --loop loop_XXX
 
 ## 落とし穴(先行プロジェクトの教訓)
 
-- **verify は Git Bash 環境から実行する**(loop_002 TOOL-ENV)。PowerShell から `npm run verify` を起動すると
-  cmd の PATH 解決で WSL の bash が呼ばれ、Windows インストールの rollup ネイティブが見えず
-  vitest が起動しない(`@rollup/rollup-linux-x64-gnu` 不在)。lint も数百秒級に低速化する
+- **npm scripts に bash 前提を持ち込まない**(HC-001: TOOL-ENV ×2)。Windows の npm scripts は
+  cmd 経由で、`bash` が WSL に解決されたり(vitest 起動不能・lint 数百秒化)、`VAR=x cmd` の
+  env プレフィックスが使えなかったりする。verify は Node 実装(scripts/verify.mjs)なので
+  どのシェルから起動してもよい。新しいスクリプトを足すときも Node/Python で書く
 
 - 品質ゲートコマンドに `| tail` 等を付けない — exit code が握り潰され虚偽 pass になる(bungo-type HC-004)
 - looplog の記録は worktree 内から実行してよい(v1.6.0 で project 自動検出が worktree 対応済み — HC-008)
