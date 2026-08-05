@@ -2,12 +2,13 @@
 
 import { summarize } from "@/core/results";
 import type { SessionState } from "@/core/session";
-import type { Level } from "@/core/types";
+import type { PlayLevel } from "@/core/types";
 
-const LEVEL_LABEL: Record<Level, string> = {
+const LEVEL_LABEL: Record<PlayLevel, string> = {
   beginner: "初級",
   intermediate: "中級",
   advanced: "上級",
+  mix: "ミックス",
 };
 
 /** 結果画面(F-10)。スコア・正確率・CPM と、復習用のミス一覧を表示する。 */

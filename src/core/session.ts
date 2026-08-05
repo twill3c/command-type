@@ -3,7 +3,7 @@ import { fallDurationMs, updateAltitude } from "./fall";
 import { matchInput } from "./match";
 import { buildQueue } from "./queue";
 import { clearScore } from "./score";
-import type { Level, Question } from "./types";
+import type { PlayLevel, Question } from "./types";
 
 /** 出題 1 件の結末。dropped = 底到達(F-06)。 */
 export type QuestionOutcome = "cleared" | "dropped";
@@ -20,7 +20,7 @@ export interface QuestionResult {
  * 外から注入する(AGENTS §4)。
  */
 export interface SessionState {
-  level: Level;
+  level: PlayLevel;
   status: "playing" | "finished";
   queue: Question[];
   index: number;
@@ -41,7 +41,7 @@ export interface SessionState {
   results: QuestionResult[];
 }
 
-export function startSession(level: Level, seed: number): SessionState {
+export function startSession(level: PlayLevel, seed: number): SessionState {
   return {
     level,
     status: "playing",

@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { loadHighScore } from "@/core/highscore";
-import type { Level } from "@/core/types";
+import type { PlayLevel } from "@/core/types";
 import { browserStore } from "@/lib/storage";
 
-const LEVELS: { level: Level; label: string; desc: string }[] = [
+const LEVELS: { level: PlayLevel; label: string; desc: string }[] = [
   {
     level: "beginner",
     label: "初級",
@@ -21,18 +21,28 @@ const LEVELS: { level: Level; label: string; desc: string }[] = [
     label: "上級",
     desc: "ディスク・性能分析・診断・セキュリティ・開発の 50 コマンド",
   },
+  {
+    level: "mix",
+    label: "ミックス",
+    desc: "全 13 カテゴリ・150 コマンドから出題(落下速度は中級相当)",
+  },
 ];
 
-/** レベル選択画面(F-02)。レベル別ハイスコアを表示する(F-12)。 */
-export function LevelSelect({ onSelect }: { onSelect: (level: Level) => void }) {
+/** レベル選択画面(F-02 / F-14)。モード別ハイスコアを表示する(F-12)。 */
+export function LevelSelect({
+  onSelect,
+}: {
+  onSelect: (level: PlayLevel) => void;
+}) {
   // ハイスコアはクライアントでのみ読める(静的エクスポートの prerender 対策)
-  const [scores, setScores] = useState<Record<Level, number> | null>(null);
+  const [scores, setScores] = useState<Record<PlayLevel, number> | null>(null);
   useEffect(() => {
     const store = browserStore();
     setScores({
       beginner: loadHighScore(store, "beginner"),
       intermediate: loadHighScore(store, "intermediate"),
       advanced: loadHighScore(store, "advanced"),
+      mix: loadHighScore(store, "mix"),
     });
   }, []);
 

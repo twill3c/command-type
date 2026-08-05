@@ -28,6 +28,26 @@ describe("T-010: シード付き出題キュー(F-11)", () => {
   });
 });
 
+describe("T-020: ミックスモードの出題キュー(F-14)", () => {
+  it("母集団は全 150・重複なし", () => {
+    const q = buildQueue("mix", 5, 999);
+    expect(q).toHaveLength(150);
+    expect(new Set(q.map((x) => x.cmd)).size).toBe(150);
+  });
+
+  it("3 レベルすべてのカテゴリが出現し得る", () => {
+    const q = buildQueue("mix", 5, 150);
+    const levels = new Set(q.map((x) => x.level));
+    expect(levels).toEqual(new Set(["beginner", "intermediate", "advanced"]));
+  });
+
+  it("同一シードで再現する", () => {
+    const a = buildQueue("mix", 11, 20).map((x) => x.cmd);
+    const b = buildQueue("mix", 11, 20).map((x) => x.cmd);
+    expect(a).toEqual(b);
+  });
+});
+
 describe("T-011: レベル→カテゴリのフィルタ(F-02)", () => {
   it.each(["beginner", "intermediate", "advanced"] as const)(
     "%s のキューは該当レベルのカテゴリのみ",

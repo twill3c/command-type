@@ -32,6 +32,11 @@ describe("T-015: 落下速度の漸増(F-09)", () => {
     expect(FALL_BASE_MS.advanced).toBeLessThan(FALL_BASE_MS.intermediate);
     expect(FALL_BASE_MS.intermediate).toBeLessThan(FALL_BASE_MS.beginner);
   });
+
+  it("T-021: ミックスの落下基準は中級と同値(F-14)", () => {
+    expect(FALL_BASE_MS.mix).toBe(FALL_BASE_MS.intermediate);
+    expect(fallDurationMs("mix", 0)).toBe(FALL_BASE_MS.intermediate);
+  });
 });
 
 describe("T-014 補助: 高度更新(F-06)", () => {

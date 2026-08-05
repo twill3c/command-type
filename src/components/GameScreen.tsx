@@ -12,7 +12,7 @@ import {
   typeChar,
 } from "@/core/session";
 import type { SessionState } from "@/core/session";
-import type { Level } from "@/core/types";
+import type { PlayLevel } from "@/core/types";
 import { keyToAction } from "@/lib/keys";
 import { FallingCommand } from "./FallingCommand";
 
@@ -26,7 +26,7 @@ export function GameScreen({
   seed,
   onFinish,
 }: {
-  level: Level;
+  level: PlayLevel;
   seed: number;
   onFinish: (state: SessionState) => void;
 }) {

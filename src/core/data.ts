@@ -4,6 +4,7 @@ import type {
   CommandEntry,
   Dataset,
   Level,
+  PlayLevel,
   Question,
 } from "./types";
 
@@ -39,4 +40,12 @@ export function questionsForLevel(level: Level): Question[] {
   return resolveQuestions(dataset.commands, categoriesById).filter(
     (q) => q.level === level,
   );
+}
+
+/** プレイモードの母集団。ミックスは全 150(F-14)。 */
+export function questionsForPlay(level: PlayLevel): Question[] {
+  if (level === "mix") {
+    return resolveQuestions(dataset.commands, categoriesById);
+  }
+  return questionsForLevel(level);
 }

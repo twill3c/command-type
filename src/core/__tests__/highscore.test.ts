@@ -35,6 +35,15 @@ describe("T-019: ハイスコア(F-12)", () => {
     expect(loadHighScore(store, "advanced")).toBe(200);
   });
 
+  it("T-021: ミックスは 3 レベルと独立に保存される(F-14)", () => {
+    const store = fakeStore();
+    saveHighScore(store, "mix", 300);
+    expect(loadHighScore(store, "mix")).toBe(300);
+    expect(loadHighScore(store, "beginner")).toBe(0);
+    expect(loadHighScore(store, "intermediate")).toBe(0);
+    expect(loadHighScore(store, "advanced")).toBe(0);
+  });
+
   it("壊れた保存値は 0 として扱う", () => {
     const store = fakeStore();
     store.set("command-type:highscore:beginner", "not-a-number");

@@ -102,6 +102,10 @@ button {
   background: var(--accent);
 }
 
+.badge-mix {
+  background: var(--text);
+}
+
 .btn {
   padding: 0.5em 1.4em;
   font-size: 1.05rem;

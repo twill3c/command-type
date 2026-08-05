@@ -1,4 +1,4 @@
-import type { Level } from "./types";
+import type { PlayLevel } from "./types";
 
 /**
  * 保存先の抽象(F-12)。UI 層で localStorage を渡す。
@@ -9,10 +9,10 @@ export interface KeyValueStore {
   set(key: string, value: string): void;
 }
 
-const keyFor = (level: Level) => `command-type:highscore:${level}`;
+const keyFor = (level: PlayLevel) => `command-type:highscore:${level}`;
 
 /** レベル別ハイスコア。未保存・壊れた値は 0。 */
-export function loadHighScore(store: KeyValueStore, level: Level): number {
+export function loadHighScore(store: KeyValueStore, level: PlayLevel): number {
   const raw = store.get(keyFor(level));
   if (raw === null) return 0;
   const n = Number(raw);
@@ -22,7 +22,7 @@ export function loadHighScore(store: KeyValueStore, level: Level): number {
 /** 既存を上回ったときのみ保存する。更新したら true。 */
 export function saveHighScore(
   store: KeyValueStore,
-  level: Level,
+  level: PlayLevel,
   score: number,
 ): boolean {
   if (score <= loadHighScore(store, level)) return false;

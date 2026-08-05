@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import { saveHighScore } from "@/core/highscore";
 import type { SessionState } from "@/core/session";
-import type { Level } from "@/core/types";
+import type { PlayLevel } from "@/core/types";
 import { browserStore } from "@/lib/storage";
 import { GameScreen } from "@/components/GameScreen";
 import { LevelSelect } from "@/components/LevelSelect";
@@ -11,13 +11,13 @@ import { ResultScreen } from "@/components/ResultScreen";
 
 type Screen =
   | { name: "select" }
-  | { name: "play"; level: Level; seed: number }
+  | { name: "play"; level: PlayLevel; seed: number }
   | { name: "result"; state: SessionState; newRecord: boolean };
 
 export default function Home() {
   const [screen, setScreen] = useState<Screen>({ name: "select" });
 
-  const startPlay = useCallback((level: Level) => {
+  const startPlay = useCallback((level: PlayLevel) => {
     // シードは UI 層で採る(core は乱数を持たない — AGENTS §4)
     setScreen({ name: "play", level, seed: Date.now() >>> 0 });
   }, []);
