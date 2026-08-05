@@ -19,9 +19,9 @@
 | 改訂 | 恒久修正: verify を bash 実装(verify.sh)から **Node 実装(scripts/verify.mjs)へ移行**し、シェル依存を根本から排除。--fast フラグ方式(env プレフィックス不使用)、VERIFY_SKIP_BUILD は後方互換で維持。cmd / PowerShell / Git Bash / Linux CI で同一動作 |
 | 種別 | tooling(プロジェクト所有の scripts/verify.mjs / package.json) |
 | SCAFFOLD_VERSION | 1.6.1(変更なし — registry 管理外)|
-| 効果検証 | 2026-08-05 確認: verify:fast が PowerShell 起動・Git Bash 起動の双方で PASS(WSL bash 経由時の vitest 起動不能・lint 数百秒化も消滅)。フル verify(build 込み)の PASS は loop_003 完了時に確認 |
+| 効果検証 | 2026-08-05 確認: verify:fast が PowerShell 起動・Git Bash 起動の双方で PASS(WSL bash 経由時の vitest 起動不能・lint 数百秒化も消滅)。フル verify(build 込み)も loop_003・loop_004 で連続 PASS。以後 TOOL-ENV 再発 0 件 |
 | propagation | command-type のみ。bash 版 verify.sh を持つ bungo-type で同種の TOOL-ENV が再発した場合、verify.mjs の registry 昇格(managed file 化)を検討する |
-| 状態 | Verifying |
+| 状態 | Closed |
 
 ## HC-002
 
