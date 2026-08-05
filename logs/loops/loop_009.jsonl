@@ -1,0 +1,10 @@
+{"v": "1.2", "ts": "2026-08-06T01:13:25+09:00", "project": "command-type", "loop_id": "loop_009", "event": "loop_start", "data": {"goal": "P3 前半: F-13/F-14 のスペック具体化と、ミックスモード(全 150 コマンド出題・独立ハイスコア)の core+UI 実装", "spec_refs": ["F-13", "F-14"], "scaffold_version": "1.6.1", "agent": "claude-code", "model": "claude-fable-5"}}
+{"v": "1.2", "ts": "2026-08-06T02:10:12+09:00", "project": "command-type", "loop_id": "loop_009", "event": "commit", "data": {"sha": "0b3a05b", "kind": "spec", "note": "F-13 具体化 / F-14 新設 / T-020・021 追加"}}
+{"v": "1.2", "ts": "2026-08-06T06:36:57+09:00", "project": "command-type", "loop_id": "loop_009", "event": "test_run", "data": {"command": "npx vitest run", "passed": 73, "failed": 3, "note": "T-020/T-021 追加直後の赤確認(mix 未実装 — 意図した赤)"}}
+{"v": "1.2", "ts": "2026-08-06T06:36:57+09:00", "project": "command-type", "loop_id": "loop_009", "event": "stage_end", "data": {"stage": 3, "stage_name": "テスト先行", "result": "pass"}}
+{"v": "1.2", "ts": "2026-08-06T06:38:49+09:00", "project": "command-type", "loop_id": "loop_009", "event": "test_run", "data": {"command": "npm run verify", "passed": 76, "failed": 0, "note": "フル verify PASS(T-020/T-021 含む)"}}
+{"v": "1.2", "ts": "2026-08-06T06:38:50+09:00", "project": "command-type", "loop_id": "loop_009", "event": "stage_end", "data": {"stage": 4, "stage_name": "実装", "result": "pass"}}
+{"v": "1.2", "ts": "2026-08-06T06:38:50+09:00", "project": "command-type", "loop_id": "loop_009", "event": "stage_end", "data": {"stage": 5, "stage_name": "検証", "result": "pass"}}
+{"v": "1.2", "ts": "2026-08-06T06:38:51+09:00", "project": "command-type", "loop_id": "loop_009", "event": "commit", "data": {"sha": "2ca6beb", "kind": "feat", "note": "mix モード一式"}}
+{"v": "1.2", "ts": "2026-08-06T06:38:51+09:00", "project": "command-type", "loop_id": "loop_009", "event": "stage_end", "data": {"stage": 6, "stage_name": "文書同期", "result": "pass", "notes": "SPEC 先行改訂済みのため乖離なし"}}
+{"v": "1.2", "ts": "2026-08-06T06:38:51+09:00", "project": "command-type", "loop_id": "loop_009", "event": "loop_end", "data": {"outcome": "success", "failure_count": 0, "summary": "ミックスモード完成(76 テスト green)。実機確認は loop_010 の演出とまとめて実施"}}
