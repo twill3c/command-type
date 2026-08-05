@@ -39,3 +39,8 @@ npm run verify    # 完了条件(typecheck + lint + test + build)
 | P1 | core ロジック + データ検証テスト | 完了 |
 | P2 | UI + Vercel 公開 | 完了 |
 | P3 | 磨き込み(効果音・演出・ミックスモード) | 完了 |
+
+## License
+
+MIT License — Copyright (c) 2026 坂田哲朗([LICENSE](LICENSE))。
+ハーネスツール(`harness/`・`schema/`)を含むリポジトリ全体が対象。
