@@ -201,6 +201,42 @@ button {
   opacity: 0.25;
 }
 
+.btn-sound {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* クリア/落下の瞬間フラッシュ(F-13)。key の付け替えで再マウントして 1 回再生する */
+.flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+}
+
+.flash-clear {
+  background: var(--prompt);
+  animation: flash-fade 0.35s ease-out;
+}
+
+.flash-drop {
+  background: var(--miss);
+  animation: flash-fade 0.45s ease-out;
+}
+
+@keyframes flash-fade {
+  from {
+    opacity: 0.22;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .stage {
   position: relative;
   height: min(58vh, 560px);

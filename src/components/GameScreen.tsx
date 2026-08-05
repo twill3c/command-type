@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SESSION_LIVES } from "@/core/config";
 import { matchInput } from "@/core/match";
 import {
@@ -14,6 +14,8 @@ import {
 import type { SessionState } from "@/core/session";
 import type { PlayLevel } from "@/core/types";
 import { keyToAction } from "@/lib/keys";
+import { isMuted, playClear, playDrop, playMissEnter, setMuted } from "@/lib/sound";
+import { browserStore } from "@/lib/storage";
 import { FallingCommand } from "./FallingCommand";
 
 /**
@@ -33,6 +35,36 @@ export function GameScreen({
   const [state, setState] = useState<SessionState>(() =>
     startSession(level, seed),
   );
+  const [muted, setMutedState] = useState(false);
+  useEffect(() => {
+    setMutedState(isMuted(browserStore()));
+  }, []);
+
+  const toggleMute = () => {
+    const next = !muted;
+    setMutedState(next);
+    setMuted(browserStore(), next);
+  };
+
+  // 状態遷移の検出で効果音を鳴らす(F-13)。判定は core のカウンタ差分のみ
+  const prev = useRef({
+    cleared: 0,
+    enterMisses: 0,
+    lives: SESSION_LIVES,
+  });
+  useEffect(() => {
+    const p = prev.current;
+    if (!muted) {
+      if (state.cleared > p.cleared) playClear(state.combo);
+      if (state.enterMisses > p.enterMisses) playMissEnter();
+      if (state.lives < p.lives) playDrop();
+    }
+    prev.current = {
+      cleared: state.cleared,
+      enterMisses: state.enterMisses,
+      lives: state.lives,
+    };
+  }, [state.cleared, state.enterMisses, state.lives, state.combo, muted]);
 
   useEffect(() => {
     let raf = 0;
@@ -88,6 +120,13 @@ export function GameScreen({
             {"♥".repeat(SESSION_LIVES - state.lives)}
           </span>
         </span>
+        <button
+          className="btn-sound"
+          onClick={toggleMute}
+          aria-label={muted ? "効果音をオンにする" : "効果音をオフにする"}
+        >
+          {muted ? "🔇" : "🔊"}
+        </button>
       </header>
 
       <div className="stage">
@@ -99,6 +138,12 @@ export function GameScreen({
           />
         )}
         <div className="ground" />
+        {state.cleared > 0 && (
+          <div key={`c${state.cleared}`} className="flash flash-clear" />
+        )}
+        {state.lives < SESSION_LIVES && (
+          <div key={`d${state.lives}`} className="flash flash-drop" />
+        )}
       </div>
 
       <div className="input-line" aria-live="polite">
