@@ -1,0 +1,65 @@
+/*
+ * デザイントークン(SPEC §7 が正本)
+ * やわらかく明るい背景 + 大きめフォント。端末モチーフは等幅書体とプロンプト記号で残す。
+ */
+:root {
+  /* 背景系 */
+  --bg: #faf6ef;          /* 生成り — 画面全体 */
+  --bg-panel: #ffffff;    /* パネル面 */
+  --bg-danger: #fdeae7;   /* 底線接近の警告帯 */
+  --line: #e3dcce;        /* 罫線 */
+
+  /* 文字系 */
+  --text: #3a3630;        /* 主文字(墨色) */
+  --text-dim: #8a8375;    /* 解説文・補助 */
+  --typed: #2f6fbf;       /* 一致部分 */
+  --miss: #d0453b;        /* ミス */
+  --prompt: #2e8b57;      /* プロンプト・クリア演出 */
+  --accent: #c98a1b;      /* コンボ・スコア・上級 */
+
+  /* 書体 */
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", sans-serif;
+
+  /* サイズ(大きめ基調) */
+  --fs-cmd: clamp(2.2rem, 5vw, 3.2rem);
+  --fs-desc: clamp(1rem, 2.4vw, 1.25rem);
+  --fs-input: 1.8rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px; /* 基準を大きめに(SPEC §7) */
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+a {
+  color: var(--typed);
+}
+
+button {
+  font-family: inherit;
+}
