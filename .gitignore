@@ -1,0 +1,16 @@
+# dependencies / build
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# env / deploy
+.env*
+.vercel/
+
+# loop observability(検証ログは append-only・gitignore)
+.loop/
+
+# worktree baseline(worktree ごとのローカル状態)
+.wt-baseline.json
