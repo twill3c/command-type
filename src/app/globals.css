@@ -272,12 +272,19 @@ button {
 .input-line {
   display: flex;
   align-items: baseline;
-  gap: 0.4em;
+  /* gap を置くと空スパン(未入力時の input-miss 等)にも隙間が入り、
+     caret がテキスト末尾から 1 文字分右に離れて見える。
+     間隔はプロンプト直後のみに付ける */
+  gap: 0;
   justify-content: center;
   margin-top: 14px;
   font-family: var(--font-mono);
   font-size: var(--fs-input);
   min-height: 1.6em;
+}
+
+.input-line .prompt {
+  margin-right: 0.4em;
 }
 
 .input-ok {
