@@ -43,6 +43,10 @@ python harness/wtctl.py close --loop loop_XXX
 
 ## 落とし穴(先行プロジェクトの教訓)
 
+- **verify は Git Bash 環境から実行する**(loop_002 TOOL-ENV)。PowerShell から `npm run verify` を起動すると
+  cmd の PATH 解決で WSL の bash が呼ばれ、Windows インストールの rollup ネイティブが見えず
+  vitest が起動しない(`@rollup/rollup-linux-x64-gnu` 不在)。lint も数百秒級に低速化する
+
 - 品質ゲートコマンドに `| tail` 等を付けない — exit code が握り潰され虚偽 pass になる(bungo-type HC-004)
 - looplog の記録は worktree 内から実行してよい(v1.6.0 で project 自動検出が worktree 対応済み — HC-008)
 - CI アーティファクトに隠しディレクトリを含める場合は `include-hidden-files: true`(bungo-type HC-005)
