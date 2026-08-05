@@ -55,21 +55,41 @@ export function ResultScreen({
         </div>
       </div>
 
-      {sum.missed.length > 0 && (
+      {sum.attempted.length > 0 && (
         <section className="review">
-          <h2 className="review-title">復習しよう({sum.missed.length} 件)</h2>
+          <h2 className="review-title">
+            出題コマンドの復習({sum.attempted.length} 問
+            {sum.missed.length > 0 && ` / 要復習 ${sum.missed.length} 件`})
+          </h2>
           <ul className="review-list">
-            {sum.missed.map((r) => (
-              <li key={r.question.cmd} className="review-item">
-                <code className="review-cmd">{r.question.cmd}</code>
-                <span className="review-desc">
-                  {r.question.desc}
-                  <span className="review-cat">
-                    ({r.question.categoryName})
+            {sum.attempted.map((r) => {
+              const needsReview =
+                r.outcome === "dropped" || r.enterMisses > 0;
+              return (
+                <li
+                  key={r.question.cmd}
+                  className={
+                    needsReview ? "review-item needs-review" : "review-item"
+                  }
+                >
+                  <span
+                    className={
+                      needsReview ? "review-mark mark-miss" : "review-mark"
+                    }
+                    aria-label={r.outcome === "cleared" ? "成功" : "落下"}
+                  >
+                    {r.outcome === "cleared" ? "✓" : "✗"}
                   </span>
-                </span>
-              </li>
-            ))}
+                  <code className="review-cmd">{r.question.cmd}</code>
+                  <span className="review-desc">
+                    {r.question.desc}
+                    <span className="review-cat">
+                      ({r.question.categoryName})
+                    </span>
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}

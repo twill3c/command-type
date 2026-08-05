@@ -9,6 +9,8 @@ export interface SessionSummary {
   accuracy: number;
   /** 正打鍵 / 経過分。経過ゼロのときは 0。 */
   cpm: number;
+  /** 全出題の結果(出題順)。成功も含め復習一覧に使う(F-10)。 */
+  attempted: QuestionResult[];
   /** 復習対象: 落下した出題、または不一致 Enter があった出題。 */
   missed: QuestionResult[];
 }
@@ -26,6 +28,7 @@ export function summarize(state: SessionState): SessionSummary {
     total: state.queue.length,
     accuracy,
     cpm,
+    attempted: [...state.results],
     missed: state.results.filter(
       (r) => r.outcome === "dropped" || r.enterMisses > 0,
     ),

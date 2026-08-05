@@ -414,9 +414,26 @@ button {
   align-items: baseline;
   padding: 10px 14px;
   border: 1.5px solid var(--line);
-  border-left: 4px solid var(--miss);
+  border-left: 4px solid var(--prompt);
   border-radius: 10px;
   background: var(--bg-panel);
+}
+
+/* ミス(落下 or 不一致 Enter)は強調(F-10) */
+.review-item.needs-review {
+  border-left-color: var(--miss);
+  background: var(--bg-danger);
+}
+
+.review-mark {
+  font-weight: 700;
+  color: var(--prompt);
+  min-width: 1.2em;
+  text-align: center;
+}
+
+.review-mark.mark-miss {
+  color: var(--miss);
 }
 
 .review-cmd {
