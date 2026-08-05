@@ -63,3 +63,334 @@ a {
 button {
   font-family: inherit;
 }
+
+/* ---------- 共通部品 ---------- */
+
+.title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.4em;
+}
+
+.prompt {
+  color: var(--prompt);
+}
+
+.tagline {
+  color: var(--text-dim);
+  margin-bottom: 1.6em;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  border-radius: 999px;
+  font-size: var(--fs-desc);
+  font-weight: 600;
+  color: #fff;
+}
+
+.badge-beginner {
+  background: var(--prompt);
+}
+
+.badge-intermediate {
+  background: var(--typed);
+}
+
+.badge-advanced {
+  background: var(--accent);
+}
+
+.btn {
+  padding: 0.5em 1.4em;
+  font-size: 1.05rem;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--text-dim);
+}
+
+.btn-primary {
+  background: var(--prompt);
+  border-color: var(--prompt);
+  color: #fff;
+}
+
+.input-hint {
+  margin-top: 1em;
+  color: var(--text-dim);
+  font-size: var(--fs-desc);
+  text-align: center;
+}
+
+/* ---------- レベル選択(F-02 / F-12) ---------- */
+
+.select {
+  text-align: center;
+  padding-top: 4vh;
+}
+
+.level-list {
+  display: grid;
+  gap: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.level-card {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  text-align: left;
+  padding: 18px 22px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-panel);
+  cursor: pointer;
+  transition: transform 0.08s ease, border-color 0.08s ease;
+}
+
+.level-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--text-dim);
+}
+
+.level-desc {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.level-score {
+  color: var(--text-dim);
+  font-size: var(--fs-desc);
+  font-family: var(--font-mono);
+}
+
+/* ---------- ゲーム画面(F-03〜F-06) ---------- */
+
+.hud {
+  display: flex;
+  gap: 1.4em;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.hud-item strong {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+}
+
+.hud-lives {
+  color: var(--miss);
+  font-size: 1.3rem;
+}
+
+.lives-lost {
+  opacity: 0.25;
+}
+
+.stage {
+  position: relative;
+  height: min(58vh, 560px);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: var(--line);
+}
+
+.falling {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
+  padding: 8px 20px;
+  border-radius: 12px;
+  max-width: 90%;
+}
+
+.falling-cmd {
+  font-family: var(--font-mono);
+  font-size: var(--fs-cmd);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.cmd-typed {
+  color: var(--typed);
+}
+
+.cmd-rest {
+  color: var(--text);
+}
+
+.falling-desc {
+  font-size: var(--fs-desc);
+  color: var(--text-dim);
+}
+
+.falling.danger {
+  background: var(--bg-danger);
+  animation: danger-blink 0.5s ease-in-out infinite alternate;
+}
+
+.falling.danger .cmd-rest {
+  color: var(--miss);
+}
+
+@keyframes danger-blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.65;
+  }
+}
+
+/* ---------- 入力欄(F-04) ---------- */
+
+.input-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  justify-content: center;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-input);
+  min-height: 1.6em;
+}
+
+.input-ok {
+  color: var(--typed);
+}
+
+.input-miss {
+  color: var(--miss);
+  text-decoration: underline wavy var(--miss);
+}
+
+.caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.15em;
+  background: var(--text);
+  align-self: center;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- 結果画面(F-10) ---------- */
+
+.result {
+  text-align: center;
+  padding-top: 3vh;
+}
+
+.result-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  max-width: 720px;
+  margin: 0 auto 1.8em;
+}
+
+.result-card {
+  display: grid;
+  gap: 2px;
+  padding: 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-panel);
+}
+
+.result-label {
+  color: var(--text-dim);
+  font-size: var(--fs-desc);
+}
+
+.result-value {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+}
+
+.new-record {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: var(--fs-desc);
+}
+
+.review {
+  max-width: 720px;
+  margin: 0 auto 1.6em;
+  text-align: left;
+}
+
+.review-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.6em;
+}
+
+.review-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.review-item {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-left: 4px solid var(--miss);
+  border-radius: 10px;
+  background: var(--bg-panel);
+}
+
+.review-cmd {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  min-width: 7em;
+}
+
+.review-desc {
+  color: var(--text);
+}
+
+.review-cat {
+  color: var(--text-dim);
+  font-size: 0.9em;
+  margin-left: 0.5em;
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
