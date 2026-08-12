@@ -57,7 +57,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "py-dev-tools": { level: "advanced", count: 8 },
     },
   },
-  typescript: undefined, // P6(loop_016)で §4.3 の表を書き写す
+  typescript: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.]+$/,
+    categories: {
+      "ts-types": { level: "beginner", count: 18 },
+      "ts-array": { level: "beginner", count: 17 },
+      "ts-string": { level: "beginner", count: 15 },
+      "ts-object": { level: "intermediate", count: 14 },
+      "ts-async": { level: "intermediate", count: 12 },
+      "ts-class": { level: "intermediate", count: 12 },
+      "ts-collection": { level: "intermediate", count: 12 },
+      "ts-utility": { level: "advanced", count: 9 },
+      "ts-type-ops": { level: "advanced", count: 9 },
+      "ts-utility-adv": { level: "advanced", count: 8 },
+      "ts-dom": { level: "advanced", count: 8 },
+      "ts-function": { level: "advanced", count: 8 },
+      "ts-tooling": { level: "advanced", count: 8 },
+    },
+  },
 };
 
 const availableTracks = [...datasets.keys()];
