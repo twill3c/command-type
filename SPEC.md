@@ -10,13 +10,17 @@ Linux コマンド・Python・TypeScript のタイピング練習ゲーム(多�
 
 Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/API を
 「落ちものゲーム × タイピング」の形式で楽しく反復学習する Web アプリを提供する。
-出題は**トラック**(学習科目)単位で選ぶ。トラックは以下の 14(P9 で 5 つ、P10 で sql、
-P11 で pyml、P12 で pyauto / react / aws / r を追加)。
-トラック選択タブの表示順は学習領域のクラスタ順とする(2026-08-12 人間指示):
+出題は**トラック**(学習科目)単位で選ぶ。トラックは以下の 17(P9 で 5 つ、P10 で sql、
+P11 で pyml、P12 で pyauto / react / aws / r、P13 で http / pyweb / mcp を追加)。
+トラック選択タブは**カテゴリ(グループ)見出し付き**で表示する(F-15 改訂、2026-08-12 人間指示)。
+グループ定義と表示順は次のとおり(実装の正は core の TRACK_GROUPS):
 
-`linux` / `sql` / `python` / `pyml` / `pyauto` / `r`(データ系)/
-`typescript` / `react`(フロントエンド)/ `java` / `git` / `docker` / `aws`(インフラ)/
-`htmlcss` / `powershell`
+| グループ | トラック(表示順) |
+|---|---|
+| インフラ・OS | `linux` / `git` / `docker` / `aws` / `powershell` |
+| データ・分析 | `sql` / `python` / `pyml` / `pyauto` / `r` |
+| Web・フロントエンド | `typescript` / `react` / `htmlcss` / `http` |
+| バックエンド・AI | `java` / `pyweb` / `mcp` |
 出題文字列を打鍵しながら、短い解説文とカテゴリ名を同時に目にすることで、
 タイピング練習と知識の定着を一度に実現する。
 
@@ -38,7 +42,7 @@ P11 で pyml、P12 で pyauto / react / aws / r を追加)。
 | F-12 | ハイスコアをトラック×モード別に localStorage へ保存し、レベル選択画面に表示する。トラック導入(P7)前の旧キー(モードのみ)は linux トラックの値として読み継ぐ | should |
 | F-13 | 効果音と演出: クリア(上昇音 + 緑フラッシュ)・不一致 Enter(ブザー)・落下(下降音 + 赤フラッシュ)。効果音は Web Audio の合成音のみ(外部アセットなし)で、🔊 トグルで ON/OFF でき、設定は localStorage に保存(既定 ON)。演出は CSS アニメーションのみで実装する | could(P3) |
 | F-14 | ミックスモード: レベル選択に「ミックス」を追加し、**選択中トラックの**全カテゴリ・全件から出題する。落下基準速度は中級と同値。ハイスコアは 3 レベルと独立に保存する | could(P3) |
-| F-15 | トラック選択: レベル選択画面で登録済みトラック(§4)を切り替えられる。表示中トラックのモード別ハイスコアを表示する。データ未提供のトラックは選択肢に出さない | must(P7) |
+| F-15 | トラック選択: レベル選択画面で登録済みトラック(§4)を切り替えられる。タブは §1 のグループ見出し付きで表示する(P13 改訂)。表示中トラックのモード別ハイスコアを表示する。データ未提供のトラックは選択肢に出さない。全トラックが 1 グループにちょうど 1 回属することをテストで保証する(T-035) | must(P7) |
 | F-16 | ライセンス表記: 全画面共通のフッターに本アプリが MIT ライセンスであることと著作権表記を明示し、リポジトリの LICENSE へリンクする。フッターは**画面下部に常時固定表示**とし、トラック選択画面を含むどの画面でもスクロールせずに視認できる | must(P8) |
 
 ## 3. 非機能要求
@@ -47,7 +51,7 @@ P11 で pyml、P12 で pyauto / react / aws / r を追加)。
 |---|---|---|
 | N-01 | Next.js 静的エクスポート(`output: 'export'`)で動作し、サーバ API を持たない。GitHub 連携の Vercel で公開する | `next build` 成功 + out/ のみで動作 |
 | N-02 | 落下・判定ロジックは UI から分離した決定的な純関数(`src/core/`)とし、`requestAnimationFrame` の経過時間を入力に取る。描画は 60fps を目標 | core の単体テスト + 手動確認 |
-| N-03 | ゲーム操作はキーボードのみで完結する。コマンド入力欄は IME を無効化し、半角英数記号(`[A-Za-z0-9+._-]`)のみ受け付ける。照合は**大文字小文字を区別する**(`Promise.all` 等の大文字も打鍵どおりに扱う。Shift 打鍵も練習対象) | テスト + 手動確認 |
+| N-03 | ゲーム操作はキーボードのみで完結する。コマンド入力欄は IME を無効化し、半角英数記号(`[A-Za-z0-9+._/-]`)のみ受け付ける(`/` は P13 で追加 — MCP のメソッド名 `tools/list` 等のため)。照合は**大文字小文字を区別する**(`Promise.all` 等の大文字も打鍵どおりに扱う。Shift 打鍵も練習対象) | テスト + 手動確認 |
 | N-04 | デスクトップブラウザ(Chrome / Edge / Firefox 最新)を対象。モバイルは表示崩れがないことのみ保証 | 手動確認 |
 
 ## 4. トラック・レベル・カテゴリ・出題数の対応(データ正本の配分)
@@ -344,6 +348,67 @@ base R・tidyverse・統計・可視化の単語型(`read.csv` `str_detect` `Sys
 | 上級 | `r-env` | 環境・パッケージ | 8 |
 | 上級 | `r-struct` | 型・構造 | 8 |
 
+### 4.15 トラック `http`(HTTP / Web 標準)— 150 件
+
+メソッド・ステータスコード(数字 3 桁)・ヘッダ名・プロトコル・API 設計語彙の単語型
+(`Content-Type` `HTTP/2` `200` 等)。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `http-methods` | メソッド・URL 基本 | 18 |
+| 初級 | `http-status` | ステータスコード | 17 |
+| 初級 | `http-headers` | 基本ヘッダ | 15 |
+| 中級 | `http-cache` | キャッシュ | 14 |
+| 中級 | `http-security` | セキュリティヘッダ・脅威 | 12 |
+| 中級 | `http-auth` | 認証・認可 | 12 |
+| 中級 | `http-protocol` | プロトコル進化 | 12 |
+| 上級 | `http-content` | 表現・エンコーディング | 9 |
+| 上級 | `http-rest` | API 設計 | 9 |
+| 上級 | `http-url` | ドメイン・DNS | 8 |
+| 上級 | `http-conn` | 接続・性能 | 8 |
+| 上級 | `http-storage` | ブラウザ側 API | 8 |
+| 上級 | `http-standards` | 標準化・文書 | 8 |
+
+### 4.16 トラック `pyweb`(Python Web 開発)— 150 件
+
+FastAPI・pydantic・Django・Flask・SQLAlchemy と周辺運用の単語型。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `pyweb-fastapi` | FastAPI 基礎 | 18 |
+| 初級 | `pyweb-pydantic` | pydantic | 17 |
+| 初級 | `pyweb-django` | Django 基礎 | 15 |
+| 中級 | `pyweb-flask` | Flask・テンプレート | 14 |
+| 中級 | `pyweb-sqlalchemy` | DB・ORM | 12 |
+| 中級 | `pyweb-async` | 非同期・サーバ | 12 |
+| 中級 | `pyweb-auth` | 認証・セキュリティ | 12 |
+| 上級 | `pyweb-test` | テスト | 9 |
+| 上級 | `pyweb-tasks` | 非同期タスク・キュー | 9 |
+| 上級 | `pyweb-deploy` | デプロイ・運用 | 8 |
+| 上級 | `pyweb-api` | API 設計・文書 | 8 |
+| 上級 | `pyweb-graphql` | GraphQL | 8 |
+| 上級 | `pyweb-frameworks` | その他フレームワーク | 8 |
+
+### 4.17 トラック `mcp`(MCP: Model Context Protocol)— 150 件
+
+MCP 仕様(メソッド名はスラッシュ込みの正式表記 `tools/list` 等)・SDK・エコシステムの単語型。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `mcp-basic` | 基本概念 | 18 |
+| 初級 | `mcp-lifecycle` | 接続・ライフサイクル | 17 |
+| 初級 | `mcp-jsonrpc` | JSON-RPC メッセージ | 15 |
+| 中級 | `mcp-tools` | ツール | 14 |
+| 中級 | `mcp-resources` | リソース | 12 |
+| 中級 | `mcp-prompts` | プロンプト・コンテンツ | 12 |
+| 中級 | `mcp-sampling` | サンプリング・クライアント機能 | 12 |
+| 上級 | `mcp-pysdk` | Python SDK | 9 |
+| 上級 | `mcp-tssdk` | TypeScript SDK | 9 |
+| 上級 | `mcp-auth` | 認可・セキュリティ | 8 |
+| 上級 | `mcp-clients` | ホスト・クライアント実装 | 8 |
+| 上級 | `mcp-patterns` | 設計パターン | 8 |
+| 上級 | `mcp-versions` | 仕様・バージョン | 8 |
+
 各表の集計: 初級 50 / 中級 50 / 上級 50 = 150。
 
 ## 5. 品質基準
@@ -352,9 +417,10 @@ base R・tidyverse・統計・可視化の単語型(`read.csv` `str_detect` `Sys
 
 - `data/tracks/*.json`: トラックごとに、件数・レベル配分・カテゴリ配分が §4 の該当表と完全一致 /
   `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別:
-  linux: `[a-z0-9+._-]+` / python・pyml・pyauto・r・typescript・java: `[A-Za-z0-9_.]+` /
+  linux: `[a-z0-9+._-]+` / python・pyml・pyauto・r・typescript・java・pyweb: `[A-Za-z0-9_.]+` /
   git・docker: `[A-Za-z0-9+._-]+` / react・aws: `[A-Za-z0-9_.-]+` /
   htmlcss: `[a-z0-9-]+` / powershell: `[A-Za-z0-9-]+` / sql: `[a-z0-9_]+` /
+  http: `[A-Za-z0-9./-]+` / mcp: `[A-Za-z0-9/._-]+` /
   `desc` は 8〜40 文字の日本語解説
 - `desc` は本プロジェクトのための**書き下ろしオリジナル文**に限る。既存文書
   (man ページ・docs.python.org・MDN・TypeScript Handbook 等)からの転載・翻訳流用を
@@ -378,7 +444,8 @@ base R・tidyverse・統計・可視化の単語型(`read.csv` `str_detect` `Sys
 | P9 | 追加 5 トラック: java(§4.4)・git(§4.5)・docker(§4.6)・htmlcss(§4.7)・powershell(§4.8)、各 150 件 + 基調色(§7.1) | 完了(loop_022〜026) |
 | P10 | SQL:2023 トラック(§4.9): 150 件・小文字表記・タブ位置は linux と python の間 | 完了(loop_027) |
 | P11 | Python ML トラック(§4.10): 機械学習ライブラリ 150 件・基調色 PyTorch オレンジ | 完了(loop_028) |
-| P12 | 追加 4 トラック: pyauto(§4.11)・react(§4.12)・aws(§4.13)・r(§4.14)、各 150 件 + タブ順のクラスタ再配置 | 本ループ群(loop_029〜032) |
+| P12 | 追加 4 トラック: pyauto(§4.11)・react(§4.12)・aws(§4.13)・r(§4.14)、各 150 件 + タブ順のクラスタ再配置 | 完了(loop_029〜032) |
+| P13 | 追加 3 トラック: http(§4.15)・pyweb(§4.16)・mcp(§4.17)+ グループ見出し付きタブ(F-15 改訂)+ 受理文字へ `/` 追加(N-03 改訂) | 本ループ群(loop_033〜035) |
 
 ## 7. デザイン(視覚仕様)
 
@@ -434,6 +501,12 @@ base R・tidyverse・統計・可視化の単語型(`read.csv` `str_detect` `Sys
 | react | `#61DAFB`(React シアン) | `#000000` | `#087EA4`(ダークシアン) |
 | aws | `#FF9900`(AWS オレンジ) | `#000000` | `#232F3E`(スクイッドインク) |
 | r | `#276DC3`(R ロゴブルー) | `#FFFFFF` | `#A7A9AC`(ロゴグレー) |
+| http | `#005A9C`(W3C ブルー) | `#FFFFFF` | `#4D9FD6`(ライトブルー) |
+| pyweb | `#092E20`(Django グリーン) | `#FFFFFF` | `#44B78B`(Django ライトグリーン) |
+| mcp | `#CC785C`(Anthropic テラコッタ) | `#000000` | `#191919`(Anthropic ブラック) |
+
+http は標準化団体 W3C のブランド色、mcp は公式色が存在しないため発祥元 Anthropic の
+ブランド色を採用(2026-08-12)。
 
 SQL は ISO 標準でありコミュニティ共通のブランド色が存在しないため、
 データベースの定番連想色であるディープブルーを採用(2026-08-12 人間指示で確定)。
