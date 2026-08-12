@@ -133,11 +133,41 @@ button {
   text-align: center;
 }
 
-/* ---------- レベル選択(F-02 / F-12) ---------- */
+/* ---------- レベル選択(F-02 / F-12 / F-15) ---------- */
 
 .select {
   text-align: center;
   padding-top: 4vh;
+}
+
+.track-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.2em;
+}
+
+.track-tab {
+  padding: 0.35em 1.2em;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.08s ease, color 0.08s ease;
+}
+
+.track-tab:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+}
+
+.track-tab.active {
+  border-color: var(--prompt);
+  background: var(--prompt);
+  color: #fff;
 }
 
 .level-list {

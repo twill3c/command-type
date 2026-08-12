@@ -1,5 +1,6 @@
 "use client";
 
+import { datasets } from "@/core/data";
 import { summarize } from "@/core/results";
 import type { SessionState } from "@/core/session";
 import type { PlayLevel } from "@/core/types";
@@ -30,7 +31,7 @@ export function ResultScreen({
     <div className="result">
       <h1 className="title">
         <span className="prompt">&gt;</span> リザルト —{" "}
-        {LEVEL_LABEL[state.level]}
+        {datasets.get(state.track)?.track.name} {LEVEL_LABEL[state.level]}
       </h1>
 
       <div className="result-cards">

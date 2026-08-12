@@ -16,6 +16,7 @@ type Screen =
 
 export default function Home() {
   const [screen, setScreen] = useState<Screen>({ name: "select" });
+  const [track, setTrack] = useState<TrackId>("linux");
 
   const startPlay = useCallback((track: TrackId, level: PlayLevel) => {
     // シードは UI 層で採る(core は乱数を持たない — AGENTS §4)
@@ -23,15 +24,23 @@ export default function Home() {
   }, []);
 
   const handleFinish = useCallback((state: SessionState) => {
-    const newRecord = saveHighScore(browserStore(), state.level, state.score);
+    const newRecord = saveHighScore(
+      browserStore(),
+      state.track,
+      state.level,
+      state.score,
+    );
     setScreen({ name: "result", state, newRecord });
   }, []);
 
   return (
     <main>
       {screen.name === "select" && (
-        // トラック選択 UI は P7(F-15)。それまでは linux 固定
-        <LevelSelect onSelect={(level) => startPlay("linux", level)} />
+        <LevelSelect
+          track={track}
+          onTrackChange={setTrack}
+          onSelect={(level) => startPlay(track, level)}
+        />
       )}
       {screen.name === "play" && (
         <GameScreen
