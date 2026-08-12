@@ -10,10 +10,13 @@ Linux コマンド・Python・TypeScript のタイピング練習ゲーム(多�
 
 Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/API を
 「落ちものゲーム × タイピング」の形式で楽しく反復学習する Web アプリを提供する。
-出題は**トラック**(学習科目)単位で選ぶ。トラックは `linux` / `sql` / `python` / `pyml` /
-`typescript` / `java` / `git` / `docker` / `htmlcss` / `powershell` の 10(P9 で 5 つ、
-P10 で sql、P11 で pyml を追加)。トラック選択タブの表示順もこの並びとする
-(sql は linux と python の間、pyml は python の隣 — 2026-08-12 人間指示)。
+出題は**トラック**(学習科目)単位で選ぶ。トラックは以下の 14(P9 で 5 つ、P10 で sql、
+P11 で pyml、P12 で pyauto / react / aws / r を追加)。
+トラック選択タブの表示順は学習領域のクラスタ順とする(2026-08-12 人間指示):
+
+`linux` / `sql` / `python` / `pyml` / `pyauto` / `r`(データ系)/
+`typescript` / `react`(フロントエンド)/ `java` / `git` / `docker` / `aws`(インフラ)/
+`htmlcss` / `powershell`
 出題文字列を打鍵しながら、短い解説文とカテゴリ名を同時に目にすることで、
 タイピング練習と知識の定着を一度に実現する。
 
@@ -258,6 +261,89 @@ NumPy・pandas・可視化・scikit-learn・PyTorch・Transformers・GBDT・実�
 | 上級 | `pyml-gbdt` | 勾配ブースティング | 8 |
 | 上級 | `pyml-ops` | 実験・運用 | 8 |
 
+### 4.11 トラック `pyauto`(Python 業務自動化)— 150 件
+
+Excel・ファイル・Web・ブラウザ・通知など日常業務の自動化に使う API の単語型。
+表記は慣用形(`Path.rglob` `requests.get` `pyautogui.click` 等)。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `pyauto-excel` | Excel 操作(openpyxl) | 18 |
+| 初級 | `pyauto-files` | ファイル・フォルダ整理 | 17 |
+| 初級 | `pyauto-csvtext` | CSV・テキスト処理 | 15 |
+| 中級 | `pyauto-http` | HTTP・API 連携 | 14 |
+| 中級 | `pyauto-scrape` | Web スクレイピング | 12 |
+| 中級 | `pyauto-browser` | ブラウザ自動化 | 12 |
+| 中級 | `pyauto-schedule` | 日付・スケジュール実行 | 12 |
+| 上級 | `pyauto-mail` | メール・通知 | 9 |
+| 上級 | `pyauto-pdfimg` | PDF・画像処理 | 9 |
+| 上級 | `pyauto-gui` | GUI 操作自動化 | 8 |
+| 上級 | `pyauto-cli` | CLI 化・設定 | 8 |
+| 上級 | `pyauto-proc` | 外部プロセス実行 | 8 |
+| 上級 | `pyauto-robust` | 堅牢化・リトライ | 8 |
+
+### 4.12 トラック `react`(React / フロントエンド)— 150 件
+
+React・Next.js とその周辺エコシステムの単語型。`use client` 等の複数語ディレクティブは
+採録しない(スペース打鍵不可)。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `react-hooks` | フックの基本 | 18 |
+| 初級 | `react-component` | コンポーネント・JSX | 17 |
+| 初級 | `react-state` | 状態管理 | 15 |
+| 中級 | `react-router` | ルーティング | 14 |
+| 中級 | `react-nextjs` | Next.js・SSR | 12 |
+| 中級 | `react-styling` | スタイリング | 12 |
+| 中級 | `react-forms` | フォーム・データ取得 | 12 |
+| 上級 | `react-perf` | パフォーマンス | 9 |
+| 上級 | `react-test` | テスト | 9 |
+| 上級 | `react-events` | イベント・DOM 連携 | 8 |
+| 上級 | `react-server` | サーバー連携・キャッシュ | 8 |
+| 上級 | `react-motion` | アニメーション | 8 |
+| 上級 | `react-tools` | ツール・エコシステム | 8 |
+
+### 4.13 トラック `aws`(クラウド: AWS)— 150 件
+
+主要サービス名・CLI/boto3・設計語彙の単語型(`S3` `t3.micro` `boto3.client` 等)。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `aws-core` | 主要サービス | 18 |
+| 初級 | `aws-storage` | S3・ストレージ | 17 |
+| 初級 | `aws-iam` | IAM・認証 | 15 |
+| 中級 | `aws-compute` | コンピュート・サーバーレス | 14 |
+| 中級 | `aws-network` | ネットワーク | 12 |
+| 中級 | `aws-db` | データベース・分析 | 12 |
+| 中級 | `aws-cli` | CLI・SDK(boto3) | 12 |
+| 上級 | `aws-deploy` | IaC・デプロイ | 9 |
+| 上級 | `aws-monitor` | 監視・運用 | 9 |
+| 上級 | `aws-security` | セキュリティ | 8 |
+| 上級 | `aws-cost` | コスト管理 | 8 |
+| 上級 | `aws-arch` | アーキテクチャ | 8 |
+| 上級 | `aws-analytics` | ストリーム・統合 | 8 |
+
+### 4.14 トラック `r`(R 言語)— 150 件
+
+base R・tidyverse・統計・可視化の単語型(`read.csv` `str_detect` `Sys.Date` 等。
+`%>%` `<-` などの記号演算子は採録しない)。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `r-basic` | 基本・ベクトル | 18 |
+| 初級 | `r-dataframe` | データフレーム | 17 |
+| 初級 | `r-tidyverse` | tidyverse 基礎 | 15 |
+| 中級 | `r-apply` | 反復・関数型 | 14 |
+| 中級 | `r-stats` | 統計解析 | 12 |
+| 中級 | `r-prob` | 確率・分布 | 12 |
+| 中級 | `r-viz` | 可視化(ggplot2) | 12 |
+| 上級 | `r-strings` | 文字列・日付 | 9 |
+| 上級 | `r-model` | モデリング・ML | 9 |
+| 上級 | `r-report` | レポーティング | 8 |
+| 上級 | `r-data` | データ入出力 | 8 |
+| 上級 | `r-env` | 環境・パッケージ | 8 |
+| 上級 | `r-struct` | 型・構造 | 8 |
+
 各表の集計: 初級 50 / 中級 50 / 上級 50 = 150。
 
 ## 5. 品質基準
@@ -266,9 +352,9 @@ NumPy・pandas・可視化・scikit-learn・PyTorch・Transformers・GBDT・実�
 
 - `data/tracks/*.json`: トラックごとに、件数・レベル配分・カテゴリ配分が §4 の該当表と完全一致 /
   `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別:
-  linux: `[a-z0-9+._-]+` / python・pyml・typescript・java: `[A-Za-z0-9_.]+` /
-  git・docker: `[A-Za-z0-9+._-]+` / htmlcss: `[a-z0-9-]+` / powershell: `[A-Za-z0-9-]+` /
-  sql: `[a-z0-9_]+` /
+  linux: `[a-z0-9+._-]+` / python・pyml・pyauto・r・typescript・java: `[A-Za-z0-9_.]+` /
+  git・docker: `[A-Za-z0-9+._-]+` / react・aws: `[A-Za-z0-9_.-]+` /
+  htmlcss: `[a-z0-9-]+` / powershell: `[A-Za-z0-9-]+` / sql: `[a-z0-9_]+` /
   `desc` は 8〜40 文字の日本語解説
 - `desc` は本プロジェクトのための**書き下ろしオリジナル文**に限る。既存文書
   (man ページ・docs.python.org・MDN・TypeScript Handbook 等)からの転載・翻訳流用を
@@ -291,7 +377,8 @@ NumPy・pandas・可視化・scikit-learn・PyTorch・Transformers・GBDT・実�
 | P8 | データ出典の文書化(§5 転載禁止規約・docs/data-provenance.md)+ 全画面の MIT ライセンス表記(F-16) | 完了(loop_019〜021) |
 | P9 | 追加 5 トラック: java(§4.4)・git(§4.5)・docker(§4.6)・htmlcss(§4.7)・powershell(§4.8)、各 150 件 + 基調色(§7.1) | 完了(loop_022〜026) |
 | P10 | SQL:2023 トラック(§4.9): 150 件・小文字表記・タブ位置は linux と python の間 | 完了(loop_027) |
-| P11 | Python ML トラック(§4.10): 機械学習ライブラリ 150 件・基調色 PyTorch オレンジ | 本ループ(loop_028) |
+| P11 | Python ML トラック(§4.10): 機械学習ライブラリ 150 件・基調色 PyTorch オレンジ | 完了(loop_028) |
+| P12 | 追加 4 トラック: pyauto(§4.11)・react(§4.12)・aws(§4.13)・r(§4.14)、各 150 件 + タブ順のクラスタ再配置 | 本ループ群(loop_029〜032) |
 
 ## 7. デザイン(視覚仕様)
 
@@ -343,6 +430,10 @@ NumPy・pandas・可視化・scikit-learn・PyTorch・Transformers・GBDT・実�
 | powershell | `#012456`(PowerShell 紺) | `#FFFFFF` | `#5391FE`(ライトブルー) |
 | sql | `#1A5276`(ディープブルー) | `#FFFFFF` | `#5DADE2`(ライトブルー) |
 | pyml | `#EE4C2C`(PyTorch オレンジ) | `#000000` | `#7F2A18`(ダークオレンジ) |
+| pyauto | `#217346`(Excel グリーン) | `#FFFFFF` | `#A9D08E`(ライトグリーン) |
+| react | `#61DAFB`(React シアン) | `#000000` | `#087EA4`(ダークシアン) |
+| aws | `#FF9900`(AWS オレンジ) | `#000000` | `#232F3E`(スクイッドインク) |
+| r | `#276DC3`(R ロゴブルー) | `#FFFFFF` | `#A7A9AC`(ロゴグレー) |
 
 SQL は ISO 標準でありコミュニティ共通のブランド色が存在しないため、
 データベースの定番連想色であるディープブルーを採用(2026-08-12 人間指示で確定)。
