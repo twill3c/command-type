@@ -171,6 +171,28 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "ps-winadmin": { level: "advanced", count: 8 },
     },
   },
+  pyauto: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.]+$/,
+    categories: {
+      "pyauto-excel": { level: "beginner", count: 18 },
+      "pyauto-files": { level: "beginner", count: 17 },
+      "pyauto-csvtext": { level: "beginner", count: 15 },
+      "pyauto-http": { level: "intermediate", count: 14 },
+      "pyauto-scrape": { level: "intermediate", count: 12 },
+      "pyauto-browser": { level: "intermediate", count: 12 },
+      "pyauto-schedule": { level: "intermediate", count: 12 },
+      "pyauto-mail": { level: "advanced", count: 9 },
+      "pyauto-pdfimg": { level: "advanced", count: 9 },
+      "pyauto-gui": { level: "advanced", count: 8 },
+      "pyauto-cli": { level: "advanced", count: 8 },
+      "pyauto-proc": { level: "advanced", count: 8 },
+      "pyauto-robust": { level: "advanced", count: 8 },
+    },
+  },
+  react: undefined, // loop_030 で §4.12 の表を書き写す
+  aws: undefined, // loop_031 で §4.13 の表を書き写す
+  r: undefined, // loop_032 で §4.14 の表を書き写す
   pyml: {
     total: 150,
     charset: /^[A-Za-z0-9_.]+$/,
