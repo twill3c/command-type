@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.6",
+  "track": {
+    "id": "docker",
+    "name": "Docker / Kubernetes"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "dk-basic",
+      "name": "コンテナ基本操作",
+      "level": "beginner"
+    },
+    {
+      "id": "dk-image",
+      "name": "イメージ・Dockerfile",
+      "level": "beginner"
+    },
+    {
+      "id": "dk-compose",
+      "name": "Compose・ボリューム",
+      "level": "beginner"
+    },
+    {
+      "id": "dk-k8s-basic",
+      "name": "Kubernetes 基本",
+      "level": "intermediate"
+    },
+    {
+      "id": "dk-k8s-workload",
+      "name": "ワークロード",
+      "level": "intermediate"
+    },
+    {
+      "id": "dk-k8s-net",
+      "name": "ネットワーク・公開",
+      "level": "intermediate"
+    },
+    {
+      "id": "dk-registry",
+      "name": "レジストリ・配布",
+      "level": "intermediate"
+    },
+    {
+      "id": "dk-k8s-ops",
+      "name": "運用・スケーリング",
+      "level": "advanced"
+    },
+    {
+      "id": "dk-k8s-storage",
+      "name": "ストレージ・設定",
+      "level": "advanced"
+    },
+    {
+      "id": "dk-security",
+      "name": "セキュリティ",
+      "level": "advanced"
+    },
+    {
+      "id": "dk-observ",
+      "name": "監視・ログ",
+      "level": "advanced"
+    },
+    {
+      "id": "dk-helm",
+      "name": "Helm・エコシステム",
+      "level": "advanced"
+    },
+    {
+      "id": "dk-internals",
+      "name": "内部構造・ランタイム",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "run",
+      "desc": "イメージから新しいコンテナを作って起動する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "ps",
+      "desc": "実行中のコンテナ一覧を表示する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "exec",
+      "desc": "実行中のコンテナ内でコマンドを実行する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "logs",
+      "desc": "コンテナの標準出力ログを表示する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "stop",
+      "desc": "コンテナを穏やかに停止する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "start",
+      "desc": "停止中のコンテナを再び起動する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "restart",
+      "desc": "コンテナを停止してから起動し直す",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "rm",
+      "desc": "停止済みのコンテナを削除する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "attach",
+      "desc": "実行中コンテナの入出力に接続する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "cp",
+      "desc": "コンテナとホストの間でファイルを写す",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "inspect",
+      "desc": "コンテナ等の詳細情報を JSON で表示する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "stats",
+      "desc": "コンテナの CPU・メモリ使用量を監視する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "top",
+      "desc": "コンテナ内のプロセス一覧を表示する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "port",
+      "desc": "コンテナのポート割り当てを表示する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "rename",
+      "desc": "コンテナの名前を変更する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "pause",
+      "desc": "コンテナ内の全プロセスを一時停止する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "unpause",
+      "desc": "一時停止したコンテナを再開する",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "detach",
+      "desc": "コンテナを動かしたまま接続を離れる操作",
+      "category": "dk-basic"
+    },
+    {
+      "cmd": "build",
+      "desc": "Dockerfile からイメージを構築する",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "images",
+      "desc": "ローカルに保存されたイメージを一覧する",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "rmi",
+      "desc": "ローカルのイメージを削除する",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "Dockerfile",
+      "desc": "イメージの構築手順を記述するファイル",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "FROM",
+      "desc": "ベースイメージを指定する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "RUN",
+      "desc": "構築時にコマンドを実行する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "COPY",
+      "desc": "ファイルをイメージへ複製する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "ADD",
+      "desc": "URL 展開等も行う複製命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "CMD",
+      "desc": "コンテナ起動時の既定コマンドを指定する",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "ENTRYPOINT",
+      "desc": "コンテナの実行体を固定する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "ENV",
+      "desc": "環境変数を設定する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "ARG",
+      "desc": "構築時だけ使える変数を宣言する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "EXPOSE",
+      "desc": "リッスンするポートを宣言する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "WORKDIR",
+      "desc": "以降の命令の作業ディレクトリを指定する",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "VOLUME",
+      "desc": "ボリュームのマウント点を宣言する命令",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "multi-stage",
+      "desc": "構築を段階に分けて成果物だけを残す手法",
+      "category": "dk-image"
+    },
+    {
+      "cmd": ".dockerignore",
+      "desc": "構築コンテキストから除外するパターン集",
+      "category": "dk-image"
+    },
+    {
+      "cmd": "compose",
+      "desc": "複数コンテナをまとめて定義・起動する",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "up",
+      "desc": "compose 定義のサービス群を作成・起動する",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "down",
+      "desc": "compose のサービス群を停止・削除する",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "services",
+      "desc": "compose 定義内の各コンテナの単位",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "depends_on",
+      "desc": "サービスの起動順の依存を宣言する",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "volume",
+      "desc": "データを永続化する保存領域",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "bind-mount",
+      "desc": "ホストのパスを直接マウントする方式",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "tmpfs",
+      "desc": "メモリ上にだけ書き込むマウント方式",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "network",
+      "desc": "コンテナ間通信のための仮想ネットワーク",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "bridge",
+      "desc": "既定の単一ホスト用ネットワーク方式",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "host",
+      "desc": "ホストのネットワークをそのまま使う方式",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "ports",
+      "desc": "ホストとコンテナのポート対応の指定",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "environment",
+      "desc": "サービスへ渡す環境変数の指定",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "healthcheck",
+      "desc": "サービスの健全性を確かめる検査設定",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "profiles",
+      "desc": "起動するサービスの組を切り替える仕組み",
+      "category": "dk-compose"
+    },
+    {
+      "cmd": "kubectl",
+      "desc": "Kubernetes を操作する標準 CLI",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "apply",
+      "desc": "マニフェストを宣言的に適用する",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "get",
+      "desc": "リソースの一覧・状態を表示する",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "describe",
+      "desc": "リソースの詳細と関連イベントを表示する",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "delete",
+      "desc": "リソースを削除する",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "create",
+      "desc": "リソースを命令的に作成する",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "edit",
+      "desc": "稼働中リソースの定義をその場で編集する",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "Pod",
+      "desc": "コンテナ群をまとめる最小のデプロイ単位",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "Node",
+      "desc": "Pod が動く物理・仮想マシン",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "Namespace",
+      "desc": "クラスタ内をリソースを分離する区画",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "Cluster",
+      "desc": "ノード群とコントロールプレーンの全体",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "manifest",
+      "desc": "リソースの望ましい状態を書いた YAML",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "kubeconfig",
+      "desc": "接続先クラスタと認証情報の設定ファイル",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "context",
+      "desc": "kubeconfig 内の接続先の切り替え単位",
+      "category": "dk-k8s-basic"
+    },
+    {
+      "cmd": "Deployment",
+      "desc": "Pod のレプリカ数と更新戦略を管理する",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "ReplicaSet",
+      "desc": "指定数の Pod 複製を維持するリソース",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "StatefulSet",
+      "desc": "安定した識別子を持つ Pod 群を管理する",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "DaemonSet",
+      "desc": "全ノードに 1 つずつ Pod を配置する",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "Job",
+      "desc": "完了するまで実行するバッチ処理リソース",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "CronJob",
+      "desc": "スケジュール実行するジョブリソース",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "rollout",
+      "desc": "デプロイの進行状況の確認や巻き戻しを行う",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "replicas",
+      "desc": "維持したい Pod の複製数の指定",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "selector",
+      "desc": "対象 Pod をラベルで選ぶ仕組み",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "label",
+      "desc": "リソースに付けるキーと値の目印",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "annotation",
+      "desc": "ツール向けの補足情報を付けるメタデータ",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "sidecar",
+      "desc": "主コンテナに併走する補助コンテナの型",
+      "category": "dk-k8s-workload"
+    },
+    {
+      "cmd": "Service",
+      "desc": "Pod 群への安定した接続口を提供する",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "ClusterIP",
+      "desc": "クラスタ内部向けの仮想 IP を持つ Service",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "NodePort",
+      "desc": "各ノードのポートで公開する Service",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "LoadBalancer",
+      "desc": "外部 LB を割り当てて公開する Service",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "Ingress",
+      "desc": "HTTP のルーティング規則で公開する",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "IngressClass",
+      "desc": "Ingress を処理するコントローラの指定",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "Endpoint",
+      "desc": "Service が振り分ける実際の宛先",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "port-forward",
+      "desc": "ローカルのポートを Pod へ転送する",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "proxy",
+      "desc": "API サーバ経由でクラスタへ接続する",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "CoreDNS",
+      "desc": "クラスタ内の名前解決を担う DNS",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "NetworkPolicy",
+      "desc": "Pod 間通信の許可規則を定義する",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "Gateway",
+      "desc": "次世代のトラフィック制御 API",
+      "category": "dk-k8s-net"
+    },
+    {
+      "cmd": "pull",
+      "desc": "レジストリからイメージを取得する",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "push",
+      "desc": "レジストリへイメージを送信する",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "tag",
+      "desc": "イメージに名前とタグを付ける",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "login",
+      "desc": "レジストリに認証してログインする",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "logout",
+      "desc": "レジストリの認証情報を破棄する",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "registry",
+      "desc": "イメージを保管・配布するサーバ",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "repository",
+      "desc": "レジストリ内の同名イメージの集まり",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "digest",
+      "desc": "イメージ内容を一意に示すハッシュ",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "latest",
+      "desc": "タグ省略時に使われる既定タグ",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "save",
+      "desc": "イメージを tar アーカイブに書き出す",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "load",
+      "desc": "tar アーカイブからイメージを読み込む",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "ghcr.io",
+      "desc": "GitHub が提供するコンテナレジストリ",
+      "category": "dk-registry"
+    },
+    {
+      "cmd": "scale",
+      "desc": "レプリカ数を手動で増減する",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "autoscale",
+      "desc": "負荷に応じた自動スケールを設定する",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "HorizontalPodAutoscaler",
+      "desc": "指標に基づき Pod 数を自動調整する",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "drain",
+      "desc": "ノードから Pod を退避させ保守に備える",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "cordon",
+      "desc": "ノードへの新規スケジュールを止める",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "uncordon",
+      "desc": "ノードをスケジュール可能に戻す",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "taint",
+      "desc": "ノードに配置制限の印を付ける",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "toleration",
+      "desc": "taint を許容して配置可能にする設定",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "PodDisruptionBudget",
+      "desc": "同時に落とせる Pod 数の下限を守る",
+      "category": "dk-k8s-ops"
+    },
+    {
+      "cmd": "ConfigMap",
+      "desc": "設定値を Pod へ供給するリソース",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "Secret",
+      "desc": "機密情報を安全に供給するリソース",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "PersistentVolume",
+      "desc": "クラスタが提供する永続ストレージ実体",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "PersistentVolumeClaim",
+      "desc": "必要な永続ストレージを要求する",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "StorageClass",
+      "desc": "動的プロビジョニングの種別定義",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "emptyDir",
+      "desc": "Pod と同寿命の一時ボリューム",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "hostPath",
+      "desc": "ノードのパスをマウントするボリューム",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "subPath",
+      "desc": "ボリューム内の一部だけをマウントする指定",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "volumeMounts",
+      "desc": "コンテナへのマウント位置の指定",
+      "category": "dk-k8s-storage"
+    },
+    {
+      "cmd": "ServiceAccount",
+      "desc": "Pod が API へアクセスする際の身元",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "RBAC",
+      "desc": "ロールに基づくアクセス制御の仕組み",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "Role",
+      "desc": "名前空間内の操作権限の集合",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "ClusterRole",
+      "desc": "クラスタ全体に及ぶ権限の集合",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "RoleBinding",
+      "desc": "権限の集合を利用者へ結び付ける",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "securityContext",
+      "desc": "実行ユーザーや特権の制約を指定する",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "rootless",
+      "desc": "デーモンを非 root で動かす実行方式",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "trivy",
+      "desc": "イメージの脆弱性を走査するスキャナ",
+      "category": "dk-security"
+    },
+    {
+      "cmd": "events",
+      "desc": "クラスタで起きた出来事の記録を見る",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "liveness",
+      "desc": "生存確認に失敗すると再起動される probe",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "readiness",
+      "desc": "準備完了までトラフィックを止める probe",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "startup",
+      "desc": "起動の遅いアプリを守る probe",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "metrics-server",
+      "desc": "Pod・ノードの資源使用量を集計する",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "prometheus",
+      "desc": "メトリクス収集・警報のデファクト",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "grafana",
+      "desc": "メトリクスの可視化ダッシュボード",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "stern",
+      "desc": "複数 Pod のログを同時に追うツール",
+      "category": "dk-observ"
+    },
+    {
+      "cmd": "helm",
+      "desc": "Kubernetes のパッケージマネージャ",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "chart",
+      "desc": "Helm のパッケージ(マニフェスト雛形)",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "values.yaml",
+      "desc": "チャートへ渡す設定値のファイル",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "install",
+      "desc": "チャートをクラスタへ導入する",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "upgrade",
+      "desc": "導入済みリリースを新版へ更新する",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "rollback",
+      "desc": "リリースを以前の版へ巻き戻す",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "kustomize",
+      "desc": "YAML をパッチ合成で変形するツール",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "operator",
+      "desc": "運用知識をコード化した自動管理役",
+      "category": "dk-helm"
+    },
+    {
+      "cmd": "containerd",
+      "desc": "業界標準の中核コンテナランタイム",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "runc",
+      "desc": "OCI 仕様のコンテナ実行体",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "OCI",
+      "desc": "コンテナの形式と実行の標準仕様",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "cgroups",
+      "desc": "CPU やメモリを隔離・制限する核機能",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "namespaces",
+      "desc": "プロセス空間等を隔離する核機能",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "kubelet",
+      "desc": "各ノードで Pod を実際に動かす代理",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "etcd",
+      "desc": "クラスタ状態を保存する分散 KV ストア",
+      "category": "dk-internals"
+    },
+    {
+      "cmd": "scheduler",
+      "desc": "Pod を置くノードを決める制御部品",
+      "category": "dk-internals"
+    }
+  ]
+}
