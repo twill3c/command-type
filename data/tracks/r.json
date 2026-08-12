@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.14",
+  "track": {
+    "id": "r",
+    "name": "R"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "r-basic",
+      "name": "基本・ベクトル",
+      "level": "beginner"
+    },
+    {
+      "id": "r-dataframe",
+      "name": "データフレーム",
+      "level": "beginner"
+    },
+    {
+      "id": "r-tidyverse",
+      "name": "tidyverse 基礎",
+      "level": "beginner"
+    },
+    {
+      "id": "r-apply",
+      "name": "反復・関数型",
+      "level": "intermediate"
+    },
+    {
+      "id": "r-stats",
+      "name": "統計解析",
+      "level": "intermediate"
+    },
+    {
+      "id": "r-prob",
+      "name": "確率・分布",
+      "level": "intermediate"
+    },
+    {
+      "id": "r-viz",
+      "name": "可視化(ggplot2)",
+      "level": "intermediate"
+    },
+    {
+      "id": "r-strings",
+      "name": "文字列・日付",
+      "level": "advanced"
+    },
+    {
+      "id": "r-model",
+      "name": "モデリング・ML",
+      "level": "advanced"
+    },
+    {
+      "id": "r-report",
+      "name": "レポーティング",
+      "level": "advanced"
+    },
+    {
+      "id": "r-data",
+      "name": "データ入出力",
+      "level": "advanced"
+    },
+    {
+      "id": "r-env",
+      "name": "環境・パッケージ",
+      "level": "advanced"
+    },
+    {
+      "id": "r-struct",
+      "name": "型・構造",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "c",
+      "desc": "値をつないでベクトルを作る基本関数",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "seq",
+      "desc": "等差の数列ベクトルを作る",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "rep",
+      "desc": "値を繰り返したベクトルを作る",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "length",
+      "desc": "ベクトルの要素数を返す",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "sum",
+      "desc": "数値ベクトルの合計を求める",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "mean",
+      "desc": "数値ベクトルの平均を求める",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "median",
+      "desc": "数値ベクトルの中央値を求める",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "sd",
+      "desc": "標準偏差を求める関数",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "var",
+      "desc": "分散を求める関数",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "sort",
+      "desc": "ベクトルを昇順・降順に並べ替える",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "rev",
+      "desc": "ベクトルの要素順を逆にする",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "unique",
+      "desc": "重複を除いた値の一覧を返す",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "which",
+      "desc": "条件が真の位置(添字)を返す",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "paste",
+      "desc": "文字列を空白区切りで連結する",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "paste0",
+      "desc": "文字列を区切りなしで連結する",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "sprintf",
+      "desc": "書式指定で文字列を組み立てる",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "round",
+      "desc": "数値を指定桁で丸める",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "typeof",
+      "desc": "オブジェクトの内部型を調べる",
+      "category": "r-basic"
+    },
+    {
+      "cmd": "data.frame",
+      "desc": "列の集まりとして表データを作る",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "read.csv",
+      "desc": "CSV を読み込みデータフレームにする",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "write.csv",
+      "desc": "データフレームを CSV へ書き出す",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "head",
+      "desc": "先頭の数行を表示して確認する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "tail",
+      "desc": "末尾の数行を表示して確認する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "str",
+      "desc": "オブジェクトの構造を要約表示する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "summary",
+      "desc": "各列の要約統計量を表示する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "nrow",
+      "desc": "データフレームの行数を返す",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "ncol",
+      "desc": "データフレームの列数を返す",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "colnames",
+      "desc": "列名の取得・変更を行う",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "rownames",
+      "desc": "行名の取得・変更を行う",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "subset",
+      "desc": "条件で行や列を抽出する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "rbind",
+      "desc": "行方向にデータを結合する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "cbind",
+      "desc": "列方向にデータを結合する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "merge",
+      "desc": "キーで 2 つの表を結合する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "is.na",
+      "desc": "欠損値 NA かどうかを判定する",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "na.omit",
+      "desc": "欠損値を含む行を取り除く",
+      "category": "r-dataframe"
+    },
+    {
+      "cmd": "tidyverse",
+      "desc": "データ分析パッケージ群の総称",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "dplyr",
+      "desc": "データ操作の文法を提供するパッケージ",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "filter",
+      "desc": "条件を満たす行だけを残す",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "mutate",
+      "desc": "新しい列を計算して追加する",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "select",
+      "desc": "必要な列だけを選び出す",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "arrange",
+      "desc": "指定列の値で行を並べ替える",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "group_by",
+      "desc": "グループ単位の処理を宣言する",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "summarise",
+      "desc": "グループごとに要約統計を計算する",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "tibble",
+      "desc": "現代的で扱いやすいデータフレーム",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "readr",
+      "desc": "高速なファイル読み込みパッケージ",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "read_csv",
+      "desc": "readr の高速 CSV 読み込み関数",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "tidyr",
+      "desc": "データ整形(縦横変換)パッケージ",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "pivot_longer",
+      "desc": "横持ちデータを縦持ちへ変換する",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "pivot_wider",
+      "desc": "縦持ちデータを横持ちへ変換する",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "magrittr",
+      "desc": "パイプ演算子を提供するパッケージ",
+      "category": "r-tidyverse"
+    },
+    {
+      "cmd": "apply",
+      "desc": "行列の行・列へ関数を適用する",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "lapply",
+      "desc": "リストの各要素へ適用しリストで返す",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "sapply",
+      "desc": "lapply の結果を単純化して返す",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "vapply",
+      "desc": "戻り値の型を指定して安全に適用する",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "mapply",
+      "desc": "複数の引数列へ並行に適用する",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "tapply",
+      "desc": "グループごとに関数を適用する",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "purrr",
+      "desc": "関数型プログラミングのパッケージ",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "map_dbl",
+      "desc": "各要素へ適用し数値ベクトルで返す",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "map_chr",
+      "desc": "各要素へ適用し文字ベクトルで返す",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "walk",
+      "desc": "副作用のために各要素へ適用する",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "function",
+      "desc": "関数を定義するキーワード",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "do.call",
+      "desc": "引数リストを展開して関数を呼ぶ",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "Reduce",
+      "desc": "要素を畳み込んで 1 つの値にする",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "Vectorize",
+      "desc": "スカラー関数をベクトル対応にする",
+      "category": "r-apply"
+    },
+    {
+      "cmd": "lm",
+      "desc": "線形回帰モデルを当てはめる",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "glm",
+      "desc": "一般化線形モデルを当てはめる",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "t.test",
+      "desc": "平均の差の t 検定を行う",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "chisq.test",
+      "desc": "カイ二乗検定を行う",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "cor",
+      "desc": "相関係数を計算する",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "anova",
+      "desc": "分散分析表を計算する",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "aov",
+      "desc": "分散分析モデルを当てはめる",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "wilcox.test",
+      "desc": "ノンパラメトリックな順位検定",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "shapiro.test",
+      "desc": "正規性の検定を行う",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "residuals",
+      "desc": "モデルの残差を取り出す",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "coef",
+      "desc": "モデルの係数を取り出す",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "confint",
+      "desc": "係数の信頼区間を計算する",
+      "category": "r-stats"
+    },
+    {
+      "cmd": "rnorm",
+      "desc": "正規分布に従う乱数を生成する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "dnorm",
+      "desc": "正規分布の確率密度を返す",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "pnorm",
+      "desc": "正規分布の累積確率を返す",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "qnorm",
+      "desc": "正規分布の分位点を返す",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "runif",
+      "desc": "一様分布に従う乱数を生成する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "rbinom",
+      "desc": "二項分布に従う乱数を生成する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "rpois",
+      "desc": "ポアソン分布に従う乱数を生成する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "sample",
+      "desc": "ベクトルから無作為に抽出する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "set.seed",
+      "desc": "乱数の種を固定して再現性を得る",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "quantile",
+      "desc": "データの分位点を計算する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "choose",
+      "desc": "組み合わせの数 nCk を計算する",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "factorial",
+      "desc": "階乗を計算する関数",
+      "category": "r-prob"
+    },
+    {
+      "cmd": "ggplot",
+      "desc": "レイヤ文法の作図を開始する関数",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "aes",
+      "desc": "列と見た目(軸・色)の対応を決める",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "geom_point",
+      "desc": "散布図の点レイヤを重ねる",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "geom_line",
+      "desc": "折れ線のレイヤを重ねる",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "geom_bar",
+      "desc": "棒グラフのレイヤを重ねる",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "geom_histogram",
+      "desc": "ヒストグラムのレイヤを重ねる",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "facet_wrap",
+      "desc": "カテゴリ別の小さなパネルに分割する",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "labs",
+      "desc": "タイトルや軸ラベルを設定する",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "theme_minimal",
+      "desc": "余計な装飾のない最小テーマ",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "scale_fill_manual",
+      "desc": "塗り色を手動の配色にする",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "ggsave",
+      "desc": "直前のプロットをファイルへ保存する",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "plotly",
+      "desc": "対話的なグラフを作るパッケージ",
+      "category": "r-viz"
+    },
+    {
+      "cmd": "stringr",
+      "desc": "一貫した文字列操作パッケージ",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "str_detect",
+      "desc": "パターンを含むかを判定する",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "str_replace",
+      "desc": "パターン一致部分を置き換える",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "str_split",
+      "desc": "区切りで文字列を分割する",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "gsub",
+      "desc": "一致箇所をすべて置換する base 関数",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "grepl",
+      "desc": "パターン一致の真偽を返す base 関数",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "lubridate",
+      "desc": "日付・時刻処理のパッケージ",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "ymd",
+      "desc": "年月日文字列を日付型へ変換する",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "Sys.Date",
+      "desc": "今日の日付を返す関数",
+      "category": "r-strings"
+    },
+    {
+      "cmd": "caret",
+      "desc": "統一 API の機械学習フレームワーク",
+      "category": "r-model"
+    },
+    {
+      "cmd": "tidymodels",
+      "desc": "tidyverse 流のモデリング枠組み",
+      "category": "r-model"
+    },
+    {
+      "cmd": "recipes",
+      "desc": "前処理をレシピとして定義する",
+      "category": "r-model"
+    },
+    {
+      "cmd": "parsnip",
+      "desc": "モデル定義を統一するパッケージ",
+      "category": "r-model"
+    },
+    {
+      "cmd": "ranger",
+      "desc": "高速なランダムフォレスト実装",
+      "category": "r-model"
+    },
+    {
+      "cmd": "glmnet",
+      "desc": "正則化付き回帰(lasso 等)の実装",
+      "category": "r-model"
+    },
+    {
+      "cmd": "kmeans",
+      "desc": "k 平均法クラスタリングの関数",
+      "category": "r-model"
+    },
+    {
+      "cmd": "prcomp",
+      "desc": "主成分分析を実行する関数",
+      "category": "r-model"
+    },
+    {
+      "cmd": "cv.glmnet",
+      "desc": "交差検証で正則化の強さを選ぶ",
+      "category": "r-model"
+    },
+    {
+      "cmd": "rmarkdown",
+      "desc": "文書とコードを混ぜて報告書を作る",
+      "category": "r-report"
+    },
+    {
+      "cmd": "knitr",
+      "desc": "コードの実行結果を文書へ織り込む",
+      "category": "r-report"
+    },
+    {
+      "cmd": "quarto",
+      "desc": "次世代の科学技術文書システム",
+      "category": "r-report"
+    },
+    {
+      "cmd": "shiny",
+      "desc": "対話的な Web アプリを R で作る",
+      "category": "r-report"
+    },
+    {
+      "cmd": "renderPlot",
+      "desc": "shiny でプロットを描画する",
+      "category": "r-report"
+    },
+    {
+      "cmd": "reactive",
+      "desc": "入力に反応して再計算される式",
+      "category": "r-report"
+    },
+    {
+      "cmd": "flexdashboard",
+      "desc": "R Markdown でダッシュボードを作る",
+      "category": "r-report"
+    },
+    {
+      "cmd": "gt",
+      "desc": "美しい表組みを作るパッケージ",
+      "category": "r-report"
+    },
+    {
+      "cmd": "readxl",
+      "desc": "Excel ファイルを読むパッケージ",
+      "category": "r-data"
+    },
+    {
+      "cmd": "read_excel",
+      "desc": "Excel のシートを読み込む関数",
+      "category": "r-data"
+    },
+    {
+      "cmd": "haven",
+      "desc": "SPSS・SAS 等の形式を読み書きする",
+      "category": "r-data"
+    },
+    {
+      "cmd": "jsonlite",
+      "desc": "JSON の読み書きパッケージ",
+      "category": "r-data"
+    },
+    {
+      "cmd": "fromJSON",
+      "desc": "JSON を R オブジェクトへ変換する",
+      "category": "r-data"
+    },
+    {
+      "cmd": "data.table",
+      "desc": "大規模データの高速処理パッケージ",
+      "category": "r-data"
+    },
+    {
+      "cmd": "fread",
+      "desc": "data.table の超高速読み込み関数",
+      "category": "r-data"
+    },
+    {
+      "cmd": "arrow",
+      "desc": "Parquet 等の列指向形式を扱う",
+      "category": "r-data"
+    },
+    {
+      "cmd": "install.packages",
+      "desc": "CRAN からパッケージを導入する",
+      "category": "r-env"
+    },
+    {
+      "cmd": "library",
+      "desc": "パッケージを読み込んで使う",
+      "category": "r-env"
+    },
+    {
+      "cmd": "require",
+      "desc": "読み込みの成否を返す読み込み関数",
+      "category": "r-env"
+    },
+    {
+      "cmd": "CRAN",
+      "desc": "R パッケージの公式リポジトリ",
+      "category": "r-env"
+    },
+    {
+      "cmd": "renv",
+      "desc": "プロジェクト単位の依存管理ツール",
+      "category": "r-env"
+    },
+    {
+      "cmd": "devtools",
+      "desc": "パッケージ開発の支援ツール",
+      "category": "r-env"
+    },
+    {
+      "cmd": "Rscript",
+      "desc": "R スクリプトをコマンドラインで実行",
+      "category": "r-env"
+    },
+    {
+      "cmd": "RStudio",
+      "desc": "R の定番統合開発環境",
+      "category": "r-env"
+    },
+    {
+      "cmd": "factor",
+      "desc": "カテゴリ(水準付き)データの型",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "levels",
+      "desc": "factor の水準を取得・設定する",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "matrix",
+      "desc": "2 次元の行列を作る",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "array",
+      "desc": "3 次元以上の多次元配列を作る",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "names",
+      "desc": "要素の名前を取得・設定する",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "attributes",
+      "desc": "オブジェクトの属性一覧を扱う",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "S4",
+      "desc": "厳密なクラス定義のオブジェクト指向体系",
+      "category": "r-struct"
+    },
+    {
+      "cmd": "R6",
+      "desc": "参照セマンティクスのクラスを作る",
+      "category": "r-struct"
+    }
+  ]
+}
