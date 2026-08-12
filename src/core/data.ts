@@ -7,6 +7,7 @@ import powershell from "../../data/tracks/powershell.json";
 import pyauto from "../../data/tracks/pyauto.json";
 import pyml from "../../data/tracks/pyml.json";
 import python from "../../data/tracks/python.json";
+import react from "../../data/tracks/react.json";
 import sql from "../../data/tracks/sql.json";
 import typescript from "../../data/tracks/typescript.json";
 import type {
@@ -31,6 +32,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["pyml", pyml as Dataset],
   ["pyauto", pyauto as Dataset],
   ["typescript", typescript as Dataset],
+  ["react", react as Dataset],
   ["java", java as Dataset],
   ["git", git as Dataset],
   ["docker", docker as Dataset],

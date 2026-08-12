@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.12",
+  "track": {
+    "id": "react",
+    "name": "React"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "react-hooks",
+      "name": "フックの基本",
+      "level": "beginner"
+    },
+    {
+      "id": "react-component",
+      "name": "コンポーネント・JSX",
+      "level": "beginner"
+    },
+    {
+      "id": "react-state",
+      "name": "状態管理",
+      "level": "beginner"
+    },
+    {
+      "id": "react-router",
+      "name": "ルーティング",
+      "level": "intermediate"
+    },
+    {
+      "id": "react-nextjs",
+      "name": "Next.js・SSR",
+      "level": "intermediate"
+    },
+    {
+      "id": "react-styling",
+      "name": "スタイリング",
+      "level": "intermediate"
+    },
+    {
+      "id": "react-forms",
+      "name": "フォーム・データ取得",
+      "level": "intermediate"
+    },
+    {
+      "id": "react-perf",
+      "name": "パフォーマンス",
+      "level": "advanced"
+    },
+    {
+      "id": "react-test",
+      "name": "テスト",
+      "level": "advanced"
+    },
+    {
+      "id": "react-events",
+      "name": "イベント・DOM 連携",
+      "level": "advanced"
+    },
+    {
+      "id": "react-server",
+      "name": "サーバー連携・キャッシュ",
+      "level": "advanced"
+    },
+    {
+      "id": "react-motion",
+      "name": "アニメーション",
+      "level": "advanced"
+    },
+    {
+      "id": "react-tools",
+      "name": "ツール・エコシステム",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "useState",
+      "desc": "コンポーネントに状態変数を持たせる",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useEffect",
+      "desc": "描画後に副作用(取得・購読)を実行する",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useRef",
+      "desc": "再描画を起こさない可変の入れ物を持つ",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useContext",
+      "desc": "コンテキストの値を読み取るフック",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useMemo",
+      "desc": "計算結果をメモ化して再計算を避ける",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useCallback",
+      "desc": "関数をメモ化して再生成を避ける",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useReducer",
+      "desc": "reducer 方式で複雑な状態を管理する",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useId",
+      "desc": "アクセシビリティ用の一意 ID を得る",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useTransition",
+      "desc": "緊急でない更新を遅延優先度にする",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useDeferredValue",
+      "desc": "値の反映を遅らせて描画を軽くする",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useSyncExternalStore",
+      "desc": "外部ストアを安全に購読する",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useLayoutEffect",
+      "desc": "描画前に同期実行される副作用フック",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useImperativeHandle",
+      "desc": "ref 経由で公開する API を定める",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useDebugValue",
+      "desc": "DevTools にフックの値を表示する",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useActionState",
+      "desc": "フォームアクションの状態を扱うフック",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useOptimistic",
+      "desc": "楽観的 UI 更新を宣言的に書くフック",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "useFormStatus",
+      "desc": "送信中などフォームの状態を読むフック",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "use",
+      "desc": "Promise やコンテキストを読む新プリミティブ",
+      "category": "react-hooks"
+    },
+    {
+      "cmd": "props",
+      "desc": "親から子コンポーネントへ渡すデータ",
+      "category": "react-component"
+    },
+    {
+      "cmd": "children",
+      "desc": "タグの間に挟んだ要素を受け取る props",
+      "category": "react-component"
+    },
+    {
+      "cmd": "key",
+      "desc": "リスト要素の同一性を示す特別な属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "ref",
+      "desc": "DOM やコンポーネントへの参照を保持する",
+      "category": "react-component"
+    },
+    {
+      "cmd": "Fragment",
+      "desc": "余分な要素を増やさずに束ねる入れ物",
+      "category": "react-component"
+    },
+    {
+      "cmd": "JSX",
+      "desc": "JavaScript 中に書く HTML 風の構文",
+      "category": "react-component"
+    },
+    {
+      "cmd": "className",
+      "desc": "JSX で CSS クラスを指定する属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "onClick",
+      "desc": "クリック時の処理を渡すイベント属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "onChange",
+      "desc": "入力変更時の処理を渡すイベント属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "onSubmit",
+      "desc": "フォーム送信時の処理を渡す属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "defaultValue",
+      "desc": "非制御入力の初期値を与える属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "dangerouslySetInnerHTML",
+      "desc": "HTML 文字列を直接挿入する危険な属性",
+      "category": "react-component"
+    },
+    {
+      "cmd": "React.memo",
+      "desc": "props が同じなら再描画を省略する",
+      "category": "react-component"
+    },
+    {
+      "cmd": "forwardRef",
+      "desc": "ref を子の DOM へ転送する仕組み",
+      "category": "react-component"
+    },
+    {
+      "cmd": "lazy",
+      "desc": "コンポーネントを遅延読み込みにする",
+      "category": "react-component"
+    },
+    {
+      "cmd": "Suspense",
+      "desc": "読み込み中の代替表示を宣言する",
+      "category": "react-component"
+    },
+    {
+      "cmd": "StrictMode",
+      "desc": "潜在的な問題を開発時に検出する",
+      "category": "react-component"
+    },
+    {
+      "cmd": "createContext",
+      "desc": "コンテキスト(共有値の器)を作る",
+      "category": "react-state"
+    },
+    {
+      "cmd": "Provider",
+      "desc": "コンテキストの値を配下へ供給する",
+      "category": "react-state"
+    },
+    {
+      "cmd": "reducer",
+      "desc": "状態と action から次の状態を返す関数",
+      "category": "react-state"
+    },
+    {
+      "cmd": "dispatch",
+      "desc": "action を送って状態遷移を起こす",
+      "category": "react-state"
+    },
+    {
+      "cmd": "action",
+      "desc": "状態への変更内容を表すオブジェクト",
+      "category": "react-state"
+    },
+    {
+      "cmd": "selector",
+      "desc": "ストアから必要な値だけ選ぶ関数",
+      "category": "react-state"
+    },
+    {
+      "cmd": "store",
+      "desc": "アプリ全体の状態を保持する器",
+      "category": "react-state"
+    },
+    {
+      "cmd": "redux",
+      "desc": "単方向データフローの状態管理ライブラリ",
+      "category": "react-state"
+    },
+    {
+      "cmd": "useSelector",
+      "desc": "Redux ストアの値を読むフック",
+      "category": "react-state"
+    },
+    {
+      "cmd": "useDispatch",
+      "desc": "Redux の dispatch を得るフック",
+      "category": "react-state"
+    },
+    {
+      "cmd": "createSlice",
+      "desc": "reducer と action をまとめて作る",
+      "category": "react-state"
+    },
+    {
+      "cmd": "configureStore",
+      "desc": "Redux Toolkit でストアを構成する",
+      "category": "react-state"
+    },
+    {
+      "cmd": "zustand",
+      "desc": "フック中心の軽量状態管理ライブラリ",
+      "category": "react-state"
+    },
+    {
+      "cmd": "jotai",
+      "desc": "アトム単位で状態を分割するライブラリ",
+      "category": "react-state"
+    },
+    {
+      "cmd": "immer",
+      "desc": "不変更新をミューテーション風に書く",
+      "category": "react-state"
+    },
+    {
+      "cmd": "BrowserRouter",
+      "desc": "履歴 API でルーティングする親要素",
+      "category": "react-router"
+    },
+    {
+      "cmd": "Routes",
+      "desc": "経路定義の集合をまとめる要素",
+      "category": "react-router"
+    },
+    {
+      "cmd": "Route",
+      "desc": "パスとコンポーネントを対応付ける",
+      "category": "react-router"
+    },
+    {
+      "cmd": "Link",
+      "desc": "ページ遷移を SPA 的に行うリンク",
+      "category": "react-router"
+    },
+    {
+      "cmd": "NavLink",
+      "desc": "現在地に応じて装飾できるリンク",
+      "category": "react-router"
+    },
+    {
+      "cmd": "Outlet",
+      "desc": "入れ子ルートの描画位置を示す要素",
+      "category": "react-router"
+    },
+    {
+      "cmd": "useNavigate",
+      "desc": "コードからページ遷移を行うフック",
+      "category": "react-router"
+    },
+    {
+      "cmd": "useParams",
+      "desc": "URL のパスパラメータを読むフック",
+      "category": "react-router"
+    },
+    {
+      "cmd": "useLocation",
+      "desc": "現在の URL 情報を読むフック",
+      "category": "react-router"
+    },
+    {
+      "cmd": "useSearchParams",
+      "desc": "クエリ文字列を読み書きするフック",
+      "category": "react-router"
+    },
+    {
+      "cmd": "usePathname",
+      "desc": "Next.js で現在のパスを読むフック",
+      "category": "react-router"
+    },
+    {
+      "cmd": "redirect",
+      "desc": "サーバー側で別 URL へ転送する",
+      "category": "react-router"
+    },
+    {
+      "cmd": "notFound",
+      "desc": "Next.js で 404 表示へ切り替える",
+      "category": "react-router"
+    },
+    {
+      "cmd": "loader",
+      "desc": "ルート表示前にデータを読み込む仕組み",
+      "category": "react-router"
+    },
+    {
+      "cmd": "getStaticProps",
+      "desc": "ビルド時にデータを取得する旧 API",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "getServerSideProps",
+      "desc": "リクエスト毎に取得する旧 API",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "generateStaticParams",
+      "desc": "App Router で静的パスを列挙する",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "generateMetadata",
+      "desc": "ページのメタ情報を動的に作る",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "revalidate",
+      "desc": "静的ページの再生成間隔を指定する",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "middleware",
+      "desc": "リクエストを途中で加工・転送する層",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "layout.tsx",
+      "desc": "配下ページで共有されるレイアウト",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "page.tsx",
+      "desc": "ルートに対応するページ本体",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "loading.tsx",
+      "desc": "読み込み中に表示される UI",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "error.tsx",
+      "desc": "エラー時に表示される UI 境界",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "hydration",
+      "desc": "サーバー HTML に事後で対話性を付与",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "streaming",
+      "desc": "HTML を分割して順次届ける描画方式",
+      "category": "react-nextjs"
+    },
+    {
+      "cmd": "tailwindcss",
+      "desc": "ユーティリティクラスの CSS フレームワーク",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "styled-components",
+      "desc": "CSS-in-JS の代表的ライブラリ",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "emotion",
+      "desc": "柔軟な CSS-in-JS ライブラリ",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "clsx",
+      "desc": "条件付きでクラス名を結合するユーティリティ",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "cva",
+      "desc": "バリアント別のクラス設計ユーティリティ",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "module.css",
+      "desc": "クラス名を局所化する CSS Modules",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "globals.css",
+      "desc": "アプリ全体へ効くグローバル CSS",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "sass",
+      "desc": "ネストや変数を持つ CSS 拡張言語",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "postcss",
+      "desc": "CSS をプラグインで変換する処理系",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "autoprefixer",
+      "desc": "ベンダープレフィックスを自動付与する",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "cssnano",
+      "desc": "CSS を圧縮・最適化するプラグイン",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "classnames",
+      "desc": "クラス名結合の定番ユーティリティ",
+      "category": "react-styling"
+    },
+    {
+      "cmd": "react-hook-form",
+      "desc": "非制御ベースの高速フォームライブラリ",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "useForm",
+      "desc": "フォームの状態と登録関数を得るフック",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "register",
+      "desc": "入力欄をフォーム管理へ登録する",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "handleSubmit",
+      "desc": "検証を通ったら送信処理を呼ぶ",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "formState",
+      "desc": "エラーや送信状況を保持する状態",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "zod",
+      "desc": "スキーマ定義とバリデーションのライブラリ",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "useSWR",
+      "desc": "取得・キャッシュ・再検証を行うフック",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "react-query",
+      "desc": "サーバー状態管理の定番(TanStack)",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "useQuery",
+      "desc": "データ取得とキャッシュを扱うフック",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "useMutation",
+      "desc": "作成・更新などの変更処理を扱う",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "queryClient",
+      "desc": "クエリのキャッシュを統括する客体",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "invalidateQueries",
+      "desc": "キャッシュを無効化して再取得させる",
+      "category": "react-forms"
+    },
+    {
+      "cmd": "code-splitting",
+      "desc": "バンドルを分割して初期読込を軽くする",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "tree-shaking",
+      "desc": "未使用コードをビルド時に除去する",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "lazy-loading",
+      "desc": "必要になった時点で読み込む戦略",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "virtualization",
+      "desc": "見えている行だけ描画する長リスト対策",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "memoization",
+      "desc": "計算・描画結果を再利用する最適化",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "debounce",
+      "desc": "連続イベントを間引いて最後だけ実行",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "throttle",
+      "desc": "イベントの実行頻度に上限を設ける",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "prefetch",
+      "desc": "遷移先の資源を先読みしておく",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "web-vitals",
+      "desc": "LCP 等の体感性能指標の総称",
+      "category": "react-perf"
+    },
+    {
+      "cmd": "jest",
+      "desc": "定番のテスティングフレームワーク",
+      "category": "react-test"
+    },
+    {
+      "cmd": "testing-library",
+      "desc": "利用者視点でテストする DOM ライブラリ",
+      "category": "react-test"
+    },
+    {
+      "cmd": "render",
+      "desc": "テスト内でコンポーネントを描画する",
+      "category": "react-test"
+    },
+    {
+      "cmd": "screen",
+      "desc": "描画結果へアクセスするクエリの入口",
+      "category": "react-test"
+    },
+    {
+      "cmd": "fireEvent",
+      "desc": "DOM イベントを直接発火させる",
+      "category": "react-test"
+    },
+    {
+      "cmd": "userEvent",
+      "desc": "実操作に近い形で入力を再現する",
+      "category": "react-test"
+    },
+    {
+      "cmd": "getByRole",
+      "desc": "ロールで要素を取得する推奨クエリ",
+      "category": "react-test"
+    },
+    {
+      "cmd": "waitFor",
+      "desc": "非同期の状態変化を待って検証する",
+      "category": "react-test"
+    },
+    {
+      "cmd": "act",
+      "desc": "React の更新をテスト内で確定させる",
+      "category": "react-test"
+    },
+    {
+      "cmd": "SyntheticEvent",
+      "desc": "ブラウザ差を吸収する合成イベント",
+      "category": "react-events"
+    },
+    {
+      "cmd": "preventDefault",
+      "desc": "既定動作(送信・遷移)を止める",
+      "category": "react-events"
+    },
+    {
+      "cmd": "stopPropagation",
+      "desc": "イベントの伝播を止める",
+      "category": "react-events"
+    },
+    {
+      "cmd": "onFocus",
+      "desc": "フォーカス取得時のイベント属性",
+      "category": "react-events"
+    },
+    {
+      "cmd": "onBlur",
+      "desc": "フォーカス喪失時のイベント属性",
+      "category": "react-events"
+    },
+    {
+      "cmd": "onKeyDown",
+      "desc": "キー押下時のイベント属性",
+      "category": "react-events"
+    },
+    {
+      "cmd": "currentTarget",
+      "desc": "ハンドラを登録した要素への参照",
+      "category": "react-events"
+    },
+    {
+      "cmd": "bubbling",
+      "desc": "イベントが親要素へ伝わる仕組み",
+      "category": "react-events"
+    },
+    {
+      "cmd": "revalidatePath",
+      "desc": "指定パスのキャッシュを再検証する",
+      "category": "react-server"
+    },
+    {
+      "cmd": "revalidateTag",
+      "desc": "タグ付きキャッシュを再検証する",
+      "category": "react-server"
+    },
+    {
+      "cmd": "cookies",
+      "desc": "サーバー側で Cookie を読み書きする",
+      "category": "react-server"
+    },
+    {
+      "cmd": "headers",
+      "desc": "サーバー側でリクエストヘッダを読む",
+      "category": "react-server"
+    },
+    {
+      "cmd": "FormData",
+      "desc": "フォーム送信データを表す Web API",
+      "category": "react-server"
+    },
+    {
+      "cmd": "formAction",
+      "desc": "フォームからアクションを直接呼ぶ属性",
+      "category": "react-server"
+    },
+    {
+      "cmd": "startTransition",
+      "desc": "更新を低優先度として実行する",
+      "category": "react-server"
+    },
+    {
+      "cmd": "cache",
+      "desc": "関数の結果をリクエスト間で共有する",
+      "category": "react-server"
+    },
+    {
+      "cmd": "framer-motion",
+      "desc": "宣言的アニメーションの定番ライブラリ",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "AnimatePresence",
+      "desc": "要素の退場アニメーションを可能にする",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "variants",
+      "desc": "アニメーション状態の組を名前で定義",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "animate",
+      "desc": "遷移先の状態を指定するプロパティ",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "initial",
+      "desc": "初期状態を指定するプロパティ",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "exit",
+      "desc": "アンマウント時の状態を指定する",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "spring",
+      "desc": "ばね物理に基づくトランジション",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "stagger",
+      "desc": "子要素を時間差で順に動かす指定",
+      "category": "react-motion"
+    },
+    {
+      "cmd": "vite",
+      "desc": "高速な開発サーバ・ビルドツール",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "webpack",
+      "desc": "老舗のモジュールバンドラ",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "turbopack",
+      "desc": "Next.js 向けの高速バンドラ",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "storybook",
+      "desc": "UI コンポーネントのカタログ環境",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "react-devtools",
+      "desc": "React 専用のブラウザ拡張デバッガ",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "biome",
+      "desc": "高速なリンタ・フォーマッタ",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "pnpm",
+      "desc": "ディスク効率の良いパッケージマネージャ",
+      "category": "react-tools"
+    },
+    {
+      "cmd": "react-compiler",
+      "desc": "メモ化を自動化する公式コンパイラ",
+      "category": "react-tools"
+    }
+  ]
+}
