@@ -73,7 +73,7 @@ export function LevelSelect({
   }, [track]);
 
   return (
-    <div className="select">
+    <div className={`select track-${track}`}>
       <h1 className="title">
         <span className="prompt">&gt;</span> command-type
       </h1>

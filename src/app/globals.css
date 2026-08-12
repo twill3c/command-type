@@ -140,6 +140,26 @@ button {
   padding-top: 4vh;
 }
 
+/* トラック基調色(§7.1)— ルートの track-{id} クラスでスコープする */
+
+.track-linux {
+  --track-main: #fcc624;
+  --track-fg: #1a1a1a;
+  --track-sub: #000000;
+}
+
+.track-python {
+  --track-main: #3776ab;
+  --track-fg: #ffffff;
+  --track-sub: #ffd343;
+}
+
+.track-typescript {
+  --track-main: #3178c6;
+  --track-fg: #ffffff;
+  --track-sub: #1e2d3d;
+}
+
 .track-tabs {
   display: flex;
   justify-content: center;
@@ -165,9 +185,9 @@ button {
 }
 
 .track-tab.active {
-  border-color: var(--prompt);
-  background: var(--prompt);
-  color: #fff;
+  border-color: var(--track-sub, var(--prompt));
+  background: var(--track-main, var(--prompt));
+  color: var(--track-fg, #fff);
 }
 
 .level-list {
@@ -192,7 +212,7 @@ button {
 
 .level-card:hover {
   transform: translateY(-2px);
-  border-color: var(--text-dim);
+  border-color: var(--track-main, var(--text-dim));
 }
 
 .level-desc {
@@ -282,7 +302,7 @@ button {
   right: 0;
   bottom: 0;
   height: 6px;
-  background: var(--line);
+  background: var(--track-main, var(--line));
 }
 
 .falling {

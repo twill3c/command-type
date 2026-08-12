@@ -105,7 +105,7 @@ export function GameScreen({
   const okLen = m ? m.matchedLength : state.input.length;
 
   return (
-    <div className="game">
+    <div className={`game track-${track}`}>
       <header className="hud">
         <span className="hud-item">
           スコア <strong>{state.score}</strong>
