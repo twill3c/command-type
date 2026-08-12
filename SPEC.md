@@ -33,6 +33,7 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | F-13 | 効果音と演出: クリア(上昇音 + 緑フラッシュ)・不一致 Enter(ブザー)・落下(下降音 + 赤フラッシュ)。効果音は Web Audio の合成音のみ(外部アセットなし)で、🔊 トグルで ON/OFF でき、設定は localStorage に保存(既定 ON)。演出は CSS アニメーションのみで実装する | could(P3) |
 | F-14 | ミックスモード: レベル選択に「ミックス」を追加し、**選択中トラックの**全カテゴリ・全件から出題する。落下基準速度は中級と同値。ハイスコアは 3 レベルと独立に保存する | could(P3) |
 | F-15 | トラック選択: レベル選択画面でトラック(linux / python / typescript)を切り替えられる。表示中トラックのモード別ハイスコアを表示する。データ未提供のトラックは選択肢に出さない | must(P7) |
+| F-16 | ライセンス表記: 全画面共通のフッターに本アプリが MIT ライセンスであることと著作権表記を明示し、リポジトリの LICENSE へリンクする | must(P8) |
 
 ## 3. 非機能要求
 
@@ -123,6 +124,9 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
   `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別
   (linux: `[a-z0-9+._-]+`、python・typescript: `[A-Za-z0-9_.]+`)/
   `desc` は 8〜40 文字の日本語解説
+- `desc` は本プロジェクトのための**書き下ろしオリジナル文**に限る。既存文書
+  (man ページ・docs.python.org・MDN・TypeScript Handbook 等)からの転載・翻訳流用を
+  禁止する。出典・執筆方針の正本は `docs/data-provenance.md`
 - `src/core/` のカバレッジ: lines・functions・statements ≥ 90%、branches ≥ 85%(bungo-type と同水準)
 - 完了条件: `npm run verify`(typecheck + lint + test + build)green + `python harness/looplog.py validate` 合格
 
@@ -138,6 +142,7 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | P5 | Python トラック: §4.2 の配分でデータ 150 件 | 完了(loop_015) |
 | P6 | TypeScript トラック: §4.3 の配分でデータ 150 件 | 完了(loop_016) |
 | P7 | トラック選択 UI(F-15)+ ハイスコアのトラック×モード化・旧キー読み継ぎ(F-12 改訂) | 完了(loop_017) |
+| P8 | データ出典の文書化(§5 転載禁止規約・docs/data-provenance.md)+ 全画面の MIT ライセンス表記(F-16) | 本ループ(loop_019) |
 
 ## 7. デザイン(視覚仕様)
 
