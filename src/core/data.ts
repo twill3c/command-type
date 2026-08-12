@@ -1,5 +1,6 @@
 import docker from "../../data/tracks/docker.json";
 import git from "../../data/tracks/git.json";
+import htmlcss from "../../data/tracks/htmlcss.json";
 import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
 import python from "../../data/tracks/python.json";
@@ -25,6 +26,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["java", java as Dataset],
   ["git", git as Dataset],
   ["docker", docker as Dataset],
+  ["htmlcss", htmlcss as Dataset],
 ]);
 
 function trackDataset(track: TrackId): Dataset {

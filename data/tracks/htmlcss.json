@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.7",
+  "track": {
+    "id": "htmlcss",
+    "name": "HTML / CSS"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "hc-structure",
+      "name": "文書構造タグ",
+      "level": "beginner"
+    },
+    {
+      "id": "hc-content",
+      "name": "コンテンツ・フォームタグ",
+      "level": "beginner"
+    },
+    {
+      "id": "hc-css-basic",
+      "name": "CSS 基本プロパティ",
+      "level": "beginner"
+    },
+    {
+      "id": "hc-layout",
+      "name": "レイアウト",
+      "level": "intermediate"
+    },
+    {
+      "id": "hc-text-color",
+      "name": "文字・配色",
+      "level": "intermediate"
+    },
+    {
+      "id": "hc-attr",
+      "name": "属性・セマンティクス",
+      "level": "intermediate"
+    },
+    {
+      "id": "hc-responsive",
+      "name": "レスポンシブ・単位",
+      "level": "intermediate"
+    },
+    {
+      "id": "hc-animation",
+      "name": "アニメーション",
+      "level": "advanced"
+    },
+    {
+      "id": "hc-selector",
+      "name": "セレクタ・擬似クラス",
+      "level": "advanced"
+    },
+    {
+      "id": "hc-modern",
+      "name": "モダン CSS",
+      "level": "advanced"
+    },
+    {
+      "id": "hc-a11y",
+      "name": "アクセシビリティ",
+      "level": "advanced"
+    },
+    {
+      "id": "hc-graphics",
+      "name": "グラフィック・埋め込み",
+      "level": "advanced"
+    },
+    {
+      "id": "hc-function",
+      "name": "変数・関数",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "html",
+      "desc": "文書全体のルートとなる要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "head",
+      "desc": "メタ情報を置く文書のヘッダ部",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "body",
+      "desc": "画面に表示される本文の入れ物",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "header",
+      "desc": "ページやセクションの導入部",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "footer",
+      "desc": "ページやセクションの末尾情報",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "main",
+      "desc": "文書の主内容を 1 つだけ示す要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "section",
+      "desc": "見出しを持つ意味的なまとまり",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "article",
+      "desc": "単体で完結する自己完結型の記事",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "nav",
+      "desc": "主要なナビゲーションリンクの領域",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "aside",
+      "desc": "本文から外れた補足的な領域",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "div",
+      "desc": "意味を持たない汎用ブロック要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "span",
+      "desc": "意味を持たない汎用インライン要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "h1",
+      "desc": "最上位の見出し。ページに原則 1 つ",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "p",
+      "desc": "段落を表す基本のテキスト要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "ul",
+      "desc": "順序を持たないリストの入れ物",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "ol",
+      "desc": "順序付きリストの入れ物",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "li",
+      "desc": "リストの各項目を表す要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "a",
+      "desc": "ハイパーリンクを作るアンカー要素",
+      "category": "hc-structure"
+    },
+    {
+      "cmd": "img",
+      "desc": "画像を埋め込む置換要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "video",
+      "desc": "動画を再生する埋め込み要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "audio",
+      "desc": "音声を再生する埋め込み要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "table",
+      "desc": "表(テーブル)全体の入れ物",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "thead",
+      "desc": "表のヘッダ行グループ",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "tbody",
+      "desc": "表の本体行グループ",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "tr",
+      "desc": "表の 1 行を表す要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "td",
+      "desc": "表のデータセルを表す要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "th",
+      "desc": "表の見出しセルを表す要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "form",
+      "desc": "送信可能な入力フォームの入れ物",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "input",
+      "desc": "1 行入力欄など多目的の入力要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "button",
+      "desc": "クリック可能なボタン要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "select",
+      "desc": "選択肢から選ぶドロップダウン",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "option",
+      "desc": "select 内の個々の選択肢",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "textarea",
+      "desc": "複数行のテキスト入力欄",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "label",
+      "desc": "入力欄に名前を結び付ける要素",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "canvas",
+      "desc": "スクリプトで描画するビットマップ領域",
+      "category": "hc-content"
+    },
+    {
+      "cmd": "color",
+      "desc": "文字の色を指定するプロパティ",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "background",
+      "desc": "背景の色や画像の一括指定",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "margin",
+      "desc": "要素の外側の余白を指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "padding",
+      "desc": "要素の内側の余白を指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "border",
+      "desc": "枠線の太さ・種類・色の一括指定",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "width",
+      "desc": "要素の幅を指定するプロパティ",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "height",
+      "desc": "要素の高さを指定するプロパティ",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "display",
+      "desc": "ボックスの生成方法(block 等)を決める",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "position",
+      "desc": "配置方式(relative / absolute 等)",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "font-size",
+      "desc": "文字の大きさを指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "font-family",
+      "desc": "書体の優先順位リストを指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "font-weight",
+      "desc": "文字の太さを指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "line-height",
+      "desc": "行の高さ(行間)を指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "text-align",
+      "desc": "行内容の水平方向の揃えを指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "opacity",
+      "desc": "要素全体の不透明度を指定する",
+      "category": "hc-css-basic"
+    },
+    {
+      "cmd": "flex",
+      "desc": "1 次元のフレックス配置を有効にする値",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "grid",
+      "desc": "2 次元のグリッド配置を有効にする値",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "flex-direction",
+      "desc": "フレックスの主軸の向きを決める",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "justify-content",
+      "desc": "主軸方向の配置・間隔を決める",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "align-items",
+      "desc": "交差軸方向の揃えを決める",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "gap",
+      "desc": "行・列の間隔をまとめて指定する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "flex-wrap",
+      "desc": "収まらない項目の折り返しを許可する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "grid-template-columns",
+      "desc": "グリッドの列構成を定義する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "grid-template-rows",
+      "desc": "グリッドの行構成を定義する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "float",
+      "desc": "要素を左右に寄せて回り込ませる旧手法",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "z-index",
+      "desc": "重なり順(スタック順)を指定する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "overflow",
+      "desc": "はみ出した内容の扱いを指定する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "box-sizing",
+      "desc": "幅・高さに含める範囲を切り替える",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "aspect-ratio",
+      "desc": "要素の縦横比を指定する",
+      "category": "hc-layout"
+    },
+    {
+      "cmd": "text-decoration",
+      "desc": "下線・打ち消し線などの装飾を指定",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "letter-spacing",
+      "desc": "文字と文字の間隔を指定する",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "white-space",
+      "desc": "空白・改行の扱いを指定する",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "text-overflow",
+      "desc": "あふれた文字の省略記号等を指定",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "word-break",
+      "desc": "単語の途中での改行規則を指定する",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "text-shadow",
+      "desc": "文字に影を付けるプロパティ",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "rgb",
+      "desc": "赤緑青の値で色を作る関数",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "rgba",
+      "desc": "透明度付きで色を作る旧来の関数",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "hsl",
+      "desc": "色相・彩度・明度で色を作る関数",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "oklch",
+      "desc": "知覚均等な色空間で色を作る関数",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "linear-gradient",
+      "desc": "直線方向のグラデーションを作る関数",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "currentcolor",
+      "desc": "文字色を参照するキーワード",
+      "category": "hc-text-color"
+    },
+    {
+      "cmd": "alt",
+      "desc": "画像の代替テキストを与える属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "href",
+      "desc": "リンク先の URL を指定する属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "src",
+      "desc": "埋め込む資源の URL を指定する属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "class",
+      "desc": "CSS 等から参照する分類名の属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "id",
+      "desc": "文書内で一意な識別子の属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "lang",
+      "desc": "内容の言語を宣言する属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "aria-label",
+      "desc": "支援技術向けの名前を与える属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "role",
+      "desc": "要素の役割を支援技術へ伝える属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "tabindex",
+      "desc": "キーボードフォーカスの順序を制御する",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "placeholder",
+      "desc": "入力欄に薄く表示する例示テキスト",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "required",
+      "desc": "フォーム送信前の入力必須を示す属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "disabled",
+      "desc": "操作不能な状態にする属性",
+      "category": "hc-attr"
+    },
+    {
+      "cmd": "viewport",
+      "desc": "表示領域。メタタグで拡縮を制御する",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "media",
+      "desc": "画面幅等で切り替えるアット規則(@ 抜き)",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "rem",
+      "desc": "ルート文字サイズ基準の相対単位",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "em",
+      "desc": "親の文字サイズ基準の相対単位",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "vw",
+      "desc": "表示領域の幅を基準にした単位",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "vh",
+      "desc": "表示領域の高さを基準にした単位",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "vmin",
+      "desc": "表示領域の短辺を基準にした単位",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "vmax",
+      "desc": "表示領域の長辺を基準にした単位",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "calc",
+      "desc": "単位の混ざった計算を行う関数",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "clamp",
+      "desc": "最小・推奨・最大で値を挟む関数",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "min-width",
+      "desc": "メディア条件等で使う下限幅の指定",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "container",
+      "desc": "コンテナクエリの基準要素を宣言する",
+      "category": "hc-responsive"
+    },
+    {
+      "cmd": "transition",
+      "desc": "プロパティ変化を滑らかにつなぐ",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "transform",
+      "desc": "移動・回転・拡縮などの変形を適用",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "animation",
+      "desc": "キーフレームアニメーションの一括指定",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "keyframes",
+      "desc": "アニメーションの各時点を定義する規則",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "translate",
+      "desc": "要素を平行移動させる変形・プロパティ",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "rotate",
+      "desc": "要素を回転させる変形・プロパティ",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "scale",
+      "desc": "要素を拡大・縮小する変形・プロパティ",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "ease-in-out",
+      "desc": "始めと終わりを緩めるイージング",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "animation-delay",
+      "desc": "アニメーション開始を遅らせる",
+      "category": "hc-animation"
+    },
+    {
+      "cmd": "hover",
+      "desc": "ポインタが乗っている間に効く擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "focus",
+      "desc": "フォーカス中の要素に効く擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "active",
+      "desc": "押下中の要素に効く擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "first-child",
+      "desc": "最初の子要素に一致する擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "last-child",
+      "desc": "最後の子要素に一致する擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "nth-child",
+      "desc": "n 番目の子要素に一致する擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "not",
+      "desc": "条件に一致しない要素を選ぶ擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "has",
+      "desc": "特定の子孫を持つ親を選べる擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "where",
+      "desc": "詳細度を持たないグループ化擬似クラス",
+      "category": "hc-selector"
+    },
+    {
+      "cmd": "subgrid",
+      "desc": "親グリッドの線を子が引き継ぐ機能",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "container-type",
+      "desc": "コンテナクエリの計測方法を指定",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "color-mix",
+      "desc": "2 色を指定割合で混ぜる関数",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "light-dark",
+      "desc": "ライト・ダークで色を出し分ける関数",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "scroll-snap-type",
+      "desc": "スクロールの吸い付き方を指定",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "backdrop-filter",
+      "desc": "背後の描画にぼかし等を掛ける",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "accent-color",
+      "desc": "チェックボックス等の強調色を指定",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "view-transition-name",
+      "desc": "画面遷移アニメの対応付け名",
+      "category": "hc-modern"
+    },
+    {
+      "cmd": "aria-hidden",
+      "desc": "支援技術から要素を隠す属性",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "aria-expanded",
+      "desc": "開閉状態を支援技術へ伝える属性",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "aria-live",
+      "desc": "動的更新の読み上げ方を指定する属性",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "aria-describedby",
+      "desc": "説明文の要素を関連付ける属性",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "prefers-reduced-motion",
+      "desc": "動きを減らす設定を検知する条件",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "prefers-color-scheme",
+      "desc": "ライト・ダーク設定を検知する条件",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "focus-visible",
+      "desc": "キーボード操作時だけ効くフォーカス",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "inert",
+      "desc": "サブツリー全体を操作不能にする属性",
+      "category": "hc-a11y"
+    },
+    {
+      "cmd": "svg",
+      "desc": "拡大縮小に強いベクター画像の要素",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "path",
+      "desc": "SVG で任意の図形を描くパス要素",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "iframe",
+      "desc": "別の文書を枠内に埋め込む要素",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "picture",
+      "desc": "条件別の画像候補をまとめる要素",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "source",
+      "desc": "picture 等の候補資源を指定する要素",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "srcset",
+      "desc": "解像度別の画像候補を列挙する属性",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "loading",
+      "desc": "画像の遅延読み込みを指定する属性",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "object-fit",
+      "desc": "置換要素の収め方(cover 等)を指定",
+      "category": "hc-graphics"
+    },
+    {
+      "cmd": "var",
+      "desc": "カスタムプロパティの値を参照する関数",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "env",
+      "desc": "セーフエリア等の環境変数を参照する",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "attr",
+      "desc": "要素の属性値を参照する関数",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "counter",
+      "desc": "自動連番の値を参照する関数",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "min",
+      "desc": "複数の値の最小を採用する関数",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "max",
+      "desc": "複数の値の最大を採用する関数",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "minmax",
+      "desc": "グリッドで下限と上限を与える関数",
+      "category": "hc-function"
+    },
+    {
+      "cmd": "repeat",
+      "desc": "グリッドの列・行定義を繰り返す関数",
+      "category": "hc-function"
+    }
+  ]
+}
