@@ -35,6 +35,36 @@ const LEVEL_DESC: Record<TrackId, Record<PlayLevel, string>> = {
     advanced: "ユーティリティ型・型演算・DOM・ツールほか 50 問",
     mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
   },
+  java: {
+    beginner: "基本構文・文字列・コレクションの基本 50 問",
+    intermediate: "継承・例外・Stream・標準ライブラリの 50 問",
+    advanced: "並行処理・入出力・日時・モダン Java ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  git: {
+    beginner: "基本操作・ブランチ・リモート同期の基本 50 問",
+    intermediate: "履歴調査・取り消し・タグ・設定の 50 問",
+    advanced: "履歴改変・内部構造・フックほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  docker: {
+    beginner: "コンテナ操作・イメージ・Compose の基本 50 問",
+    intermediate: "Kubernetes 基本・ワークロード・公開・配布の 50 問",
+    advanced: "運用・セキュリティ・Helm・内部構造ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  htmlcss: {
+    beginner: "文書構造・フォーム・CSS 基本プロパティの 50 問",
+    intermediate: "レイアウト・配色・属性・レスポンシブの 50 問",
+    advanced: "アニメーション・セレクタ・モダン CSS ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  powershell: {
+    beginner: "基本コマンドレット・パイプライン・構文の 50 問",
+    intermediate: "システム管理・ネットワーク・データ処理の 50 問",
+    advanced: "オブジェクト・ジョブ・リモート管理ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
 };
 
 const TAGLINE: Record<TrackId, string> = {
@@ -44,6 +74,14 @@ const TAGLINE: Record<TrackId, string> = {
     "落ちてくる Python の関数・メソッドを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   typescript:
     "落ちてくる TypeScript の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  java: "落ちてくる Java の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  git: "落ちてくる Git のコマンド・概念を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  docker:
+    "落ちてくる Docker / Kubernetes の語彙を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  htmlcss:
+    "落ちてくる HTML タグ・CSS プロパティを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  powershell:
+    "落ちてくる PowerShell コマンドレットを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
 };
 
 /**

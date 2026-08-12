@@ -1,5 +1,13 @@
 /** トラック(学習科目)識別子(SPEC §1・§4)。 */
-export type TrackId = "linux" | "python" | "typescript";
+export type TrackId =
+  | "linux"
+  | "python"
+  | "typescript"
+  | "java"
+  | "git"
+  | "docker"
+  | "htmlcss"
+  | "powershell";
 
 /** data/tracks/*.json の track 要素。 */
 export interface TrackDef {

@@ -185,11 +185,43 @@ button {
   --track-sub: #1e2d3d;
 }
 
+.track-java {
+  --track-main: #007396;
+  --track-fg: #ffffff;
+  --track-sub: #ed8b00;
+}
+
+.track-git {
+  --track-main: #f05032;
+  --track-fg: #1a1a1a;
+  --track-sub: #000000;
+}
+
+.track-docker {
+  --track-main: #2496ed;
+  --track-fg: #1a1a1a;
+  --track-sub: #326ce5;
+}
+
+.track-htmlcss {
+  --track-main: #e34f26;
+  --track-fg: #000000;
+  --track-sub: #1572b6;
+}
+
+.track-powershell {
+  --track-main: #012456;
+  --track-fg: #ffffff;
+  --track-sub: #5391fe;
+}
+
 .track-tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 1.2em;
+  max-width: 720px;
+  margin: 0 auto 1.2em;
 }
 
 .track-tab {
