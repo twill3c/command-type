@@ -133,7 +133,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "hc-function": { level: "advanced", count: 8 },
     },
   },
-  powershell: undefined, // loop_026 で §4.8 の表を書き写す
+  powershell: {
+    total: 150,
+    charset: /^[A-Za-z0-9-]+$/,
+    categories: {
+      "ps-basic": { level: "beginner", count: 18 },
+      "ps-pipeline": { level: "beginner", count: 17 },
+      "ps-syntax": { level: "beginner", count: 15 },
+      "ps-system": { level: "intermediate", count: 14 },
+      "ps-net": { level: "intermediate", count: 12 },
+      "ps-data": { level: "intermediate", count: 12 },
+      "ps-env": { level: "intermediate", count: 12 },
+      "ps-object": { level: "advanced", count: 9 },
+      "ps-script": { level: "advanced", count: 9 },
+      "ps-security": { level: "advanced", count: 8 },
+      "ps-job": { level: "advanced", count: 8 },
+      "ps-remote": { level: "advanced", count: 8 },
+      "ps-winadmin": { level: "advanced", count: 8 },
+    },
+  },
   typescript: {
     total: 150,
     charset: /^[A-Za-z0-9_.]+$/,
