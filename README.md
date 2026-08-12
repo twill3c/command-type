@@ -44,3 +44,5 @@ npm run verify    # 完了条件(typecheck + lint + test + build)
 
 MIT License — Copyright (c) 2026 坂田哲朗([LICENSE](LICENSE))。
 ハーネスツール(`harness/`・`schema/`)を含むリポジトリ全体が対象。
+出題データの出典・執筆方針(解説文はすべて書き下ろしオリジナル)は
+[docs/data-provenance.md](docs/data-provenance.md) を参照。
