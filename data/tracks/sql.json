@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.9",
+  "track": {
+    "id": "sql",
+    "name": "SQL:2023"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "sql-select",
+      "name": "問い合わせの基本",
+      "level": "beginner"
+    },
+    {
+      "id": "sql-aggregate",
+      "name": "集計・グループ化",
+      "level": "beginner"
+    },
+    {
+      "id": "sql-dml",
+      "name": "データ操作",
+      "level": "beginner"
+    },
+    {
+      "id": "sql-join",
+      "name": "結合・集合演算",
+      "level": "intermediate"
+    },
+    {
+      "id": "sql-types",
+      "name": "データ型",
+      "level": "intermediate"
+    },
+    {
+      "id": "sql-func",
+      "name": "文字列・数値関数",
+      "level": "intermediate"
+    },
+    {
+      "id": "sql-datetime",
+      "name": "日付・時刻",
+      "level": "intermediate"
+    },
+    {
+      "id": "sql-window",
+      "name": "ウィンドウ関数",
+      "level": "advanced"
+    },
+    {
+      "id": "sql-ddl",
+      "name": "テーブル定義・制約",
+      "level": "advanced"
+    },
+    {
+      "id": "sql-cte",
+      "name": "CTE・条件式",
+      "level": "advanced"
+    },
+    {
+      "id": "sql-json",
+      "name": "JSON(SQL:2023)",
+      "level": "advanced"
+    },
+    {
+      "id": "sql-pgq",
+      "name": "プロパティグラフ(SQL/PGQ)",
+      "level": "advanced"
+    },
+    {
+      "id": "sql-tx",
+      "name": "トランザクション・権限",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "select",
+      "desc": "取得する列や式を指定する問い合わせの起点",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "from",
+      "desc": "問い合わせの対象となる表を指定する",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "where",
+      "desc": "行を絞り込む条件を指定する句",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "as",
+      "desc": "列や表に別名を付けるキーワード",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "distinct",
+      "desc": "結果から重複する行を取り除く",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "and",
+      "desc": "両方の条件が真のとき真になる論理演算子",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "or",
+      "desc": "どちらかの条件が真なら真になる論理演算子",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "not",
+      "desc": "条件の真偽を反転する論理演算子",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "in",
+      "desc": "値が並びのいずれかに一致するか判定する",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "between",
+      "desc": "値が範囲内(両端含む)かを判定する",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "like",
+      "desc": "パターン(% や _)で文字列を照合する",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "is",
+      "desc": "null や真偽との比較に使う述語",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "null",
+      "desc": "値が存在しないことを表す特別なマーク",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "true",
+      "desc": "真を表す論理値リテラル",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "false",
+      "desc": "偽を表す論理値リテラル",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "asc",
+      "desc": "並べ替えを昇順に指定するキーワード",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "desc",
+      "desc": "並べ替えを降順に指定するキーワード",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "values",
+      "desc": "行の値の並びを直接書く句",
+      "category": "sql-select"
+    },
+    {
+      "cmd": "count",
+      "desc": "行数や非 null 値の個数を数える集約関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "sum",
+      "desc": "数値列の合計を求める集約関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "avg",
+      "desc": "数値列の平均を求める集約関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "min",
+      "desc": "最小値を求める集約関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "max",
+      "desc": "最大値を求める集約関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "group",
+      "desc": "GROUP BY 句でグループ化の対象列を指定",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "by",
+      "desc": "GROUP BY・ORDER BY で対象を導く語",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "having",
+      "desc": "グループ化後の結果に条件を付ける句",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "rollup",
+      "desc": "小計と総計を段階的に追加する指定",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "cube",
+      "desc": "全組み合わせの小計を追加する指定",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "grouping",
+      "desc": "行が小計行かどうかを識別する関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "any_value",
+      "desc": "グループから任意の 1 値を返す(2023 新規)",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "array_agg",
+      "desc": "グループの値を配列に集める集約関数",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "listagg",
+      "desc": "グループの値を区切り文字で連結する",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "filter",
+      "desc": "集約の対象行を条件で絞る FILTER 句",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "every",
+      "desc": "全行が条件を満たすか集約する述語",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "any",
+      "desc": "いずれかが条件を満たすか判定する量化子",
+      "category": "sql-aggregate"
+    },
+    {
+      "cmd": "insert",
+      "desc": "表に新しい行を追加する文",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "into",
+      "desc": "INSERT の挿入先の表を導く語",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "update",
+      "desc": "既存の行の値を書き換える文",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "set",
+      "desc": "UPDATE で列への代入を指定する句",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "delete",
+      "desc": "条件に合う行を表から削除する文",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "merge",
+      "desc": "条件により挿入・更新・削除を使い分ける文",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "matched",
+      "desc": "MERGE で一致した行への動作を導く語",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "using",
+      "desc": "MERGE の比較元や結合キーを指定する",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "default",
+      "desc": "列の既定値を使うことを指定する",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "overriding",
+      "desc": "自動生成列への値の扱いを指定する",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "truncate",
+      "desc": "表の全行を高速に削除する文",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "new",
+      "desc": "トリガーで変更後の行を参照する遷移変数",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "old",
+      "desc": "トリガーで変更前の行を参照する遷移変数",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "final",
+      "desc": "変更文の結果行を参照する表指定",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "portion",
+      "desc": "FOR PORTION OF で期間の一部だけ更新する",
+      "category": "sql-dml"
+    },
+    {
+      "cmd": "join",
+      "desc": "複数の表を結び付けて問い合わせる",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "inner",
+      "desc": "両方に一致する行だけ残す内部結合",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "left",
+      "desc": "左表の行をすべて残す外部結合",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "right",
+      "desc": "右表の行をすべて残す外部結合",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "full",
+      "desc": "両表の行をすべて残す外部結合",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "outer",
+      "desc": "外部結合であることを明示する語",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "cross",
+      "desc": "全行の組み合わせを作る直積結合",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "natural",
+      "desc": "同名列で自動的に結合する指定",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "on",
+      "desc": "結合条件を指定する句",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "union",
+      "desc": "2 つの結果集合を和集合として重ねる",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "intersect",
+      "desc": "2 つの結果集合の共通部分を取る",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "except",
+      "desc": "一方の結果からもう一方を除いた差を取る",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "lateral",
+      "desc": "先行する表の列を参照できる派生表指定",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "corresponding",
+      "desc": "集合演算を同名列に限って行う指定",
+      "category": "sql-join"
+    },
+    {
+      "cmd": "integer",
+      "desc": "標準的な範囲の整数を表す型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "smallint",
+      "desc": "小さい範囲の整数を表す型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "bigint",
+      "desc": "大きい範囲の整数を表す型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "decimal",
+      "desc": "桁数を指定できる十進数型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "numeric",
+      "desc": "精度と位取りを厳密に指定する十進数型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "varchar",
+      "desc": "上限付きの可変長文字列型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "boolean",
+      "desc": "true / false / unknown の論理型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "date",
+      "desc": "年月日を表す日付型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "time",
+      "desc": "時分秒を表す時刻型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "timestamp",
+      "desc": "日付と時刻を合わせて表す型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "interval",
+      "desc": "日時の差分(期間)を表す型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "array",
+      "desc": "同じ型の値の並びを保持する型",
+      "category": "sql-types"
+    },
+    {
+      "cmd": "substring",
+      "desc": "文字列から部分文字列を取り出す関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "trim",
+      "desc": "先頭・末尾の空白や指定文字を除く関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "upper",
+      "desc": "文字列を大文字に変換する関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "lower",
+      "desc": "文字列を小文字に変換する関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "position",
+      "desc": "部分文字列の位置を返す関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "char_length",
+      "desc": "文字列の文字数を返す関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "overlay",
+      "desc": "文字列の一部を別の文字列で置き換える",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "cast",
+      "desc": "値を指定した型へ変換する式",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "abs",
+      "desc": "数値の絶対値を返す関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "mod",
+      "desc": "剰余(割り算の余り)を返す関数",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "ceil",
+      "desc": "数値以上で最小の整数へ切り上げる",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "floor",
+      "desc": "数値以下で最大の整数へ切り捨てる",
+      "category": "sql-func"
+    },
+    {
+      "cmd": "current_date",
+      "desc": "現在の日付を返すニラディック関数",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "current_time",
+      "desc": "現在の時刻(時間帯付き)を返す",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "current_timestamp",
+      "desc": "現在の日時(時間帯付き)を返す",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "localtime",
+      "desc": "現在の時刻(時間帯なし)を返す",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "localtimestamp",
+      "desc": "現在の日時(時間帯なし)を返す",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "extract",
+      "desc": "日時から年や月などの成分を取り出す",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "year",
+      "desc": "EXTRACT 等で使う「年」のフィールド",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "month",
+      "desc": "EXTRACT 等で使う「月」のフィールド",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "day",
+      "desc": "EXTRACT 等で使う「日」のフィールド",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "hour",
+      "desc": "EXTRACT 等で使う「時」のフィールド",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "minute",
+      "desc": "EXTRACT 等で使う「分」のフィールド",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "second",
+      "desc": "EXTRACT 等で使う「秒」のフィールド",
+      "category": "sql-datetime"
+    },
+    {
+      "cmd": "over",
+      "desc": "集約をウィンドウ関数として使う指定",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "partition",
+      "desc": "PARTITION BY で窓の区画を分ける",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "row_number",
+      "desc": "区画内で行に連番を振る関数",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "rank",
+      "desc": "同順位の次を飛ばす順位付け関数",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "dense_rank",
+      "desc": "同順位の次を詰める順位付け関数",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "ntile",
+      "desc": "行をほぼ等分の n 組に分ける関数",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "lag",
+      "desc": "同じ区画の前の行の値を参照する",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "lead",
+      "desc": "同じ区画の後の行の値を参照する",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "first_value",
+      "desc": "窓枠の先頭行の値を返す関数",
+      "category": "sql-window"
+    },
+    {
+      "cmd": "create",
+      "desc": "表やビューなどのオブジェクトを作る文",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "alter",
+      "desc": "既存オブジェクトの定義を変更する文",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "drop",
+      "desc": "オブジェクトを削除する文",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "table",
+      "desc": "行と列からなるデータの入れ物",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "constraint",
+      "desc": "データの整合性を守る制約の宣言",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "primary",
+      "desc": "PRIMARY KEY で行を一意に識別する",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "foreign",
+      "desc": "FOREIGN KEY で他表への参照を宣言",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "references",
+      "desc": "外部キーの参照先の表と列を指定する",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "check",
+      "desc": "行が満たすべき条件を宣言する制約",
+      "category": "sql-ddl"
+    },
+    {
+      "cmd": "with",
+      "desc": "問い合わせに名前を付けて再利用する CTE",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "recursive",
+      "desc": "CTE で再帰的な問い合わせを許可する",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "case",
+      "desc": "条件によって値を切り替える式の起点",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "when",
+      "desc": "CASE 式で個々の条件を導く語",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "then",
+      "desc": "条件が真のときの値を導く語",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "else",
+      "desc": "どの条件にも合わないときの値を導く語",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "end",
+      "desc": "CASE 式の終わりを示す語",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "coalesce",
+      "desc": "最初の非 null 値を返す関数",
+      "category": "sql-cte"
+    },
+    {
+      "cmd": "json",
+      "desc": "JSON 値を格納する型(2023 で標準化)",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_table",
+      "desc": "JSON を関係表として展開する関数",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_value",
+      "desc": "JSON からスカラー値を取り出す関数",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_query",
+      "desc": "JSON から部分構造を取り出す関数",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_exists",
+      "desc": "JSON パスに値があるか判定する述語",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_object",
+      "desc": "キーと値から JSON オブジェクトを作る",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_array",
+      "desc": "値の並びから JSON 配列を作る関数",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "json_scalar",
+      "desc": "SQL 値を JSON スカラーへ変換(2023)",
+      "category": "sql-json"
+    },
+    {
+      "cmd": "graph_table",
+      "desc": "プロパティグラフを表として問い合わせる",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "match",
+      "desc": "グラフ内のパターンを照合する句",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "columns",
+      "desc": "GRAPH_TABLE の出力列を定義する句",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "walk",
+      "desc": "頂点・辺の重複を許すパス探索モード",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "trail",
+      "desc": "同じ辺を二度通らないパス探索モード",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "acyclic",
+      "desc": "同じ頂点を二度通らない探索モード",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "simple",
+      "desc": "始点以外の頂点重複を禁じる探索モード",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "graph",
+      "desc": "CREATE PROPERTY GRAPH で作るグラフ",
+      "category": "sql-pgq"
+    },
+    {
+      "cmd": "commit",
+      "desc": "トランザクションの変更を確定する",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "rollback",
+      "desc": "トランザクションの変更を取り消す",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "savepoint",
+      "desc": "部分的に戻れる目印を作る文",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "start",
+      "desc": "START TRANSACTION で取引を開始する",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "isolation",
+      "desc": "トランザクションの分離レベルの指定",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "serializable",
+      "desc": "最も厳格な分離レベル",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "grant",
+      "desc": "権限を利用者やロールへ付与する文",
+      "category": "sql-tx"
+    },
+    {
+      "cmd": "revoke",
+      "desc": "付与した権限を取り消す文",
+      "category": "sql-tx"
+    }
+  ]
+}

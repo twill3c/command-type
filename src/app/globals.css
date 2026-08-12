@@ -215,6 +215,12 @@ button {
   --track-sub: #5391fe;
 }
 
+.track-sql {
+  --track-main: #1a5276;
+  --track-fg: #ffffff;
+  --track-sub: #5dade2;
+}
+
 .track-tabs {
   display: flex;
   flex-wrap: wrap;

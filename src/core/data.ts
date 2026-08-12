@@ -5,6 +5,7 @@ import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
 import powershell from "../../data/tracks/powershell.json";
 import python from "../../data/tracks/python.json";
+import sql from "../../data/tracks/sql.json";
 import typescript from "../../data/tracks/typescript.json";
 import type {
   CategoryDef,
@@ -20,8 +21,10 @@ import type {
  * 出題データの正本(data/tracks/*.json)。配分の正は SPEC §4(トラック別表)。
  * トラックを追加したら import して登録する(python: P5 / typescript: P6)。
  */
+// 登録順がトラック選択タブの表示順になる(SPEC §1: sql は linux と python の間)
 export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["linux", linux as Dataset],
+  ["sql", sql as Dataset],
   ["python", python as Dataset],
   ["typescript", typescript as Dataset],
   ["java", java as Dataset],

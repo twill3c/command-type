@@ -17,6 +17,12 @@ const LEVEL_LABEL: Record<PlayLevel, string> = {
 
 /** トラック×モードのカード説明(§4 のカテゴリ群の要約)。 */
 const LEVEL_DESC: Record<TrackId, Record<PlayLevel, string>> = {
+  sql: {
+    beginner: "問い合わせ・集計・データ操作の基本 50 問",
+    intermediate: "結合・データ型・関数・日付時刻の 50 問",
+    advanced: "ウィンドウ関数・DDL・JSON・グラフほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
   linux: {
     beginner: "ナビゲーション・テキスト処理・権限管理の基本 50 コマンド",
     intermediate: "プロセス・圧縮転送・ネットワーク・パッケージ管理の 50 コマンド",
@@ -70,6 +76,7 @@ const LEVEL_DESC: Record<TrackId, Record<PlayLevel, string>> = {
 const TAGLINE: Record<TrackId, string> = {
   linux:
     "落ちてくる Linux コマンドを、底に着く前にタイプして Enter。150 コマンドを遊びながら覚える。",
+  sql: "落ちてくる SQL:2023 のキーワード・関数を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   python:
     "落ちてくる Python の関数・メソッドを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   typescript:

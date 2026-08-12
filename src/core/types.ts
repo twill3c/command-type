@@ -1,6 +1,7 @@
 /** トラック(学習科目)識別子(SPEC §1・§4)。 */
 export type TrackId =
   | "linux"
+  | "sql"
   | "python"
   | "typescript"
   | "java"
