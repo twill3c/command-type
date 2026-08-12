@@ -2,12 +2,12 @@
 
 **▶ 遊ぶ: https://command-type.vercel.app**
 
-Linux・SQL:2023・Python・TypeScript・Java・Git・Docker/Kubernetes・HTML/CSS・PowerShell の
+Linux・SQL:2023・Python・Python ML・TypeScript・Java・Git・Docker/Kubernetes・HTML/CSS・PowerShell の
 「落ちものゲーム × タイピング練習」。
 出題(コマンド・関数・構文)が短い解説文・カテゴリ名とともに画面上部から落ちてくる。
 底に着く前にタイプして Enter — 打鍵の速さと正確さを鍛えながら、トラックごとに 150 の語彙を覚える。
 
-- **9 トラック × 各 150 問(計 1,350 問)**、各 13 カテゴリ / 3 レベル(各 50)+ 全カテゴリ混合の**ミックス**
+- **10 トラック × 各 150 問(計 1,500 問)**、各 13 カテゴリ / 3 レベル(各 50)+ 全カテゴリ混合の**ミックス**
 - トラックごとにコミュニティ標準のブランドカラーを基調色に採用(SPEC §7.1)
 - トラックとレベルに応じたカテゴリから出題(対応表は [SPEC.md](SPEC.md) §4)
 - 1 セッション 20 問・ライフ 3。スコアは速度ボーナス + コンボ
