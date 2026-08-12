@@ -171,6 +171,27 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "ps-winadmin": { level: "advanced", count: 8 },
     },
   },
+  http: {
+    total: 150,
+    charset: /^[A-Za-z0-9./-]+$/,
+    categories: {
+      "http-methods": { level: "beginner", count: 18 },
+      "http-status": { level: "beginner", count: 17 },
+      "http-headers": { level: "beginner", count: 15 },
+      "http-cache": { level: "intermediate", count: 14 },
+      "http-security": { level: "intermediate", count: 12 },
+      "http-auth": { level: "intermediate", count: 12 },
+      "http-protocol": { level: "intermediate", count: 12 },
+      "http-content": { level: "advanced", count: 9 },
+      "http-rest": { level: "advanced", count: 9 },
+      "http-url": { level: "advanced", count: 8 },
+      "http-conn": { level: "advanced", count: 8 },
+      "http-storage": { level: "advanced", count: 8 },
+      "http-standards": { level: "advanced", count: 8 },
+    },
+  },
+  pyweb: undefined, // loop_034 で §4.16 の表を書き写す
+  mcp: undefined, // loop_035 で §4.17 の表を書き写す
   pyauto: {
     total: 150,
     charset: /^[A-Za-z0-9_.]+$/,

@@ -7,8 +7,8 @@ describe("T-031: キー入力フィルタ(N-03: 半角英数記号のみ・大�
     expect(keyToAction("Backspace")).toEqual({ type: "backspace" });
   });
 
-  it("出題文字種(英数と +._-)は char になる", () => {
-    for (const ch of ["a", "z", "0", "9", "+", ".", "_", "-"]) {
+  it("出題文字種(英数と +._/-)は char になる", () => {
+    for (const ch of ["a", "z", "0", "9", "+", ".", "_", "-", "/"]) {
       expect(keyToAction(ch)).toEqual({ type: "char", ch });
     }
   });

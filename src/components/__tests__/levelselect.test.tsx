@@ -41,4 +41,16 @@ describe("T-032: トラック切替 UI(F-15)", () => {
       expect(html).toContain(label);
     }
   });
+
+  it("T-035: グループ見出し(§1)が描画される", () => {
+    const html = render("linux");
+    for (const label of [
+      "インフラ・OS",
+      "データ・分析",
+      "Web・フロントエンド",
+      "バックエンド・AI",
+    ]) {
+      expect(html).toContain(label);
+    }
+  });
 });
