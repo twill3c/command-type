@@ -38,7 +38,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "dev-debug": { level: "advanced", count: 8 },
     },
   },
-  python: undefined, // P5(loop_015)で §4.2 の表を書き写す
+  python: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.]+$/,
+    categories: {
+      "py-builtin": { level: "beginner", count: 18 },
+      "py-string": { level: "beginner", count: 17 },
+      "py-list-dict": { level: "beginner", count: 15 },
+      "py-iter-func": { level: "intermediate", count: 14 },
+      "py-file-os": { level: "intermediate", count: 12 },
+      "py-stdlib": { level: "intermediate", count: 12 },
+      "py-exception": { level: "intermediate", count: 12 },
+      "py-oop": { level: "advanced", count: 9 },
+      "py-collections": { level: "advanced", count: 9 },
+      "py-typing": { level: "advanced", count: 8 },
+      "py-async": { level: "advanced", count: 8 },
+      "py-datetime": { level: "advanced", count: 8 },
+      "py-dev-tools": { level: "advanced", count: 8 },
+    },
+  },
   typescript: undefined, // P6(loop_016)で §4.3 の表を書き写す
 };
 
