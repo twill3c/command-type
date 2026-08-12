@@ -209,7 +209,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "react-tools": { level: "advanced", count: 8 },
     },
   },
-  aws: undefined, // loop_031 で §4.13 の表を書き写す
+  aws: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.-]+$/,
+    categories: {
+      "aws-core": { level: "beginner", count: 18 },
+      "aws-storage": { level: "beginner", count: 17 },
+      "aws-iam": { level: "beginner", count: 15 },
+      "aws-compute": { level: "intermediate", count: 14 },
+      "aws-network": { level: "intermediate", count: 12 },
+      "aws-db": { level: "intermediate", count: 12 },
+      "aws-cli": { level: "intermediate", count: 12 },
+      "aws-deploy": { level: "advanced", count: 9 },
+      "aws-monitor": { level: "advanced", count: 9 },
+      "aws-security": { level: "advanced", count: 8 },
+      "aws-cost": { level: "advanced", count: 8 },
+      "aws-arch": { level: "advanced", count: 8 },
+      "aws-analytics": { level: "advanced", count: 8 },
+    },
+  },
   r: undefined, // loop_032 で §4.14 の表を書き写す
   pyml: {
     total: 150,
