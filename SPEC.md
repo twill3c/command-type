@@ -10,9 +10,10 @@ Linux コマンド・Python・TypeScript のタイピング練習ゲーム(多�
 
 Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/API を
 「落ちものゲーム × タイピング」の形式で楽しく反復学習する Web アプリを提供する。
-出題は**トラック**(学習科目)単位で選ぶ。トラックは `linux` / `sql` / `python` / `typescript` /
-`java` / `git` / `docker` / `htmlcss` / `powershell` の 9 つ(P9 で 5 つ、P10 で sql を追加)。
-トラック選択タブの表示順もこの並びとする(sql は linux と python の間 — 2026-08-12 人間指示)。
+出題は**トラック**(学習科目)単位で選ぶ。トラックは `linux` / `sql` / `python` / `pyml` /
+`typescript` / `java` / `git` / `docker` / `htmlcss` / `powershell` の 10(P9 で 5 つ、
+P10 で sql、P11 で pyml を追加)。トラック選択タブの表示順もこの並びとする
+(sql は linux と python の間、pyml は python の隣 — 2026-08-12 人間指示)。
 出題文字列を打鍵しながら、短い解説文とカテゴリ名を同時に目にすることで、
 タイピング練習と知識の定着を一度に実現する。
 
@@ -234,6 +235,29 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | 上級 | `sql-pgq` | プロパティグラフ(SQL/PGQ) | 8 |
 | 上級 | `sql-tx` | トランザクション・権限 | 8 |
 
+### 4.10 トラック `pyml`(Python 機械学習ライブラリ)— 150 件
+
+NumPy・pandas・可視化・scikit-learn・PyTorch・Transformers・GBDT・実験運用の
+バランス型構成(2026-08-12 人間指示で確定)。表記はコミュニティ慣用のエイリアス
+(`np.` `pd.` `plt.` `sns.` `nn.` `optim.`)を用いた単語型。メソッド・属性は
+レシーバなしの名前(例: `groupby`)で出題する。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `pyml-numpy` | NumPy 基礎 | 18 |
+| 初級 | `pyml-pandas` | pandas 基礎 | 17 |
+| 初級 | `pyml-wrangle` | pandas データ加工 | 15 |
+| 中級 | `pyml-viz` | 可視化 | 14 |
+| 中級 | `pyml-preprocess` | scikit-learn 前処理 | 12 |
+| 中級 | `pyml-models` | scikit-learn モデル | 12 |
+| 中級 | `pyml-eval` | モデル評価・選択 | 12 |
+| 上級 | `pyml-tensor` | PyTorch テンソル | 9 |
+| 上級 | `pyml-nn` | ニューラルネット構築 | 9 |
+| 上級 | `pyml-train` | 学習ループ・最適化 | 8 |
+| 上級 | `pyml-transformers` | Transformers・LLM | 8 |
+| 上級 | `pyml-gbdt` | 勾配ブースティング | 8 |
+| 上級 | `pyml-ops` | 実験・運用 | 8 |
+
 各表の集計: 初級 50 / 中級 50 / 上級 50 = 150。
 
 ## 5. 品質基準
@@ -242,7 +266,7 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 
 - `data/tracks/*.json`: トラックごとに、件数・レベル配分・カテゴリ配分が §4 の該当表と完全一致 /
   `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別:
-  linux: `[a-z0-9+._-]+` / python・typescript・java: `[A-Za-z0-9_.]+` /
+  linux: `[a-z0-9+._-]+` / python・pyml・typescript・java: `[A-Za-z0-9_.]+` /
   git・docker: `[A-Za-z0-9+._-]+` / htmlcss: `[a-z0-9-]+` / powershell: `[A-Za-z0-9-]+` /
   sql: `[a-z0-9_]+` /
   `desc` は 8〜40 文字の日本語解説
@@ -266,7 +290,8 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | P7 | トラック選択 UI(F-15)+ ハイスコアのトラック×モード化・旧キー読み継ぎ(F-12 改訂) | 完了(loop_017) |
 | P8 | データ出典の文書化(§5 転載禁止規約・docs/data-provenance.md)+ 全画面の MIT ライセンス表記(F-16) | 完了(loop_019〜021) |
 | P9 | 追加 5 トラック: java(§4.4)・git(§4.5)・docker(§4.6)・htmlcss(§4.7)・powershell(§4.8)、各 150 件 + 基調色(§7.1) | 完了(loop_022〜026) |
-| P10 | SQL:2023 トラック(§4.9): 150 件・小文字表記・タブ位置は linux と python の間 | 本ループ(loop_027) |
+| P10 | SQL:2023 トラック(§4.9): 150 件・小文字表記・タブ位置は linux と python の間 | 完了(loop_027) |
+| P11 | Python ML トラック(§4.10): 機械学習ライブラリ 150 件・基調色 PyTorch オレンジ | 本ループ(loop_028) |
 
 ## 7. デザイン(視覚仕様)
 
@@ -317,6 +342,7 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | htmlcss | `#E34F26`(HTML5 オレンジ) | `#000000` | `#1572B6`(CSS3 ブルー) |
 | powershell | `#012456`(PowerShell 紺) | `#FFFFFF` | `#5391FE`(ライトブルー) |
 | sql | `#1A5276`(ディープブルー) | `#FFFFFF` | `#5DADE2`(ライトブルー) |
+| pyml | `#EE4C2C`(PyTorch オレンジ) | `#000000` | `#7F2A18`(ダークオレンジ) |
 
 SQL は ISO 標準でありコミュニティ共通のブランド色が存在しないため、
 データベースの定番連想色であるディープブルーを採用(2026-08-12 人間指示で確定)。
