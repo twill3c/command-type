@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.13",
+  "track": {
+    "id": "aws",
+    "name": "AWS"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "aws-core",
+      "name": "主要サービス",
+      "level": "beginner"
+    },
+    {
+      "id": "aws-storage",
+      "name": "S3・ストレージ",
+      "level": "beginner"
+    },
+    {
+      "id": "aws-iam",
+      "name": "IAM・認証",
+      "level": "beginner"
+    },
+    {
+      "id": "aws-compute",
+      "name": "コンピュート・サーバーレス",
+      "level": "intermediate"
+    },
+    {
+      "id": "aws-network",
+      "name": "ネットワーク",
+      "level": "intermediate"
+    },
+    {
+      "id": "aws-db",
+      "name": "データベース・分析",
+      "level": "intermediate"
+    },
+    {
+      "id": "aws-cli",
+      "name": "CLI・SDK(boto3)",
+      "level": "intermediate"
+    },
+    {
+      "id": "aws-deploy",
+      "name": "IaC・デプロイ",
+      "level": "advanced"
+    },
+    {
+      "id": "aws-monitor",
+      "name": "監視・運用",
+      "level": "advanced"
+    },
+    {
+      "id": "aws-security",
+      "name": "セキュリティ",
+      "level": "advanced"
+    },
+    {
+      "id": "aws-cost",
+      "name": "コスト管理",
+      "level": "advanced"
+    },
+    {
+      "id": "aws-arch",
+      "name": "アーキテクチャ",
+      "level": "advanced"
+    },
+    {
+      "id": "aws-analytics",
+      "name": "ストリーム・統合",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "S3",
+      "desc": "オブジェクトストレージの中核サービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "EC2",
+      "desc": "仮想サーバを提供するサービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "Lambda",
+      "desc": "サーバレスで関数を実行するサービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "IAM",
+      "desc": "利用者と権限を管理するサービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "VPC",
+      "desc": "専用の仮想ネットワークを構築する",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "RDS",
+      "desc": "マネージドなリレーショナル DB",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "DynamoDB",
+      "desc": "サーバレスの NoSQL キーバリュー DB",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "CloudFront",
+      "desc": "コンテンツ配信ネットワーク(CDN)",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "Route53",
+      "desc": "DNS とドメイン管理のサービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "SQS",
+      "desc": "メッセージキューイングサービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "SNS",
+      "desc": "プッシュ型の通知・配信サービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "ECS",
+      "desc": "コンテナオーケストレーションサービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "EKS",
+      "desc": "マネージド Kubernetes サービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "Fargate",
+      "desc": "サーバ管理不要のコンテナ実行基盤",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "CloudWatch",
+      "desc": "メトリクス・ログの監視サービス",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "CloudFormation",
+      "desc": "インフラをコードで定義する IaC",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "Aurora",
+      "desc": "高性能なマネージド RDB エンジン",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "ElastiCache",
+      "desc": "マネージドなインメモリキャッシュ",
+      "category": "aws-core"
+    },
+    {
+      "cmd": "bucket",
+      "desc": "S3 でオブジェクトを入れる器",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "put_object",
+      "desc": "S3 へオブジェクトを保存する API",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "get_object",
+      "desc": "S3 からオブジェクトを取得する API",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "list_objects_v2",
+      "desc": "バケット内の一覧を取得する API",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "upload_file",
+      "desc": "ファイルを S3 へアップロードする",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "download_file",
+      "desc": "S3 からファイルをダウンロードする",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "generate_presigned_url",
+      "desc": "期限付きの署名 URL を発行する",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "multipart_upload",
+      "desc": "大きなファイルを分割して転送する",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "lifecycle",
+      "desc": "保存期間に応じた自動移行・削除規則",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "versioning",
+      "desc": "オブジェクトの世代を保持する設定",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "Glacier",
+      "desc": "低頻度アクセス向けの長期保管クラス",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "storage_class",
+      "desc": "コストと速度で選ぶ保存クラス",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "s3api",
+      "desc": "S3 を低水準 API で操作する CLI",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "EBS",
+      "desc": "EC2 に接続するブロックストレージ",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "EFS",
+      "desc": "共有できるマネージド NFS ストレージ",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "snapshot",
+      "desc": "ボリュームの時点コピーを保存する",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "AMI",
+      "desc": "EC2 の起動テンプレートとなるイメージ",
+      "category": "aws-storage"
+    },
+    {
+      "cmd": "role",
+      "desc": "サービスや人に権限を貸し出す仕組み",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "policy",
+      "desc": "許可・拒否を JSON で記述する文書",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "principal",
+      "desc": "操作の主体(誰が)を表す要素",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "STS",
+      "desc": "一時的な認証情報を発行するサービス",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "AssumeRole",
+      "desc": "ロールを引き受けて権限を得る操作",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "MFA",
+      "desc": "多要素認証。乗っ取り対策の基本",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "Cognito",
+      "desc": "アプリの利用者認証・認可サービス",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "KMS",
+      "desc": "暗号鍵を管理するサービス",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "SecretsManager",
+      "desc": "秘密情報を安全に保管・配布する",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "credentials",
+      "desc": "アクセスキー等の認証情報",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "sigv4",
+      "desc": "API リクエストの署名方式",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "PassRole",
+      "desc": "サービスへロールを渡す権限",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "trust_policy",
+      "desc": "誰がロールを引受可能かの定義",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "GetCallerIdentity",
+      "desc": "現在の認証主体を確認する API",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "least_privilege",
+      "desc": "必要最小限の権限に絞る原則",
+      "category": "aws-iam"
+    },
+    {
+      "cmd": "instance",
+      "desc": "EC2 で起動する仮想サーバ 1 台",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "t3.micro",
+      "desc": "無料利用枠でも使える小型インスタンス",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "AutoScaling",
+      "desc": "負荷に応じて台数を自動増減する",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "spot_instance",
+      "desc": "余剰資源を安価に使う中断あり方式",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "lambda_handler",
+      "desc": "Lambda 関数のエントリポイント",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "cold_start",
+      "desc": "関数の初回起動にかかる遅延",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "layers",
+      "desc": "Lambda で共有するライブラリの層",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "StepFunctions",
+      "desc": "処理の流れを状態機械で組む",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "EventBridge",
+      "desc": "イベントでサービスをつなぐバス",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "Batch",
+      "desc": "大規模バッチ処理の実行基盤",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "Lightsail",
+      "desc": "定額でシンプルな VPS サービス",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "AppRunner",
+      "desc": "コンテナを URL 付きで即公開する",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "SAM",
+      "desc": "サーバレス向けの IaC フレームワーク",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "concurrency",
+      "desc": "Lambda の同時実行数の制御",
+      "category": "aws-compute"
+    },
+    {
+      "cmd": "subnet",
+      "desc": "VPC 内を分割するアドレス範囲",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "SecurityGroup",
+      "desc": "インスタンス単位の仮想ファイアウォール",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "NACL",
+      "desc": "サブネット単位の通信許可リスト",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "InternetGateway",
+      "desc": "VPC をインターネットへつなぐ出入口",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "NATGateway",
+      "desc": "私設サブネットからの外向き通信を中継",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "ALB",
+      "desc": "HTTP 層で振り分けるロードバランサ",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "NLB",
+      "desc": "TCP 層で高速に振り分ける LB",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "TargetGroup",
+      "desc": "LB の振り分け先の集合",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "PrivateLink",
+      "desc": "サービスへ私設経路で接続する",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "DirectConnect",
+      "desc": "オンプレと専用線で接続する",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "CIDR",
+      "desc": "IP アドレス範囲の表記法",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "VPCPeering",
+      "desc": "VPC 同士を私設接続する",
+      "category": "aws-network"
+    },
+    {
+      "cmd": "Redshift",
+      "desc": "列指向のデータウェアハウス",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "Athena",
+      "desc": "S3 のデータを SQL で直接分析する",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "Glue",
+      "desc": "サーバレスの ETL・データカタログ",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "Kinesis",
+      "desc": "ストリーミングデータの収集・処理",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "QuickSight",
+      "desc": "BI ダッシュボードのサービス",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "EMR",
+      "desc": "Spark 等の分散処理基盤",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "OpenSearch",
+      "desc": "全文検索・ログ分析エンジン",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "Timestream",
+      "desc": "時系列データ専用のデータベース",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "Neptune",
+      "desc": "グラフデータベースのサービス",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "DocumentDB",
+      "desc": "MongoDB 互換のドキュメント DB",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "partition_key",
+      "desc": "DynamoDB のデータ分散を決める鍵",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "read_replica",
+      "desc": "読み取り専用の複製 DB",
+      "category": "aws-db"
+    },
+    {
+      "cmd": "boto3.client",
+      "desc": "低水準 API クライアントを作る",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "boto3.resource",
+      "desc": "高水準リソース API を作る",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "configure",
+      "desc": "認証情報と既定リージョンを設定する",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "profile",
+      "desc": "名前付きの認証設定を切り替える",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "region_name",
+      "desc": "接続先リージョンを指定する引数",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "paginator",
+      "desc": "ページ分割された結果を順に取得する",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "waiter",
+      "desc": "リソースが目的状態になるまで待つ",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "put_item",
+      "desc": "DynamoDB へ項目を書き込む API",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "get_item",
+      "desc": "DynamoDB から項目を読み取る API",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "query",
+      "desc": "キー条件で項目を検索する API",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "scan",
+      "desc": "テーブル全体を走査する API",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "batch_write_item",
+      "desc": "項目をまとめて書き込む API",
+      "category": "aws-cli"
+    },
+    {
+      "cmd": "CDK",
+      "desc": "プログラミング言語で書く IaC",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "Terraform",
+      "desc": "マルチクラウド対応の IaC ツール",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "template.yaml",
+      "desc": "CloudFormation/SAM の定義ファイル",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "stack",
+      "desc": "IaC で管理するリソースのまとまり",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "changeset",
+      "desc": "適用前に差分を確認する仕組み",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "drift",
+      "desc": "実環境と定義のずれを検出する",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "CodePipeline",
+      "desc": "CI/CD の流れを組み立てるサービス",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "CodeBuild",
+      "desc": "ビルド・テストを実行するサービス",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "CodeDeploy",
+      "desc": "アプリ配備を自動化するサービス",
+      "category": "aws-deploy"
+    },
+    {
+      "cmd": "CloudTrail",
+      "desc": "API 操作の監査ログを記録する",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "X-Ray",
+      "desc": "分散トレーシングのサービス",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "alarm",
+      "desc": "しきい値超過で通知・対処を起こす",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "metric_filter",
+      "desc": "ログからメトリクスを抽出する",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "log_group",
+      "desc": "CloudWatch Logs の保管単位",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "retention",
+      "desc": "ログの保持期間の設定",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "HealthDashboard",
+      "desc": "AWS 側の障害情報を確認する",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "TrustedAdvisor",
+      "desc": "コスト・安全のベストプラクティス診断",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "Config",
+      "desc": "リソース構成の変更履歴を追跡する",
+      "category": "aws-monitor"
+    },
+    {
+      "cmd": "WAF",
+      "desc": "Web アプリへの攻撃を防ぐファイアウォール",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "Shield",
+      "desc": "DDoS 攻撃から保護するサービス",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "GuardDuty",
+      "desc": "脅威を機械学習で検知するサービス",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "Inspector",
+      "desc": "脆弱性を自動診断するサービス",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "SecurityHub",
+      "desc": "セキュリティ状況を集約するハブ",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "Macie",
+      "desc": "S3 の機密データを検出・保護する",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "encryption_at_rest",
+      "desc": "保存データの暗号化",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "bucket_policy",
+      "desc": "S3 バケットへのアクセス制御文書",
+      "category": "aws-security"
+    },
+    {
+      "cmd": "CostExplorer",
+      "desc": "コストの内訳と推移を可視化する",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "budgets",
+      "desc": "予算超過を警告する仕組み",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "free_tier",
+      "desc": "無料利用枠。超過に注意",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "SavingsPlans",
+      "desc": "利用量の約束で割引を受ける",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "ReservedInstances",
+      "desc": "長期予約による割引方式",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "billing",
+      "desc": "請求情報の確認・管理",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "tagging",
+      "desc": "タグ付けでコストを部門別に配賦する",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "rightsizing",
+      "desc": "過剰なリソースを適正サイズへ調整",
+      "category": "aws-cost"
+    },
+    {
+      "cmd": "Multi-AZ",
+      "desc": "複数の可用性ゾーンへ冗長配置する",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "WellArchitected",
+      "desc": "設計原則をまとめた公式フレームワーク",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "serverless",
+      "desc": "サーバ管理を持たない設計様式",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "microservices",
+      "desc": "小さなサービス群に分割する設計",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "event_driven",
+      "desc": "イベント連鎖で疎結合に組む設計",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "caching",
+      "desc": "頻繁な読み取りをキャッシュで高速化",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "throttling",
+      "desc": "過剰なリクエストを制限する仕組み",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "blue_green",
+      "desc": "新旧環境を切り替える無停止デプロイ",
+      "category": "aws-arch"
+    },
+    {
+      "cmd": "Firehose",
+      "desc": "ストリームを S3 等へ自動配信する",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "MSK",
+      "desc": "マネージドな Apache Kafka",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "DataSync",
+      "desc": "オンプレと AWS 間のデータ転送",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "Transfer",
+      "desc": "SFTP 等でファイルを受け渡すサービス",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "AppFlow",
+      "desc": "SaaS 間のデータ連携を自動化する",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "EventSourceMapping",
+      "desc": "キューと Lambda を結び付ける仕組み",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "dead_letter_queue",
+      "desc": "処理失敗メッセージの退避先キュー",
+      "category": "aws-analytics"
+    },
+    {
+      "cmd": "fan_out",
+      "desc": "1 つのイベントを複数の宛先へ配る",
+      "category": "aws-analytics"
+    }
+  ]
+}

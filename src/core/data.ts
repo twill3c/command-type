@@ -1,3 +1,4 @@
+import aws from "../../data/tracks/aws.json";
 import docker from "../../data/tracks/docker.json";
 import git from "../../data/tracks/git.json";
 import htmlcss from "../../data/tracks/htmlcss.json";
@@ -36,6 +37,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["java", java as Dataset],
   ["git", git as Dataset],
   ["docker", docker as Dataset],
+  ["aws", aws as Dataset],
   ["htmlcss", htmlcss as Dataset],
   ["powershell", powershell as Dataset],
 ]);
