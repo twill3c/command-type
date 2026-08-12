@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.10",
+  "track": {
+    "id": "pyml",
+    "name": "Python ML"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "pyml-numpy",
+      "name": "NumPy 基礎",
+      "level": "beginner"
+    },
+    {
+      "id": "pyml-pandas",
+      "name": "pandas 基礎",
+      "level": "beginner"
+    },
+    {
+      "id": "pyml-wrangle",
+      "name": "pandas データ加工",
+      "level": "beginner"
+    },
+    {
+      "id": "pyml-viz",
+      "name": "可視化",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyml-preprocess",
+      "name": "scikit-learn 前処理",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyml-models",
+      "name": "scikit-learn モデル",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyml-eval",
+      "name": "モデル評価・選択",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyml-tensor",
+      "name": "PyTorch テンソル",
+      "level": "advanced"
+    },
+    {
+      "id": "pyml-nn",
+      "name": "ニューラルネット構築",
+      "level": "advanced"
+    },
+    {
+      "id": "pyml-train",
+      "name": "学習ループ・最適化",
+      "level": "advanced"
+    },
+    {
+      "id": "pyml-transformers",
+      "name": "Transformers・LLM",
+      "level": "advanced"
+    },
+    {
+      "id": "pyml-gbdt",
+      "name": "勾配ブースティング",
+      "level": "advanced"
+    },
+    {
+      "id": "pyml-ops",
+      "name": "実験・運用",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "np.array",
+      "desc": "リスト等から多次元配列 ndarray を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.arange",
+      "desc": "等差の数列から配列を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.linspace",
+      "desc": "区間を等分した値の配列を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.zeros",
+      "desc": "全要素 0 の配列を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.ones",
+      "desc": "全要素 1 の配列を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.eye",
+      "desc": "単位行列(対角 1)の配列を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.random.rand",
+      "desc": "0〜1 の一様乱数の配列を作る",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "reshape",
+      "desc": "要素を保ったまま配列の形を変える",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "shape",
+      "desc": "配列の各次元の大きさを表す属性",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "dtype",
+      "desc": "配列要素のデータ型を表す属性",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.mean",
+      "desc": "配列の平均値を計算する",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.median",
+      "desc": "配列の中央値を計算する",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.std",
+      "desc": "配列の標準偏差を計算する",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.dot",
+      "desc": "内積・行列積を計算する",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.concatenate",
+      "desc": "複数の配列を軸に沿って連結する",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.where",
+      "desc": "条件に応じて値や位置を選び出す",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.argmax",
+      "desc": "最大値の位置(添字)を返す",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "np.unique",
+      "desc": "重複を除いた値の一覧を返す",
+      "category": "pyml-numpy"
+    },
+    {
+      "cmd": "pd.DataFrame",
+      "desc": "行と列を持つ表形式のデータ構造",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "pd.Series",
+      "desc": "ラベル付きの 1 次元データ構造",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "pd.read_csv",
+      "desc": "CSV ファイルを読み込んで表にする",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "pd.read_excel",
+      "desc": "Excel ファイルを読み込んで表にする",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "to_csv",
+      "desc": "表を CSV ファイルへ書き出す",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "head",
+      "desc": "先頭の数行を表示して中身を確かめる",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "tail",
+      "desc": "末尾の数行を表示して中身を確かめる",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "info",
+      "desc": "列の型や欠損数などの概要を表示する",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "describe",
+      "desc": "数値列の基本統計量をまとめて出す",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "dtypes",
+      "desc": "各列のデータ型を一覧する属性",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "columns",
+      "desc": "列名の一覧を保持する属性",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "index",
+      "desc": "行ラベル(インデックス)を保持する属性",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "loc",
+      "desc": "ラベル指定で行・列を選択する",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "iloc",
+      "desc": "位置(番号)指定で行・列を選択する",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "value_counts",
+      "desc": "値ごとの出現回数を数える",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "sort_values",
+      "desc": "指定列の値で行を並べ替える",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "isnull",
+      "desc": "欠損値かどうかの真偽表を返す",
+      "category": "pyml-pandas"
+    },
+    {
+      "cmd": "groupby",
+      "desc": "キーごとにまとめて集計する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "merge",
+      "desc": "キーで 2 つの表を結合する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "concat",
+      "desc": "複数の表を縦・横に連結する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "pivot_table",
+      "desc": "縦持ちデータを集計付きで横持ちにする",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "melt",
+      "desc": "横持ちデータを縦持ちに変換する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "fillna",
+      "desc": "欠損値を指定の値で埋める",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "dropna",
+      "desc": "欠損値を含む行・列を取り除く",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "astype",
+      "desc": "列のデータ型を変換する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "apply",
+      "desc": "行・列・要素に関数を適用する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "rename",
+      "desc": "列名や行ラベルを付け替える",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "drop",
+      "desc": "指定した行や列を取り除く",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "query",
+      "desc": "条件式の文字列で行を絞り込む",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "sample",
+      "desc": "行を無作為に抽出する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "reset_index",
+      "desc": "インデックスを振り直して列に戻す",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "duplicated",
+      "desc": "重複した行かどうかを判定する",
+      "category": "pyml-wrangle"
+    },
+    {
+      "cmd": "plt.plot",
+      "desc": "折れ線グラフを描く基本の関数",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.scatter",
+      "desc": "散布図を描く関数",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.hist",
+      "desc": "ヒストグラム(度数分布)を描く",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.bar",
+      "desc": "棒グラフを描く関数",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.subplots",
+      "desc": "図と座標軸をまとめて用意する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.xlabel",
+      "desc": "横軸のラベルを設定する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.ylabel",
+      "desc": "縦軸のラベルを設定する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.title",
+      "desc": "グラフのタイトルを設定する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.legend",
+      "desc": "凡例を表示する関数",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.savefig",
+      "desc": "描いた図をファイルへ保存する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "plt.show",
+      "desc": "描いた図を画面に表示する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "sns.heatmap",
+      "desc": "行列の値を色の濃淡で可視化する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "sns.pairplot",
+      "desc": "列の組ごとの散布図を一覧で描く",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "sns.boxplot",
+      "desc": "箱ひげ図で分布を比較する",
+      "category": "pyml-viz"
+    },
+    {
+      "cmd": "train_test_split",
+      "desc": "データを学習用と評価用に分割する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "StandardScaler",
+      "desc": "平均 0・分散 1 に標準化する変換器",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "MinMaxScaler",
+      "desc": "指定範囲(0〜1 等)へ正規化する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "OneHotEncoder",
+      "desc": "カテゴリ値をダミー変数へ展開する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "LabelEncoder",
+      "desc": "カテゴリ値を整数ラベルへ変換する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "SimpleImputer",
+      "desc": "欠損値を平均等で補完する変換器",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "PolynomialFeatures",
+      "desc": "多項式・交互作用の特徴量を作る",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "ColumnTransformer",
+      "desc": "列ごとに異なる前処理を適用する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "Pipeline",
+      "desc": "前処理とモデルを 1 本の流れに束ねる",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "make_pipeline",
+      "desc": "パイプラインを簡潔に組み立てる",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "fit_transform",
+      "desc": "学習と変換をまとめて実行する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "transform",
+      "desc": "学習済みの変換をデータへ適用する",
+      "category": "pyml-preprocess"
+    },
+    {
+      "cmd": "LinearRegression",
+      "desc": "最小二乗法による線形回帰モデル",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "LogisticRegression",
+      "desc": "分類に使うロジスティック回帰",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "DecisionTreeClassifier",
+      "desc": "決定木による分類モデル",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "RandomForestClassifier",
+      "desc": "決定木を束ねたアンサンブル分類器",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "GradientBoostingClassifier",
+      "desc": "勾配ブースティングの分類器",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "SVC",
+      "desc": "サポートベクターマシンの分類器",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "KNeighborsClassifier",
+      "desc": "k 近傍法による分類器",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "KMeans",
+      "desc": "k 平均法によるクラスタリング",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "PCA",
+      "desc": "主成分分析による次元削減",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "fit",
+      "desc": "モデルをデータに当てはめて学習する",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "predict",
+      "desc": "学習済みモデルで予測値を出す",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "predict_proba",
+      "desc": "クラス所属確率を予測する",
+      "category": "pyml-models"
+    },
+    {
+      "cmd": "accuracy_score",
+      "desc": "正解率(精度)を計算する指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "precision_score",
+      "desc": "適合率を計算する指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "recall_score",
+      "desc": "再現率を計算する指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "f1_score",
+      "desc": "適合率と再現率の調和平均の指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "roc_auc_score",
+      "desc": "ROC 曲線の下面積を計算する指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "confusion_matrix",
+      "desc": "予測と正解の混同行列を作る",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "classification_report",
+      "desc": "主要な分類指標を一覧で出す",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "mean_squared_error",
+      "desc": "平均二乗誤差を計算する回帰指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "r2_score",
+      "desc": "決定係数 R2 を計算する回帰指標",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "cross_val_score",
+      "desc": "交差検証でスコアを繰り返し測る",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "GridSearchCV",
+      "desc": "格子探索でハイパーパラメータを選ぶ",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "RandomizedSearchCV",
+      "desc": "無作為探索でパラメータを選ぶ",
+      "category": "pyml-eval"
+    },
+    {
+      "cmd": "torch.tensor",
+      "desc": "データから PyTorch のテンソルを作る",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "torch.randn",
+      "desc": "標準正規乱数のテンソルを作る",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "torch.matmul",
+      "desc": "テンソルの行列積を計算する",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "unsqueeze",
+      "desc": "大きさ 1 の次元を挿入する",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "squeeze",
+      "desc": "大きさ 1 の次元を取り除く",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "view",
+      "desc": "メモリを共有したまま形を変える",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "to",
+      "desc": "テンソルをデバイスや型へ移す",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "cuda",
+      "desc": "GPU(CUDA)デバイスを使う指定",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "requires_grad",
+      "desc": "勾配計算の対象にするフラグ",
+      "category": "pyml-tensor"
+    },
+    {
+      "cmd": "nn.Module",
+      "desc": "モデルの基底クラス。層を組み合わせる",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "nn.Linear",
+      "desc": "全結合(線形変換)層",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "nn.Conv2d",
+      "desc": "2 次元の畳み込み層",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "nn.ReLU",
+      "desc": "負を 0 にする活性化関数の層",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "nn.Dropout",
+      "desc": "過学習を抑えるランダム無効化の層",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "nn.Embedding",
+      "desc": "整数 ID を密ベクトルへ変換する層",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "nn.LSTM",
+      "desc": "系列を扱う再帰型ネットワーク層",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "forward",
+      "desc": "モデルの順伝播を定義するメソッド",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "parameters",
+      "desc": "学習対象のパラメータ列を返す",
+      "category": "pyml-nn"
+    },
+    {
+      "cmd": "optim.Adam",
+      "desc": "適応的学習率の定番オプティマイザ",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "optim.SGD",
+      "desc": "確率的勾配降下法のオプティマイザ",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "backward",
+      "desc": "誤差逆伝播で勾配を計算する",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "zero_grad",
+      "desc": "蓄積された勾配をゼロに戻す",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "step",
+      "desc": "勾配に基づきパラメータを更新する",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "DataLoader",
+      "desc": "ミニバッチを順に供給する仕組み",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "Dataset",
+      "desc": "データ供給を抽象化する基底クラス",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "nn.CrossEntropyLoss",
+      "desc": "多クラス分類の定番損失関数",
+      "category": "pyml-train"
+    },
+    {
+      "cmd": "AutoTokenizer",
+      "desc": "モデルに合うトークナイザを自動で選ぶ",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "AutoModel",
+      "desc": "名前から事前学習モデルを自動で選ぶ",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "pipeline",
+      "desc": "推論タスクを 1 行で実行する高水準 API",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "generate",
+      "desc": "言語モデルでテキストを生成する",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "from_pretrained",
+      "desc": "公開済みの重みを読み込む",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "load_dataset",
+      "desc": "公開データセットを読み込む",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "Trainer",
+      "desc": "学習ループを肩代わりする高水準 API",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "TrainingArguments",
+      "desc": "Trainer の学習設定をまとめる",
+      "category": "pyml-transformers"
+    },
+    {
+      "cmd": "xgboost",
+      "desc": "定番の勾配ブースティングライブラリ",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "lightgbm",
+      "desc": "高速・省メモリな GBDT ライブラリ",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "catboost",
+      "desc": "カテゴリ変数に強い GBDT ライブラリ",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "XGBClassifier",
+      "desc": "XGBoost の分類器クラス",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "LGBMClassifier",
+      "desc": "LightGBM の分類器クラス",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "early_stopping",
+      "desc": "改善が止まったら学習を打ち切る",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "feature_importances_",
+      "desc": "特徴量の重要度を保持する属性",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "n_estimators",
+      "desc": "木の本数を決めるパラメータ",
+      "category": "pyml-gbdt"
+    },
+    {
+      "cmd": "mlflow",
+      "desc": "実験記録・モデル管理のプラットフォーム",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "optuna",
+      "desc": "ハイパーパラメータ自動最適化ライブラリ",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "joblib.dump",
+      "desc": "学習済みモデルをファイルへ保存する",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "joblib.load",
+      "desc": "保存したモデルを読み込む",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "onnx",
+      "desc": "モデル交換のためのオープン形式",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "tensorboard",
+      "desc": "学習経過を可視化するダッシュボード",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "wandb",
+      "desc": "実験管理・可視化のクラウドサービス",
+      "category": "pyml-ops"
+    },
+    {
+      "cmd": "gradio",
+      "desc": "モデルのデモ UI を素早く作るライブラリ",
+      "category": "pyml-ops"
+    }
+  ]
+}

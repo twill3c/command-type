@@ -35,6 +35,12 @@ const LEVEL_DESC: Record<TrackId, Record<PlayLevel, string>> = {
     advanced: "特殊メソッド・collections・型ヒント・非同期ほか 50 問",
     mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
   },
+  pyml: {
+    beginner: "NumPy・pandas の基本 50 問",
+    intermediate: "可視化・scikit-learn(前処理/モデル/評価)の 50 問",
+    advanced: "PyTorch・Transformers・GBDT・実験運用ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
   typescript: {
     beginner: "基本型・配列・文字列メソッドの基本 50 問",
     intermediate: "Object/JSON・非同期・クラス・コレクションの 50 問",
@@ -79,6 +85,7 @@ const TAGLINE: Record<TrackId, string> = {
   sql: "落ちてくる SQL:2023 のキーワード・関数を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   python:
     "落ちてくる Python の関数・メソッドを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  pyml: "落ちてくる Python 機械学習ライブラリの API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   typescript:
     "落ちてくる TypeScript の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   java: "落ちてくる Java の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",

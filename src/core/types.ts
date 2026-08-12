@@ -3,6 +3,7 @@ export type TrackId =
   | "linux"
   | "sql"
   | "python"
+  | "pyml"
   | "typescript"
   | "java"
   | "git"

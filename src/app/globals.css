@@ -221,6 +221,12 @@ button {
   --track-sub: #5dade2;
 }
 
+.track-pyml {
+  --track-main: #ee4c2c;
+  --track-fg: #000000;
+  --track-sub: #7f2a18;
+}
+
 .track-tabs {
   display: flex;
   flex-wrap: wrap;
