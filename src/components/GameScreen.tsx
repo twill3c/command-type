@@ -12,7 +12,7 @@ import {
   typeChar,
 } from "@/core/session";
 import type { SessionState } from "@/core/session";
-import type { PlayLevel } from "@/core/types";
+import type { PlayLevel, TrackId } from "@/core/types";
 import { keyToAction } from "@/lib/keys";
 import { isMuted, playClear, playDrop, playMissEnter, setMuted } from "@/lib/sound";
 import { browserStore } from "@/lib/storage";
@@ -24,16 +24,18 @@ import { FallingCommand } from "./FallingCommand";
  * 入力欄を持たないことで IME の介在を避ける(N-03)。
  */
 export function GameScreen({
+  track,
   level,
   seed,
   onFinish,
 }: {
+  track: TrackId;
   level: PlayLevel;
   seed: number;
   onFinish: (state: SessionState) => void;
 }) {
   const [state, setState] = useState<SessionState>(() =>
-    startSession(level, seed),
+    startSession(track, level, seed),
   );
   const [muted, setMutedState] = useState(false);
   useEffect(() => {

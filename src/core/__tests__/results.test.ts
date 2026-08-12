@@ -18,7 +18,7 @@ function typeString(state: SessionState, s: string): SessionState {
 
 describe("T-018: 結果集計(F-10)", () => {
   it("正確率: 正打鍵 / 総打鍵(前提検算: 期待値を計数から明示的に導出)", () => {
-    const s0 = startSession("beginner", SEED);
+    const s0 = startSession("linux", "beginner", SEED);
     const target = currentQuestion(s0)!.cmd;
     // 打鍵列: 誤打 1(空白は cmd 文字種に現れない)→ 不一致 Enter → Backspace →
     // 正打 len でクリア。Backspace は打鍵数に数えないため、
@@ -36,7 +36,7 @@ describe("T-018: 結果集計(F-10)", () => {
   });
 
   it("CPM: 正打鍵 / 経過分(前提検算: 経過 12 秒 = 0.2 分を tick で注入)", () => {
-    const s0 = startSession("beginner", SEED);
+    const s0 = startSession("linux", "beginner", SEED);
     const target = currentQuestion(s0)!.cmd;
     let s = tick(s0, 6000);
     s = tick(s, 6000); // 経過 12000ms(落下途中 — beginner 基準未満で落下しない)
@@ -46,13 +46,13 @@ describe("T-018: 結果集計(F-10)", () => {
   });
 
   it("打鍵ゼロ・経過ゼロの既定値(正確率 1・CPM 0)", () => {
-    const sum = summarize(startSession("beginner", SEED));
+    const sum = summarize(startSession("linux", "beginner", SEED));
     expect(sum.accuracy).toBe(1);
     expect(sum.cpm).toBe(0);
   });
 
   it("全出題一覧: クリアも含め出題順で attempted に載る(F-10)", () => {
-    const s0 = startSession("beginner", SEED);
+    const s0 = startSession("linux", "beginner", SEED);
     const first = currentQuestion(s0)!.cmd;
     let s = pressEnter(typeString(s0, first)); // 1 問目クリア
     const second = currentQuestion(s)!.cmd;
@@ -75,7 +75,7 @@ describe("T-018: 結果集計(F-10)", () => {
   });
 
   it("ミス一覧: 落下した出題が missed に載る", () => {
-    const s0 = startSession("beginner", SEED);
+    const s0 = startSession("linux", "beginner", SEED);
     const dropped = tick(s0, 60000); // 基準値超の経過で確実に落下
     const sum = summarize(dropped);
     expect(sum.missed.map((m) => m.question.cmd)).toContain(
