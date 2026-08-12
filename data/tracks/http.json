@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.15",
+  "track": {
+    "id": "http",
+    "name": "HTTP"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "http-methods",
+      "name": "メソッド・URL 基本",
+      "level": "beginner"
+    },
+    {
+      "id": "http-status",
+      "name": "ステータスコード",
+      "level": "beginner"
+    },
+    {
+      "id": "http-headers",
+      "name": "基本ヘッダ",
+      "level": "beginner"
+    },
+    {
+      "id": "http-cache",
+      "name": "キャッシュ",
+      "level": "intermediate"
+    },
+    {
+      "id": "http-security",
+      "name": "セキュリティヘッダ・脅威",
+      "level": "intermediate"
+    },
+    {
+      "id": "http-auth",
+      "name": "認証・認可",
+      "level": "intermediate"
+    },
+    {
+      "id": "http-protocol",
+      "name": "プロトコル進化",
+      "level": "intermediate"
+    },
+    {
+      "id": "http-content",
+      "name": "表現・エンコーディング",
+      "level": "advanced"
+    },
+    {
+      "id": "http-rest",
+      "name": "API 設計",
+      "level": "advanced"
+    },
+    {
+      "id": "http-url",
+      "name": "ドメイン・DNS",
+      "level": "advanced"
+    },
+    {
+      "id": "http-conn",
+      "name": "接続・性能",
+      "level": "advanced"
+    },
+    {
+      "id": "http-storage",
+      "name": "ブラウザ側 API",
+      "level": "advanced"
+    },
+    {
+      "id": "http-standards",
+      "name": "標準化・文書",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "GET",
+      "desc": "リソースを取得する安全なメソッド",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "POST",
+      "desc": "データを送信して処理を依頼する",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "PUT",
+      "desc": "リソースを丸ごと作成・置換する",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "DELETE",
+      "desc": "リソースを削除するメソッド",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "PATCH",
+      "desc": "リソースを部分的に更新する",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "HEAD",
+      "desc": "本文なしでヘッダだけ取得する",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "OPTIONS",
+      "desc": "利用可能なメソッド等を問い合わせる",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "TRACE",
+      "desc": "経路の診断用にリクエストを折り返す",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "CONNECT",
+      "desc": "プロキシ経由のトンネルを確立する",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "request",
+      "desc": "クライアントからサーバへの要求",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "response",
+      "desc": "サーバからクライアントへの応答",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "URL",
+      "desc": "リソースの場所を示す統一資源位置指定子",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "URI",
+      "desc": "リソースを識別する統一資源識別子",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "scheme",
+      "desc": "URL の先頭で通信方式を示す部分",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "origin",
+      "desc": "スキーム・ホスト・ポートの組",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "query",
+      "desc": "? 以降のキーと値のパラメータ部分",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "fragment",
+      "desc": "# 以降のページ内位置を示す部分",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "endpoint",
+      "desc": "API の機能ごとの接続先 URL",
+      "category": "http-methods"
+    },
+    {
+      "cmd": "200",
+      "desc": "OK。リクエスト成功の基本コード",
+      "category": "http-status"
+    },
+    {
+      "cmd": "201",
+      "desc": "Created。リソース作成に成功した",
+      "category": "http-status"
+    },
+    {
+      "cmd": "204",
+      "desc": "No Content。成功したが本文なし",
+      "category": "http-status"
+    },
+    {
+      "cmd": "301",
+      "desc": "Moved Permanently。恒久的な移転",
+      "category": "http-status"
+    },
+    {
+      "cmd": "302",
+      "desc": "Found。一時的なリダイレクト",
+      "category": "http-status"
+    },
+    {
+      "cmd": "304",
+      "desc": "Not Modified。キャッシュが有効",
+      "category": "http-status"
+    },
+    {
+      "cmd": "307",
+      "desc": "メソッドを保ったまま一時リダイレクト",
+      "category": "http-status"
+    },
+    {
+      "cmd": "400",
+      "desc": "Bad Request。リクエストが不正",
+      "category": "http-status"
+    },
+    {
+      "cmd": "401",
+      "desc": "Unauthorized。認証が必要",
+      "category": "http-status"
+    },
+    {
+      "cmd": "403",
+      "desc": "Forbidden。認証済みでも権限がない",
+      "category": "http-status"
+    },
+    {
+      "cmd": "404",
+      "desc": "Not Found。リソースが見つからない",
+      "category": "http-status"
+    },
+    {
+      "cmd": "405",
+      "desc": "Method Not Allowed。メソッド不許可",
+      "category": "http-status"
+    },
+    {
+      "cmd": "409",
+      "desc": "Conflict。リソースの競合が発生",
+      "category": "http-status"
+    },
+    {
+      "cmd": "429",
+      "desc": "Too Many Requests。リクエスト過多",
+      "category": "http-status"
+    },
+    {
+      "cmd": "500",
+      "desc": "Internal Server Error。サーバ内部エラー",
+      "category": "http-status"
+    },
+    {
+      "cmd": "502",
+      "desc": "Bad Gateway。中継先から不正な応答",
+      "category": "http-status"
+    },
+    {
+      "cmd": "503",
+      "desc": "Service Unavailable。一時的に利用不可",
+      "category": "http-status"
+    },
+    {
+      "cmd": "Content-Type",
+      "desc": "本文のメディア型を示すヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Content-Length",
+      "desc": "本文のバイト数を示すヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Accept",
+      "desc": "受け入れ可能なメディア型を伝える",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Accept-Language",
+      "desc": "希望する言語をサーバへ伝える",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Accept-Encoding",
+      "desc": "受け入れ可能な圧縮方式を伝える",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "User-Agent",
+      "desc": "クライアントの種類を示すヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Host",
+      "desc": "リクエスト先のホスト名を示す必須ヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Referer",
+      "desc": "遷移元ページの URL を伝えるヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Location",
+      "desc": "リダイレクト先を示す応答ヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Authorization",
+      "desc": "認証情報を運ぶリクエストヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Cookie",
+      "desc": "保存済みクッキーをサーバへ送るヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Set-Cookie",
+      "desc": "クッキーの保存を指示する応答ヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Date",
+      "desc": "メッセージの生成日時を示すヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Server",
+      "desc": "サーバソフトウェアを示す応答ヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Allow",
+      "desc": "許可されるメソッド一覧を示すヘッダ",
+      "category": "http-headers"
+    },
+    {
+      "cmd": "Cache-Control",
+      "desc": "キャッシュの可否・期間を制御するヘッダ",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "max-age",
+      "desc": "キャッシュの有効秒数を示すディレクティブ",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "no-cache",
+      "desc": "再検証なしの利用を禁じる指定",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "no-store",
+      "desc": "一切の保存を禁じる指定",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "must-revalidate",
+      "desc": "期限切れ後は必ず再検証させる指定",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "ETag",
+      "desc": "リソースの版を示す識別子ヘッダ",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "If-None-Match",
+      "desc": "ETag が変わったときだけ取得する",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "Last-Modified",
+      "desc": "最終更新日時を示す応答ヘッダ",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "If-Modified-Since",
+      "desc": "更新時のみ取得する条件付き要求",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "Expires",
+      "desc": "キャッシュの絶対期限を示す旧ヘッダ",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "Vary",
+      "desc": "キャッシュの鍵に含めるヘッダを指定",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "immutable",
+      "desc": "期間内は再検証不要と宣言する指定",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "stale-while-revalidate",
+      "desc": "再検証中も古い内容を出してよい指定",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "CDN",
+      "desc": "利用者の近くから配信するキャッシュ網",
+      "category": "http-cache"
+    },
+    {
+      "cmd": "CORS",
+      "desc": "オリジン間のリソース共有を制御する仕組み",
+      "category": "http-security"
+    },
+    {
+      "cmd": "CSP",
+      "desc": "読み込み可能な資源を制限するポリシー",
+      "category": "http-security"
+    },
+    {
+      "cmd": "HSTS",
+      "desc": "HTTPS の使用を強制するヘッダ",
+      "category": "http-security"
+    },
+    {
+      "cmd": "X-Frame-Options",
+      "desc": "iframe への埋め込みを制限するヘッダ",
+      "category": "http-security"
+    },
+    {
+      "cmd": "SameSite",
+      "desc": "クッキーのサイト間送信を制限する属性",
+      "category": "http-security"
+    },
+    {
+      "cmd": "HttpOnly",
+      "desc": "スクリプトからのクッキー参照を禁じる",
+      "category": "http-security"
+    },
+    {
+      "cmd": "Secure",
+      "desc": "HTTPS のときだけクッキーを送る属性",
+      "category": "http-security"
+    },
+    {
+      "cmd": "XSS",
+      "desc": "スクリプトを注入する攻撃の総称",
+      "category": "http-security"
+    },
+    {
+      "cmd": "CSRF",
+      "desc": "利用者の権限で偽リクエストを送る攻撃",
+      "category": "http-security"
+    },
+    {
+      "cmd": "clickjacking",
+      "desc": "透明な UI を重ねて誤クリックさせる攻撃",
+      "category": "http-security"
+    },
+    {
+      "cmd": "Referrer-Policy",
+      "desc": "遷移元情報の送信範囲を制御するヘッダ",
+      "category": "http-security"
+    },
+    {
+      "cmd": "SRI",
+      "desc": "外部資源の改ざんをハッシュで検知する",
+      "category": "http-security"
+    },
+    {
+      "cmd": "OAuth",
+      "desc": "第三者へ権限を安全に委譲する枠組み",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "JWT",
+      "desc": "署名付きのクレームを運ぶトークン形式",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "bearer",
+      "desc": "所持者を認可するトークンの提示方式",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "Basic",
+      "desc": "ID とパスワードを base64 で送る認証",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "OIDC",
+      "desc": "OAuth 上に認証を載せた標準",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "SSO",
+      "desc": "1 度のログインで複数サービスを使う仕組み",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "SAML",
+      "desc": "XML ベースの認証連携の標準",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "WWW-Authenticate",
+      "desc": "必要な認証方式を伝える応答ヘッダ",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "token",
+      "desc": "認証・認可の証となる文字列",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "refresh-token",
+      "desc": "アクセストークンを再発行するための鍵",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "session",
+      "desc": "サーバ側で状態を保持する仕組み",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "nonce",
+      "desc": "リプレイ攻撃を防ぐ使い捨ての値",
+      "category": "http-auth"
+    },
+    {
+      "cmd": "HTTP/1.1",
+      "desc": "持続接続を標準化した長寿命の版",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "HTTP/2",
+      "desc": "多重化とヘッダ圧縮を導入した版",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "HTTP/3",
+      "desc": "QUIC 上で動く最新の版",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "QUIC",
+      "desc": "UDP 上の高速トランスポートプロトコル",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "TLS",
+      "desc": "通信を暗号化するトランスポート層の仕組み",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "HTTPS",
+      "desc": "TLS で保護された HTTP",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "handshake",
+      "desc": "接続確立時の暗号・設定の交渉",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "ALPN",
+      "desc": "TLS 内でプロトコルを選ぶ拡張",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "multiplexing",
+      "desc": "1 接続で複数の要求を並行処理する",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "head-of-line",
+      "desc": "先頭の詰まりが後続を塞ぐ問題",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "WebSocket",
+      "desc": "双方向のリアルタイム通信プロトコル",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "SSE",
+      "desc": "サーバからの一方向イベント配信",
+      "category": "http-protocol"
+    },
+    {
+      "cmd": "JSON",
+      "desc": "API の事実上標準のデータ形式",
+      "category": "http-content"
+    },
+    {
+      "cmd": "gzip",
+      "desc": "広く使われる圧縮エンコーディング",
+      "category": "http-content"
+    },
+    {
+      "cmd": "brotli",
+      "desc": "高圧縮率の新しい圧縮方式",
+      "category": "http-content"
+    },
+    {
+      "cmd": "chunked",
+      "desc": "本文を分割して逐次転送する方式",
+      "category": "http-content"
+    },
+    {
+      "cmd": "multipart",
+      "desc": "複数パートを 1 つの本文で送る形式",
+      "category": "http-content"
+    },
+    {
+      "cmd": "form-urlencoded",
+      "desc": "フォーム送信の既定エンコード形式",
+      "category": "http-content"
+    },
+    {
+      "cmd": "base64",
+      "desc": "バイナリをテキストで表す符号化",
+      "category": "http-content"
+    },
+    {
+      "cmd": "charset",
+      "desc": "テキストの文字符号化方式の指定",
+      "category": "http-content"
+    },
+    {
+      "cmd": "UTF-8",
+      "desc": "Web の標準文字エンコーディング",
+      "category": "http-content"
+    },
+    {
+      "cmd": "REST",
+      "desc": "資源指向の API 設計原則",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "GraphQL",
+      "desc": "必要なデータを問い合わせで指定する API",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "idempotent",
+      "desc": "何度実行しても結果が同じ性質",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "safe",
+      "desc": "状態を変更しないメソッドの性質",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "stateless",
+      "desc": "各要求が独立して完結する性質",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "pagination",
+      "desc": "大量の結果をページに分けて返す設計",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "versioning",
+      "desc": "API の版を管理する設計",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "rate-limit",
+      "desc": "呼び出し回数に上限を設ける制御",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "webhook",
+      "desc": "イベント発生時に相手へ通知する仕組み",
+      "category": "http-rest"
+    },
+    {
+      "cmd": "domain",
+      "desc": "組織などを表す階層的な名前",
+      "category": "http-url"
+    },
+    {
+      "cmd": "subdomain",
+      "desc": "ドメインの下位区分の名前",
+      "category": "http-url"
+    },
+    {
+      "cmd": "TLD",
+      "desc": "com や jp などの最上位ドメイン",
+      "category": "http-url"
+    },
+    {
+      "cmd": "DNS",
+      "desc": "名前を IP アドレスへ解決する仕組み",
+      "category": "http-url"
+    },
+    {
+      "cmd": "port",
+      "desc": "ホスト内のサービスを区別する番号",
+      "category": "http-url"
+    },
+    {
+      "cmd": "path",
+      "desc": "ホスト内のリソース位置を示す部分",
+      "category": "http-url"
+    },
+    {
+      "cmd": "localhost",
+      "desc": "自分自身を指すホスト名",
+      "category": "http-url"
+    },
+    {
+      "cmd": "punycode",
+      "desc": "国際化ドメインを ASCII で表す符号化",
+      "category": "http-url"
+    },
+    {
+      "cmd": "keep-alive",
+      "desc": "接続を使い回して往復を減らす仕組み",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "latency",
+      "desc": "要求から応答までの遅延時間",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "RTT",
+      "desc": "往復にかかる時間(ラウンドトリップ)",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "preload",
+      "desc": "重要資源を先に読み込ませるヒント",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "preconnect",
+      "desc": "接続だけ先に確立しておくヒント",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "dns-prefetch",
+      "desc": "名前解決を先回りして行うヒント",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "redirect",
+      "desc": "別の URL へ誘導する応答",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "throughput",
+      "desc": "単位時間あたりの転送量",
+      "category": "http-conn"
+    },
+    {
+      "cmd": "localStorage",
+      "desc": "永続するオリジン別のキーバリュー保存",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "sessionStorage",
+      "desc": "タブを閉じると消える保存領域",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "IndexedDB",
+      "desc": "ブラウザ内の大容量データベース",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "CacheStorage",
+      "desc": "リクエスト応答の組を保存する API",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "ServiceWorker",
+      "desc": "ネットワークを仲介する常駐スクリプト",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "fetch",
+      "desc": "HTTP リクエストを送る標準 API",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "preflight",
+      "desc": "CORS の事前確認 OPTIONS リクエスト",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "beacon",
+      "desc": "離脱時にデータを確実に送る API",
+      "category": "http-storage"
+    },
+    {
+      "cmd": "RFC",
+      "desc": "インターネット標準を定める文書群",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "IETF",
+      "desc": "インターネット標準を策定する団体",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "W3C",
+      "desc": "Web 技術の標準化団体",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "WHATWG",
+      "desc": "HTML 等の生きた標準を管理する団体",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "MDN",
+      "desc": "Web 技術の事実上標準のリファレンス",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "RFC9110",
+      "desc": "HTTP の意味論を定める中心的文書",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "living-standard",
+      "desc": "常に更新され続ける標準の方式",
+      "category": "http-standards"
+    },
+    {
+      "cmd": "deprecation",
+      "desc": "機能の非推奨化と段階的廃止",
+      "category": "http-standards"
+    }
+  ]
+}
