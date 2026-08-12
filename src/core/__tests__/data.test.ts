@@ -190,7 +190,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "http-standards": { level: "advanced", count: 8 },
     },
   },
-  pyweb: undefined, // loop_034 で §4.16 の表を書き写す
+  pyweb: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.]+$/,
+    categories: {
+      "pyweb-fastapi": { level: "beginner", count: 18 },
+      "pyweb-pydantic": { level: "beginner", count: 17 },
+      "pyweb-django": { level: "beginner", count: 15 },
+      "pyweb-flask": { level: "intermediate", count: 14 },
+      "pyweb-sqlalchemy": { level: "intermediate", count: 12 },
+      "pyweb-async": { level: "intermediate", count: 12 },
+      "pyweb-auth": { level: "intermediate", count: 12 },
+      "pyweb-test": { level: "advanced", count: 9 },
+      "pyweb-tasks": { level: "advanced", count: 9 },
+      "pyweb-deploy": { level: "advanced", count: 8 },
+      "pyweb-api": { level: "advanced", count: 8 },
+      "pyweb-graphql": { level: "advanced", count: 8 },
+      "pyweb-frameworks": { level: "advanced", count: 8 },
+    },
+  },
   mcp: undefined, // loop_035 で §4.17 の表を書き写す
   pyauto: {
     total: 150,
