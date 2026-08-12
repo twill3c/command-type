@@ -228,7 +228,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "aws-analytics": { level: "advanced", count: 8 },
     },
   },
-  r: undefined, // loop_032 で §4.14 の表を書き写す
+  r: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.]+$/,
+    categories: {
+      "r-basic": { level: "beginner", count: 18 },
+      "r-dataframe": { level: "beginner", count: 17 },
+      "r-tidyverse": { level: "beginner", count: 15 },
+      "r-apply": { level: "intermediate", count: 14 },
+      "r-stats": { level: "intermediate", count: 12 },
+      "r-prob": { level: "intermediate", count: 12 },
+      "r-viz": { level: "intermediate", count: 12 },
+      "r-strings": { level: "advanced", count: 9 },
+      "r-model": { level: "advanced", count: 9 },
+      "r-report": { level: "advanced", count: 8 },
+      "r-data": { level: "advanced", count: 8 },
+      "r-env": { level: "advanced", count: 8 },
+      "r-struct": { level: "advanced", count: 8 },
+    },
+  },
   pyml: {
     total: 150,
     charset: /^[A-Za-z0-9_.]+$/,
