@@ -209,7 +209,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "pyweb-frameworks": { level: "advanced", count: 8 },
     },
   },
-  mcp: undefined, // loop_035 で §4.17 の表を書き写す
+  mcp: {
+    total: 150,
+    charset: /^[A-Za-z0-9/._-]+$/,
+    categories: {
+      "mcp-basic": { level: "beginner", count: 18 },
+      "mcp-lifecycle": { level: "beginner", count: 17 },
+      "mcp-jsonrpc": { level: "beginner", count: 15 },
+      "mcp-tools": { level: "intermediate", count: 14 },
+      "mcp-resources": { level: "intermediate", count: 12 },
+      "mcp-prompts": { level: "intermediate", count: 12 },
+      "mcp-sampling": { level: "intermediate", count: 12 },
+      "mcp-pysdk": { level: "advanced", count: 9 },
+      "mcp-tssdk": { level: "advanced", count: 9 },
+      "mcp-auth": { level: "advanced", count: 8 },
+      "mcp-clients": { level: "advanced", count: 8 },
+      "mcp-patterns": { level: "advanced", count: 8 },
+      "mcp-versions": { level: "advanced", count: 8 },
+    },
+  },
   pyauto: {
     total: 150,
     charset: /^[A-Za-z0-9_.]+$/,
