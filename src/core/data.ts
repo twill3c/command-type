@@ -5,6 +5,7 @@ import htmlcss from "../../data/tracks/htmlcss.json";
 import http from "../../data/tracks/http.json";
 import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
+import mcp from "../../data/tracks/mcp.json";
 import powershell from "../../data/tracks/powershell.json";
 import pyauto from "../../data/tracks/pyauto.json";
 import pyml from "../../data/tracks/pyml.json";
@@ -41,6 +42,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["http", http as Dataset],
   ["java", java as Dataset],
   ["pyweb", pyweb as Dataset],
+  ["mcp", mcp as Dataset],
   ["git", git as Dataset],
   ["docker", docker as Dataset],
   ["aws", aws as Dataset],

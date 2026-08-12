@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.17",
+  "track": {
+    "id": "mcp",
+    "name": "MCP"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "mcp-basic",
+      "name": "基本概念",
+      "level": "beginner"
+    },
+    {
+      "id": "mcp-lifecycle",
+      "name": "接続・ライフサイクル",
+      "level": "beginner"
+    },
+    {
+      "id": "mcp-jsonrpc",
+      "name": "JSON-RPC メッセージ",
+      "level": "beginner"
+    },
+    {
+      "id": "mcp-tools",
+      "name": "ツール",
+      "level": "intermediate"
+    },
+    {
+      "id": "mcp-resources",
+      "name": "リソース",
+      "level": "intermediate"
+    },
+    {
+      "id": "mcp-prompts",
+      "name": "プロンプト・コンテンツ",
+      "level": "intermediate"
+    },
+    {
+      "id": "mcp-sampling",
+      "name": "サンプリング・クライアント機能",
+      "level": "intermediate"
+    },
+    {
+      "id": "mcp-pysdk",
+      "name": "Python SDK",
+      "level": "advanced"
+    },
+    {
+      "id": "mcp-tssdk",
+      "name": "TypeScript SDK",
+      "level": "advanced"
+    },
+    {
+      "id": "mcp-auth",
+      "name": "認可・セキュリティ",
+      "level": "advanced"
+    },
+    {
+      "id": "mcp-clients",
+      "name": "ホスト・クライアント実装",
+      "level": "advanced"
+    },
+    {
+      "id": "mcp-patterns",
+      "name": "設計パターン",
+      "level": "advanced"
+    },
+    {
+      "id": "mcp-versions",
+      "name": "仕様・バージョン",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "MCP",
+      "desc": "LLM と外部機能をつなぐ標準プロトコル",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "server",
+      "desc": "ツール等の機能を提供する側のプロセス",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "client",
+      "desc": "サーバと 1 対 1 で接続する側の部品",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "host",
+      "desc": "クライアントを束ねる LLM アプリ本体",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "transport",
+      "desc": "メッセージを運ぶ通信層の総称",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "stdio",
+      "desc": "標準入出力で通信するトランスポート",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "streamable-http",
+      "desc": "HTTP 上で双方向に通信する方式",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "JSON-RPC",
+      "desc": "MCP の土台となる遠隔呼び出し規約",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "session",
+      "desc": "初期化から切断までの対話の単位",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "capability",
+      "desc": "対応機能を宣言し合う仕組み",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "protocolVersion",
+      "desc": "使用する仕様版を示すフィールド",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "tool",
+      "desc": "モデルが呼び出せる実行可能な機能",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "resource",
+      "desc": "モデルへ文脈として渡せるデータ",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "prompt",
+      "desc": "再利用できる指示テンプレート",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "sampling",
+      "desc": "サーバ側から LLM 生成を依頼する機能",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "roots",
+      "desc": "操作対象のディレクトリ境界を伝える機能",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "elicitation",
+      "desc": "サーバが利用者へ追加入力を求める機能",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "SDK",
+      "desc": "各言語向けの公式開発キット",
+      "category": "mcp-basic"
+    },
+    {
+      "cmd": "initialize",
+      "desc": "接続開始時に能力を交渉するリクエスト",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "initialized",
+      "desc": "初期化完了をサーバへ伝える通知",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "ping",
+      "desc": "接続の生存確認を行うリクエスト",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "clientInfo",
+      "desc": "クライアントの名前と版を伝える情報",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "serverInfo",
+      "desc": "サーバの名前と版を伝える情報",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "capabilities",
+      "desc": "initialize で交換する対応機能の宣言",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "instructions",
+      "desc": "サーバがモデルへ渡す利用上の指示",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "negotiation",
+      "desc": "版と機能のすり合わせの過程",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "notifications/initialized",
+      "desc": "初期化完了を知らせる正式な通知名",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "notifications/cancelled",
+      "desc": "リクエスト取り消しを知らせる通知",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "notifications/progress",
+      "desc": "長い処理の進捗を知らせる通知",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "progressToken",
+      "desc": "進捗通知を対応付けるトークン",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "cancellation",
+      "desc": "実行中リクエストの取り消しの仕組み",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "sessionId",
+      "desc": "HTTP 方式でセッションを識別する ID",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "reconnect",
+      "desc": "切断後に接続を張り直す処理",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "lastEventId",
+      "desc": "再接続時に続きから受け取るための ID",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "logging/setLevel",
+      "desc": "サーバのログ水準を変更するメソッド",
+      "category": "mcp-lifecycle"
+    },
+    {
+      "cmd": "jsonrpc",
+      "desc": "版(2.0)を示す必須フィールド",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "method",
+      "desc": "呼び出すメソッド名のフィールド",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "params",
+      "desc": "メソッドへの引数オブジェクト",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "id",
+      "desc": "要求と応答を対応付ける識別子",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "result",
+      "desc": "成功時の結果を運ぶフィールド",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "error",
+      "desc": "失敗時の詳細を運ぶフィールド",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "request",
+      "desc": "応答を要求するメッセージ種別",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "response",
+      "desc": "リクエストへの返答メッセージ",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "notification",
+      "desc": "応答不要の一方向メッセージ",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "code",
+      "desc": "エラー種別を示す整数コード",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "message",
+      "desc": "エラーの人間向け説明文",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "data",
+      "desc": "エラーの補足情報フィールド",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "batch",
+      "desc": "複数メッセージをまとめて送る形式",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "ParseError",
+      "desc": "JSON が壊れているときのエラー",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "MethodNotFound",
+      "desc": "未知のメソッドを呼んだときのエラー",
+      "category": "mcp-jsonrpc"
+    },
+    {
+      "cmd": "tools/list",
+      "desc": "利用可能なツールの一覧を取得する",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "tools/call",
+      "desc": "ツールを名前と引数で実行する",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "inputSchema",
+      "desc": "引数の形を定める JSON Schema",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "outputSchema",
+      "desc": "結果の形を定める JSON Schema",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "structuredContent",
+      "desc": "スキーマに沿った構造化された結果",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "isError",
+      "desc": "ツール実行の失敗を示すフラグ",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "annotations",
+      "desc": "ツールの性質を伝える注釈情報",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "readOnlyHint",
+      "desc": "環境を変更しないことを示すヒント",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "destructiveHint",
+      "desc": "破壊的な操作であり得るというヒント",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "idempotentHint",
+      "desc": "再実行しても安全というヒント",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "openWorldHint",
+      "desc": "外部世界と相互作用するというヒント",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "listChanged",
+      "desc": "一覧の変化を通知できるという宣言",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "title",
+      "desc": "人間向けの表示名フィールド",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "description",
+      "desc": "モデルが読む機能説明フィールド",
+      "category": "mcp-tools"
+    },
+    {
+      "cmd": "resources/list",
+      "desc": "リソースの一覧を取得するメソッド",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "resources/read",
+      "desc": "URI を指定して内容を読み取る",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "resources/subscribe",
+      "desc": "リソースの変更購読を開始する",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "resources/unsubscribe",
+      "desc": "リソースの変更購読を解除する",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "uri",
+      "desc": "リソースを一意に指す識別子",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "uriTemplate",
+      "desc": "パラメータ化された URI の雛形",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "mimeType",
+      "desc": "内容のメディア型を示すフィールド",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "blob",
+      "desc": "バイナリ内容を base64 で運ぶフィールド",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "contents",
+      "desc": "読み取り結果の内容リスト",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "resources/templates/list",
+      "desc": "URI テンプレートの一覧を取得する",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "notifications/resources/updated",
+      "desc": "購読中リソースの更新通知",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "EmbeddedResource",
+      "desc": "結果に埋め込まれたリソース型",
+      "category": "mcp-resources"
+    },
+    {
+      "cmd": "prompts/list",
+      "desc": "プロンプトの一覧を取得するメソッド",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "prompts/get",
+      "desc": "引数を渡してプロンプトを取得する",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "arguments",
+      "desc": "プロンプトが受け取る引数の宣言",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "messages",
+      "desc": "プロンプトが展開されるメッセージ列",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "role",
+      "desc": "メッセージの話者(user 等)を示す",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "user",
+      "desc": "利用者側の発話を表すロール",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "assistant",
+      "desc": "モデル側の発話を表すロール",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "TextContent",
+      "desc": "テキストのコンテンツ型",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "ImageContent",
+      "desc": "画像のコンテンツ型",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "AudioContent",
+      "desc": "音声のコンテンツ型",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "completion/complete",
+      "desc": "引数値の補完候補を取得するメソッド",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "PromptMessage",
+      "desc": "プロンプト内の 1 メッセージの型",
+      "category": "mcp-prompts"
+    },
+    {
+      "cmd": "sampling/createMessage",
+      "desc": "サーバから LLM 生成を依頼するメソッド",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "modelPreferences",
+      "desc": "モデル選択の優先度指定",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "costPriority",
+      "desc": "費用の安さを優先する度合い",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "speedPriority",
+      "desc": "応答速度を優先する度合い",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "intelligencePriority",
+      "desc": "賢さを優先する度合い",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "maxTokens",
+      "desc": "生成の最大トークン数の指定",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "stopSequences",
+      "desc": "生成を打ち切る文字列の指定",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "systemPrompt",
+      "desc": "生成に添えるシステム指示",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "includeContext",
+      "desc": "どの範囲の文脈を含めるかの指定",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "roots/list",
+      "desc": "クライアントへルート一覧を求める",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "elicitation/create",
+      "desc": "利用者への構造化質問を発行する",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "requestedSchema",
+      "desc": "求める回答の形を定めるスキーマ",
+      "category": "mcp-sampling"
+    },
+    {
+      "cmd": "FastMCP",
+      "desc": "デコレータで書ける Python の高水準 API",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "mcp.tool",
+      "desc": "関数をツールとして公開するデコレータ",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "mcp.resource",
+      "desc": "関数をリソースとして公開するデコレータ",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "mcp.prompt",
+      "desc": "関数をプロンプトとして公開するデコレータ",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "Context",
+      "desc": "進捗報告等の機能へ触るハンドル",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "report_progress",
+      "desc": "実行中の進捗を通知するメソッド",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "read_resource",
+      "desc": "サーバ内から他リソースを読む",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "run",
+      "desc": "サーバを起動するエントリポイント",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "ClientSession",
+      "desc": "Python 側のクライアント接続クラス",
+      "category": "mcp-pysdk"
+    },
+    {
+      "cmd": "McpServer",
+      "desc": "TypeScript の高水準サーバクラス",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "registerTool",
+      "desc": "ツールを登録するメソッド",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "registerResource",
+      "desc": "リソースを登録するメソッド",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "registerPrompt",
+      "desc": "プロンプトを登録するメソッド",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "StdioServerTransport",
+      "desc": "stdio 通信のトランスポート実装",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "StreamableHTTPServerTransport",
+      "desc": "HTTP 通信のトランスポート実装",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "connect",
+      "desc": "サーバとトランスポートを接続する",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "ResourceTemplate",
+      "desc": "URI テンプレートを表すクラス",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "CallToolResult",
+      "desc": "ツール実行結果の型",
+      "category": "mcp-tssdk"
+    },
+    {
+      "cmd": "authorization",
+      "desc": "HTTP 方式で使う認可の枠組み",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "OAuth",
+      "desc": "MCP の認可が準拠する標準",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "bearer",
+      "desc": "アクセストークンの提示方式",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "PKCE",
+      "desc": "認可コード横取りを防ぐ拡張",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "scopes",
+      "desc": "許可する操作範囲の宣言",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "audience",
+      "desc": "トークンの宛先を限定する指定",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "consent",
+      "desc": "利用者による明示的な同意",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "confused-deputy",
+      "desc": "権限の踏み台化を招く脆弱性の類型",
+      "category": "mcp-auth"
+    },
+    {
+      "cmd": "mcp-inspector",
+      "desc": "サーバを対話検証する公式デバッグ UI",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "claude_desktop_config.json",
+      "desc": "Claude Desktop のサーバ設定ファイル",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "mcpServers",
+      "desc": "設定ファイル内のサーバ定義キー",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "command",
+      "desc": "サーバの起動コマンドを指定する項目",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "args",
+      "desc": "起動コマンドへ渡す引数の項目",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "env",
+      "desc": "サーバへ渡す環境変数の項目",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "registry",
+      "desc": "公開サーバを探せる公式レジストリ",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "connector",
+      "desc": "ホストに組み込まれた接続機能の呼び名",
+      "category": "mcp-clients"
+    },
+    {
+      "cmd": "gateway",
+      "desc": "複数サーバを 1 窓口に束ねる構成",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "proxy",
+      "desc": "間に入って中継・変換する構成",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "federation",
+      "desc": "組織間でサーバを連携させる構成",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "sandboxing",
+      "desc": "実行環境を隔離して被害を限定する",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "composability",
+      "desc": "サーバ同士を組み合わせられる性質",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "human-in-the-loop",
+      "desc": "重要操作に人間の承認を挟む設計",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "rate-limiting",
+      "desc": "呼び出し頻度に上限を設ける防御",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "allowlist",
+      "desc": "許可対象を明示列挙する方式",
+      "category": "mcp-patterns"
+    },
+    {
+      "cmd": "2025-06-18",
+      "desc": "構造化出力・elicitation 等を含む版",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "2024-11-05",
+      "desc": "初期に広く実装された仕様版",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "draft",
+      "desc": "策定中の次期仕様の呼び名",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "changelog",
+      "desc": "版ごとの変更点をまとめた文書",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "deprecated",
+      "desc": "非推奨となった機能の印",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "backwards-compatible",
+      "desc": "旧版クライアントとも動く互換性",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "modelcontextprotocol.io",
+      "desc": "仕様と文書の公式サイト",
+      "category": "mcp-versions"
+    },
+    {
+      "cmd": "specification",
+      "desc": "プロトコルの正式な仕様文書",
+      "category": "mcp-versions"
+    }
+  ]
+}
