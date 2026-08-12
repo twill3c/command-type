@@ -4,7 +4,7 @@
 
 上記ハーネスがこのリポジトリの正本ルール。要点のみ再掲する:
 
-- 仕様の正本は SPEC.md、出題データの正本は `data/commands.json`(配分は SPEC §4)。
+- 仕様の正本は SPEC.md、出題データの正本は `data/tracks/{track}.json`(配分は SPEC §4)。
   変更は スペック → テスト → 実装(データ)の順。
 - すべてのタスクは 7 段階ループプロトコル(AGENTS.md 末尾の共通規律)で進め、
   `python harness/looplog.py append` で `logs/loops/{loop_id}.jsonl` に記録する。

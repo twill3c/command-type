@@ -29,7 +29,7 @@ npm run verify    # 完了条件(typecheck + lint + test + build)
 ```
 
 仕様の正本は [SPEC.md](SPEC.md)、テスト仕様は [TEST_SPEC.md](TEST_SPEC.md)、
-出題データの正本は [data/commands.json](data/commands.json)。
+出題データの正本は [data/tracks/](data/tracks/) のトラック別 JSON。
 
 ## 実装フェーズ
 
