@@ -133,6 +133,24 @@ button {
   text-align: center;
 }
 
+/* ---------- ライセンス表記フッター(F-16) ---------- */
+
+.app-footer {
+  text-align: center;
+  padding: 20px 0 14px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.app-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.app-footer a:hover {
+  color: var(--text);
+}
+
 /* ---------- レベル選択(F-02 / F-12 / F-15) ---------- */
 
 .select {
