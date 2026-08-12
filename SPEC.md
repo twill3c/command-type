@@ -10,8 +10,9 @@ Linux コマンド・Python・TypeScript のタイピング練習ゲーム(多�
 
 Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/API を
 「落ちものゲーム × タイピング」の形式で楽しく反復学習する Web アプリを提供する。
-出題は**トラック**(学習科目)単位で選ぶ。トラックは `linux` / `python` / `typescript` /
-`java` / `git` / `docker` / `htmlcss` / `powershell` の 8 つ(P9 で 5 トラック追加)。
+出題は**トラック**(学習科目)単位で選ぶ。トラックは `linux` / `sql` / `python` / `typescript` /
+`java` / `git` / `docker` / `htmlcss` / `powershell` の 9 つ(P9 で 5 つ、P10 で sql を追加)。
+トラック選択タブの表示順もこの並びとする(sql は linux と python の間 — 2026-08-12 人間指示)。
 出題文字列を打鍵しながら、短い解説文とカテゴリ名を同時に目にすることで、
 タイピング練習と知識の定着を一度に実現する。
 
@@ -210,6 +211,29 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | 上級 | `ps-remote` | リモート管理 | 8 |
 | 上級 | `ps-winadmin` | Windows 管理 | 8 |
 
+### 4.9 トラック `sql`(SQL:2023 標準)— 150 件
+
+出題は ISO/IEC 9075(SQL:2023)の予約語・組み込み関数の**単語型・小文字表記**
+(照合が大文字小文字を区別するため、打鍵も小文字。2026-08-12 人間指示)。
+複数語キーワード(GROUP BY 等)はスペースが打鍵不可のため主要 1 語で代表し、
+解説文で組み合わせを補足する。ベンダー固有語(LIMIT 等)は採録しない。
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `sql-select` | 問い合わせの基本 | 18 |
+| 初級 | `sql-aggregate` | 集計・グループ化 | 17 |
+| 初級 | `sql-dml` | データ操作 | 15 |
+| 中級 | `sql-join` | 結合・集合演算 | 14 |
+| 中級 | `sql-types` | データ型 | 12 |
+| 中級 | `sql-func` | 文字列・数値関数 | 12 |
+| 中級 | `sql-datetime` | 日付・時刻 | 12 |
+| 上級 | `sql-window` | ウィンドウ関数 | 9 |
+| 上級 | `sql-ddl` | テーブル定義・制約 | 9 |
+| 上級 | `sql-cte` | CTE・条件式 | 8 |
+| 上級 | `sql-json` | JSON(SQL:2023) | 8 |
+| 上級 | `sql-pgq` | プロパティグラフ(SQL/PGQ) | 8 |
+| 上級 | `sql-tx` | トランザクション・権限 | 8 |
+
 各表の集計: 初級 50 / 中級 50 / 上級 50 = 150。
 
 ## 5. 品質基準
@@ -220,6 +244,7 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
   `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別:
   linux: `[a-z0-9+._-]+` / python・typescript・java: `[A-Za-z0-9_.]+` /
   git・docker: `[A-Za-z0-9+._-]+` / htmlcss: `[a-z0-9-]+` / powershell: `[A-Za-z0-9-]+` /
+  sql: `[a-z0-9_]+` /
   `desc` は 8〜40 文字の日本語解説
 - `desc` は本プロジェクトのための**書き下ろしオリジナル文**に限る。既存文書
   (man ページ・docs.python.org・MDN・TypeScript Handbook 等)からの転載・翻訳流用を
@@ -240,7 +265,8 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | P6 | TypeScript トラック: §4.3 の配分でデータ 150 件 | 完了(loop_016) |
 | P7 | トラック選択 UI(F-15)+ ハイスコアのトラック×モード化・旧キー読み継ぎ(F-12 改訂) | 完了(loop_017) |
 | P8 | データ出典の文書化(§5 転載禁止規約・docs/data-provenance.md)+ 全画面の MIT ライセンス表記(F-16) | 完了(loop_019〜021) |
-| P9 | 追加 5 トラック: java(§4.4)・git(§4.5)・docker(§4.6)・htmlcss(§4.7)・powershell(§4.8)、各 150 件 + 基調色(§7.1) | 本ループ群(loop_022〜026) |
+| P9 | 追加 5 トラック: java(§4.4)・git(§4.5)・docker(§4.6)・htmlcss(§4.7)・powershell(§4.8)、各 150 件 + 基調色(§7.1) | 完了(loop_022〜026) |
+| P10 | SQL:2023 トラック(§4.9): 150 件・小文字表記・タブ位置は linux と python の間 | 本ループ(loop_027) |
 
 ## 7. デザイン(視覚仕様)
 
@@ -290,6 +316,10 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | docker | `#2496ED`(Docker ブルー) | `#1A1A1A` | `#326CE5`(Kubernetes ブルー) |
 | htmlcss | `#E34F26`(HTML5 オレンジ) | `#000000` | `#1572B6`(CSS3 ブルー) |
 | powershell | `#012456`(PowerShell 紺) | `#FFFFFF` | `#5391FE`(ライトブルー) |
+| sql | `#1A5276`(ディープブルー) | `#FFFFFF` | `#5DADE2`(ライトブルー) |
+
+SQL は ISO 標準でありコミュニティ共通のブランド色が存在しないため、
+データベースの定番連想色であるディープブルーを採用(2026-08-12 人間指示で確定)。
 
 git・docker・htmlcss の main 上に白文字を置くとコントラスト比が 4.5:1 を下回るため
 (git 橙×白 ≈ 3.6)、文字色は黒系とする(§7 コントラスト規定)。
