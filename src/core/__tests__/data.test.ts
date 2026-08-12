@@ -57,6 +57,29 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "py-dev-tools": { level: "advanced", count: 8 },
     },
   },
+  java: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.]+$/,
+    categories: {
+      "java-basic": { level: "beginner", count: 18 },
+      "java-string": { level: "beginner", count: 17 },
+      "java-collections": { level: "beginner", count: 15 },
+      "java-oop": { level: "intermediate", count: 14 },
+      "java-exception": { level: "intermediate", count: 12 },
+      "java-stream": { level: "intermediate", count: 12 },
+      "java-util": { level: "intermediate", count: 12 },
+      "java-concurrent": { level: "advanced", count: 9 },
+      "java-interface": { level: "advanced", count: 9 },
+      "java-io": { level: "advanced", count: 8 },
+      "java-time": { level: "advanced", count: 8 },
+      "java-modern": { level: "advanced", count: 8 },
+      "java-tools": { level: "advanced", count: 8 },
+    },
+  },
+  git: undefined, // loop_023 で §4.5 の表を書き写す
+  docker: undefined, // loop_024 で §4.6 の表を書き写す
+  htmlcss: undefined, // loop_025 で §4.7 の表を書き写す
+  powershell: undefined, // loop_026 で §4.8 の表を書き写す
   typescript: {
     total: 150,
     charset: /^[A-Za-z0-9_.]+$/,
