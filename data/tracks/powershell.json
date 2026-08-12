@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.8",
+  "track": {
+    "id": "powershell",
+    "name": "PowerShell"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "ps-basic",
+      "name": "基本コマンドレット",
+      "level": "beginner"
+    },
+    {
+      "id": "ps-pipeline",
+      "name": "パイプライン・整形",
+      "level": "beginner"
+    },
+    {
+      "id": "ps-syntax",
+      "name": "構文・制御フロー",
+      "level": "beginner"
+    },
+    {
+      "id": "ps-system",
+      "name": "システム管理",
+      "level": "intermediate"
+    },
+    {
+      "id": "ps-net",
+      "name": "ネットワーク・Web",
+      "level": "intermediate"
+    },
+    {
+      "id": "ps-data",
+      "name": "データ処理",
+      "level": "intermediate"
+    },
+    {
+      "id": "ps-env",
+      "name": "環境・モジュール",
+      "level": "intermediate"
+    },
+    {
+      "id": "ps-object",
+      "name": "オブジェクト・型",
+      "level": "advanced"
+    },
+    {
+      "id": "ps-script",
+      "name": "スクリプティング",
+      "level": "advanced"
+    },
+    {
+      "id": "ps-security",
+      "name": "セキュリティ",
+      "level": "advanced"
+    },
+    {
+      "id": "ps-job",
+      "name": "ジョブ・並列",
+      "level": "advanced"
+    },
+    {
+      "id": "ps-remote",
+      "name": "リモート管理",
+      "level": "advanced"
+    },
+    {
+      "id": "ps-winadmin",
+      "name": "Windows 管理",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "Get-ChildItem",
+      "desc": "ディレクトリの項目一覧を取得する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Set-Location",
+      "desc": "カレントディレクトリを移動する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Get-Location",
+      "desc": "現在の作業ディレクトリを表示する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Get-Content",
+      "desc": "ファイルの内容を読み取る",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Set-Content",
+      "desc": "ファイルへ内容を書き込む(上書き)",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Add-Content",
+      "desc": "ファイルの末尾に内容を追記する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Copy-Item",
+      "desc": "ファイルやフォルダをコピーする",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Move-Item",
+      "desc": "ファイルやフォルダを移動する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Remove-Item",
+      "desc": "ファイルやフォルダを削除する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "New-Item",
+      "desc": "ファイルやフォルダを新規作成する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Rename-Item",
+      "desc": "ファイルやフォルダの名前を変える",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Test-Path",
+      "desc": "パスが存在するかを判定する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Clear-Host",
+      "desc": "コンソール画面の表示を消去する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Get-Help",
+      "desc": "コマンドレットのヘルプを表示する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Get-Command",
+      "desc": "使えるコマンドを検索・一覧する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Get-Alias",
+      "desc": "定義済みのエイリアスを一覧する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Write-Output",
+      "desc": "値をパイプラインへ出力する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Write-Host",
+      "desc": "コンソールへ直接文字を表示する",
+      "category": "ps-basic"
+    },
+    {
+      "cmd": "Select-Object",
+      "desc": "オブジェクトのプロパティを選び出す",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Where-Object",
+      "desc": "条件を満たすオブジェクトだけ通す",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "ForEach-Object",
+      "desc": "各オブジェクトへ処理を適用する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Sort-Object",
+      "desc": "プロパティ値で並べ替える",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Measure-Object",
+      "desc": "件数・合計・平均などを集計する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Group-Object",
+      "desc": "プロパティ値でグループ化する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Format-Table",
+      "desc": "結果を表形式で整形表示する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Format-List",
+      "desc": "結果を一覧形式で整形表示する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Out-File",
+      "desc": "出力をファイルへ書き出す",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Out-Null",
+      "desc": "出力を捨てて表示しない",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Out-String",
+      "desc": "オブジェクトを文字列表現へ変換する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Tee-Object",
+      "desc": "出力を保存しつつ次へも流す",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Compare-Object",
+      "desc": "2 つのオブジェクト集合の差を取る",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Get-Member",
+      "desc": "オブジェクトのプロパティ・メソッドを見る",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "Select-String",
+      "desc": "テキストからパターンを検索する",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "ConvertTo-Json",
+      "desc": "オブジェクトを JSON 文字列へ変換",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "ConvertFrom-Json",
+      "desc": "JSON 文字列をオブジェクトへ変換",
+      "category": "ps-pipeline"
+    },
+    {
+      "cmd": "function",
+      "desc": "再利用可能な関数を定義するキーワード",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "param",
+      "desc": "関数やスクリプトの引数を宣言する",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "return",
+      "desc": "関数から値を返して抜ける",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "if",
+      "desc": "条件が真のとき処理を実行する",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "else",
+      "desc": "if の条件が偽のときの分岐",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "elseif",
+      "desc": "if に続く追加の条件分岐",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "foreach",
+      "desc": "コレクションを順に処理する構文",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "while",
+      "desc": "条件が真の間繰り返す構文",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "switch",
+      "desc": "値に応じて多分岐する構文",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "try",
+      "desc": "例外が起こり得る処理ブロックを開始",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "catch",
+      "desc": "発生した例外を捕捉して処理する",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "finally",
+      "desc": "例外の有無によらず必ず実行される節",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "throw",
+      "desc": "例外を明示的に発生させる",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "break",
+      "desc": "ループや switch を途中で抜ける",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "continue",
+      "desc": "ループの残りを飛ばして次の周回へ",
+      "category": "ps-syntax"
+    },
+    {
+      "cmd": "Get-Process",
+      "desc": "実行中のプロセス一覧を取得する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Stop-Process",
+      "desc": "プロセスを強制終了する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Start-Process",
+      "desc": "新しいプロセスを起動する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Get-Service",
+      "desc": "サービスの一覧と状態を取得する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Start-Service",
+      "desc": "停止中のサービスを開始する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Stop-Service",
+      "desc": "実行中のサービスを停止する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Restart-Service",
+      "desc": "サービスを再起動する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Get-WinEvent",
+      "desc": "イベントログを取得・検索する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Get-Date",
+      "desc": "現在の日時を取得する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Get-Random",
+      "desc": "乱数や無作為抽出を生成する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Start-Sleep",
+      "desc": "指定した時間だけ処理を止める",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Get-Uptime",
+      "desc": "システムの稼働時間を取得する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Get-Clipboard",
+      "desc": "クリップボードの内容を取得する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Restart-Computer",
+      "desc": "コンピュータを再起動する",
+      "category": "ps-system"
+    },
+    {
+      "cmd": "Invoke-WebRequest",
+      "desc": "HTTP リクエストを送り応答を得る",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Invoke-RestMethod",
+      "desc": "REST API を呼び結果を変換して得る",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Test-Connection",
+      "desc": "ping で疎通確認を行う",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Test-NetConnection",
+      "desc": "ポート指定込みで接続性を診断する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Resolve-DnsName",
+      "desc": "DNS で名前解決を行う",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Get-NetIPAddress",
+      "desc": "ネットワーク IF の IP 設定を取得",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Get-NetTCPConnection",
+      "desc": "TCP 接続の一覧を取得する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Get-NetAdapter",
+      "desc": "ネットワークアダプタを一覧する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Get-NetRoute",
+      "desc": "ルーティングテーブルを取得する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "New-NetFirewallRule",
+      "desc": "ファイアウォール規則を作成する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Get-DnsClientCache",
+      "desc": "DNS キャッシュの内容を表示する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Get-SmbShare",
+      "desc": "SMB 共有の一覧を取得する",
+      "category": "ps-net"
+    },
+    {
+      "cmd": "Import-Csv",
+      "desc": "CSV を読み込みオブジェクト化する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Export-Csv",
+      "desc": "オブジェクトを CSV へ書き出す",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "ConvertTo-Csv",
+      "desc": "オブジェクトを CSV 文字列へ変換",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "ConvertFrom-Csv",
+      "desc": "CSV 文字列をオブジェクトへ変換",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Import-Clixml",
+      "desc": "保存済みオブジェクトを復元する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Export-Clixml",
+      "desc": "オブジェクトを XML で保存する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "ConvertTo-Html",
+      "desc": "結果を HTML 表へ変換する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Get-FileHash",
+      "desc": "ファイルのハッシュ値を計算する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Compress-Archive",
+      "desc": "ファイル群を ZIP に圧縮する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Expand-Archive",
+      "desc": "ZIP アーカイブを展開する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "ConvertTo-Xml",
+      "desc": "オブジェクトを XML 表現へ変換する",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Get-Unique",
+      "desc": "整列済みの入力から重複を除く",
+      "category": "ps-data"
+    },
+    {
+      "cmd": "Get-Module",
+      "desc": "読み込み済み・利用可能なモジュール一覧",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Import-Module",
+      "desc": "モジュールをセッションへ読み込む",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Install-Module",
+      "desc": "ギャラリーからモジュールを導入する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Find-Module",
+      "desc": "ギャラリーでモジュールを検索する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Update-Module",
+      "desc": "導入済みモジュールを更新する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Get-PSDrive",
+      "desc": "ドライブ(FS/レジストリ等)を一覧する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "New-PSDrive",
+      "desc": "新しいドライブ割り当てを作る",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Get-Variable",
+      "desc": "セッション内の変数を一覧・取得する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Set-Variable",
+      "desc": "変数に値を設定する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Get-History",
+      "desc": "実行したコマンドの履歴を表示する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Invoke-History",
+      "desc": "履歴のコマンドを再実行する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "Get-ExecutionPolicy",
+      "desc": "スクリプト実行ポリシーを確認する",
+      "category": "ps-env"
+    },
+    {
+      "cmd": "New-Object",
+      "desc": ".NET オブジェクトを生成する",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Add-Member",
+      "desc": "オブジェクトへプロパティ等を追加する",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Add-Type",
+      "desc": "C# 定義や .NET 型を読み込む",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "pscustomobject",
+      "desc": "任意のプロパティを持つ軽量オブジェクト",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "hashtable",
+      "desc": "キーと値の組を保持する連想配列",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Select-Xml",
+      "desc": "XPath で XML から要素を抽出する",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Update-TypeData",
+      "desc": "型の表示・拡張定義を更新する",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Get-TypeData",
+      "desc": "型の拡張定義を取得する",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Out-GridView",
+      "desc": "結果を GUI の表で対話的に見る",
+      "category": "ps-object"
+    },
+    {
+      "cmd": "Set-StrictMode",
+      "desc": "未定義変数などを厳格に検査する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Write-Verbose",
+      "desc": "詳細ログを -Verbose 時に出力する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Write-Debug",
+      "desc": "デバッグ用メッセージを出力する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Write-Warning",
+      "desc": "警告メッセージを出力する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Write-Error",
+      "desc": "エラーを報告する(継続可能)",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Write-Progress",
+      "desc": "進捗バーを表示する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Read-Host",
+      "desc": "ユーザーからの入力を読み取る",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Start-Transcript",
+      "desc": "セッションの記録を開始する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Stop-Transcript",
+      "desc": "セッションの記録を終了する",
+      "category": "ps-script"
+    },
+    {
+      "cmd": "Get-Credential",
+      "desc": "資格情報を安全に入力させて得る",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Get-Acl",
+      "desc": "ファイル等のアクセス制御リストを取得",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Set-Acl",
+      "desc": "アクセス制御リストを設定する",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Set-ExecutionPolicy",
+      "desc": "スクリプト実行ポリシーを変更する",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Unblock-File",
+      "desc": "ダウンロード由来のブロックを解除する",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "ConvertTo-SecureString",
+      "desc": "文字列を保護された文字列へ変換",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Get-AuthenticodeSignature",
+      "desc": "ファイルの署名情報を取得する",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Set-AuthenticodeSignature",
+      "desc": "スクリプトにデジタル署名する",
+      "category": "ps-security"
+    },
+    {
+      "cmd": "Start-Job",
+      "desc": "コマンドをバックグラウンドで実行する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Get-Job",
+      "desc": "バックグラウンドジョブを一覧する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Receive-Job",
+      "desc": "ジョブの出力結果を受け取る",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Wait-Job",
+      "desc": "ジョブの完了を待機する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Stop-Job",
+      "desc": "実行中のジョブを停止する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Remove-Job",
+      "desc": "終了したジョブを削除する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Start-ThreadJob",
+      "desc": "軽量なスレッドジョブを開始する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Register-ScheduledJob",
+      "desc": "スケジュール実行ジョブを登録する",
+      "category": "ps-job"
+    },
+    {
+      "cmd": "Invoke-Command",
+      "desc": "リモートやジョブでコマンドを実行する",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Enter-PSSession",
+      "desc": "対話型リモートセッションへ入る",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Exit-PSSession",
+      "desc": "対話型リモートセッションから出る",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "New-PSSession",
+      "desc": "永続的なリモートセッションを作る",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Get-PSSession",
+      "desc": "作成済みセッションを一覧する",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Remove-PSSession",
+      "desc": "リモートセッションを破棄する",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Import-PSSession",
+      "desc": "リモートのコマンドを手元へ取り込む",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Enable-PSRemoting",
+      "desc": "リモート接続の受け入れを有効化する",
+      "category": "ps-remote"
+    },
+    {
+      "cmd": "Get-CimInstance",
+      "desc": "WMI/CIM からシステム情報を取得する",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "Invoke-CimMethod",
+      "desc": "CIM クラスのメソッドを呼び出す",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "Get-HotFix",
+      "desc": "適用済み更新プログラムを一覧する",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "Get-ComputerInfo",
+      "desc": "OS・ハードウェア情報をまとめて取得",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "Get-LocalUser",
+      "desc": "ローカルユーザーを一覧する",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "New-LocalUser",
+      "desc": "ローカルユーザーを作成する",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "Get-LocalGroup",
+      "desc": "ローカルグループを一覧する",
+      "category": "ps-winadmin"
+    },
+    {
+      "cmd": "Add-LocalGroupMember",
+      "desc": "ローカルグループへメンバーを追加",
+      "category": "ps-winadmin"
+    }
+  ]
+}

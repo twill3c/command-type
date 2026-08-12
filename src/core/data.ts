@@ -3,6 +3,7 @@ import git from "../../data/tracks/git.json";
 import htmlcss from "../../data/tracks/htmlcss.json";
 import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
+import powershell from "../../data/tracks/powershell.json";
 import python from "../../data/tracks/python.json";
 import typescript from "../../data/tracks/typescript.json";
 import type {
@@ -27,6 +28,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["git", git as Dataset],
   ["docker", docker as Dataset],
   ["htmlcss", htmlcss as Dataset],
+  ["powershell", powershell as Dataset],
 ]);
 
 function trackDataset(track: TrackId): Dataset {
