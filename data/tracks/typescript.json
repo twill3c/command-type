@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.3",
+  "track": {
+    "id": "typescript",
+    "name": "TypeScript"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "ts-types",
+      "name": "基本型・宣言",
+      "level": "beginner"
+    },
+    {
+      "id": "ts-array",
+      "name": "配列メソッド",
+      "level": "beginner"
+    },
+    {
+      "id": "ts-string",
+      "name": "文字列メソッド",
+      "level": "beginner"
+    },
+    {
+      "id": "ts-object",
+      "name": "Object・JSON",
+      "level": "intermediate"
+    },
+    {
+      "id": "ts-async",
+      "name": "非同期処理",
+      "level": "intermediate"
+    },
+    {
+      "id": "ts-class",
+      "name": "クラス・モジュール",
+      "level": "intermediate"
+    },
+    {
+      "id": "ts-collection",
+      "name": "コレクション・イテレーション",
+      "level": "intermediate"
+    },
+    {
+      "id": "ts-utility",
+      "name": "ユーティリティ型",
+      "level": "advanced"
+    },
+    {
+      "id": "ts-type-ops",
+      "name": "型演算・型キーワード",
+      "level": "advanced"
+    },
+    {
+      "id": "ts-utility-adv",
+      "name": "高度な型関数",
+      "level": "advanced"
+    },
+    {
+      "id": "ts-dom",
+      "name": "DOM・イベント",
+      "level": "advanced"
+    },
+    {
+      "id": "ts-function",
+      "name": "関数・実行制御",
+      "level": "advanced"
+    },
+    {
+      "id": "ts-tooling",
+      "name": "ツール・設定",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "const",
+      "desc": "再代入できない変数を宣言するキーワード",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "let",
+      "desc": "ブロックスコープの変数を宣言する",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "string",
+      "desc": "文字列を表すプリミティブ型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "number",
+      "desc": "整数も小数も表す数値のプリミティブ型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "boolean",
+      "desc": "true / false の真偽値型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "null",
+      "desc": "値が存在しないことを表すリテラル型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "undefined",
+      "desc": "未定義であることを表すプリミティブ型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "any",
+      "desc": "型検査を無効にする最も緩い型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "unknown",
+      "desc": "使用前に型の絞り込みが必要な安全な型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "never",
+      "desc": "決して値を持たないことを表す型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "void",
+      "desc": "戻り値が無いことを表す型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "interface",
+      "desc": "オブジェクトの形を宣言する。宣言マージ可",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "type",
+      "desc": "型に別名を付けるエイリアス宣言",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "enum",
+      "desc": "名前付き定数の集合を定義する列挙型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "object",
+      "desc": "プリミティブ以外の値を表す型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "symbol",
+      "desc": "一意で不変なプリミティブ値の型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "bigint",
+      "desc": "任意精度の整数を表すプリミティブ型",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "readonly",
+      "desc": "プロパティや配列を読み取り専用にする修飾子",
+      "category": "ts-types"
+    },
+    {
+      "cmd": "map",
+      "desc": "各要素を変換した新しい配列を返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "filter",
+      "desc": "条件を満たす要素だけの新しい配列を返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "reduce",
+      "desc": "要素を畳み込んで 1 つの値に集約する",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "forEach",
+      "desc": "各要素に対して関数を順に実行する",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "find",
+      "desc": "条件を満たす最初の要素を返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "findIndex",
+      "desc": "条件を満たす最初の要素の位置を返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "some",
+      "desc": "いずれかの要素が条件を満たすか判定する",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "every",
+      "desc": "すべての要素が条件を満たすか判定する",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "includes",
+      "desc": "指定した値が含まれるかどうかを判定する",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "indexOf",
+      "desc": "一致する最初の位置を返す。無ければ -1",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "push",
+      "desc": "配列の末尾に要素を追加して長さを返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "pop",
+      "desc": "配列の末尾の要素を取り除いて返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "shift",
+      "desc": "配列の先頭の要素を取り除いて返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "unshift",
+      "desc": "配列の先頭に要素を追加して長さを返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "slice",
+      "desc": "指定範囲を切り出した新しい配列を返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "splice",
+      "desc": "要素をその場で削除・置換・挿入する",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "concat",
+      "desc": "配列や値を連結した新しい配列を返す",
+      "category": "ts-array"
+    },
+    {
+      "cmd": "split",
+      "desc": "区切り文字で文字列を分割して配列にする",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "trim",
+      "desc": "先頭と末尾の空白を取り除いた文字列を返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "replace",
+      "desc": "一致した部分を置き換えた文字列を返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "replaceAll",
+      "desc": "一致したすべての部分を置き換える",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "toUpperCase",
+      "desc": "すべての文字を大文字にして返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "toLowerCase",
+      "desc": "すべての文字を小文字にして返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "startsWith",
+      "desc": "指定の文字列で始まるかを判定する",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "endsWith",
+      "desc": "指定の文字列で終わるかを判定する",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "padStart",
+      "desc": "指定の長さまで先頭側を文字で埋める",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "padEnd",
+      "desc": "指定の長さまで末尾側を文字で埋める",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "repeat",
+      "desc": "指定回数繰り返した文字列を返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "charAt",
+      "desc": "指定位置の文字を返すメソッド",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "substring",
+      "desc": "指定範囲の部分文字列を返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "at",
+      "desc": "位置指定で文字を返す。負数は末尾から数える",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "charCodeAt",
+      "desc": "指定位置の UTF-16 コード値を返す",
+      "category": "ts-string"
+    },
+    {
+      "cmd": "Object.keys",
+      "desc": "オブジェクトのキーの配列を返す",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.values",
+      "desc": "オブジェクトの値の配列を返す",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.entries",
+      "desc": "オブジェクトのキーと値の組の配列を返す",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.assign",
+      "desc": "プロパティを別のオブジェクトへコピーする",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.freeze",
+      "desc": "オブジェクトを変更不可(凍結)にする",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.fromEntries",
+      "desc": "キーと値の組の並びからオブジェクトを作る",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.create",
+      "desc": "指定のプロトタイプでオブジェクトを作る",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.is",
+      "desc": "SameValue 比較で 2 値の同一性を判定",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.defineProperty",
+      "desc": "属性を細かく指定してプロパティを定義する",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.getPrototypeOf",
+      "desc": "オブジェクトのプロトタイプを取得する",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Object.hasOwn",
+      "desc": "自身のプロパティかどうかを判定する",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "JSON.parse",
+      "desc": "JSON 文字列をオブジェクトへ変換する",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "JSON.stringify",
+      "desc": "オブジェクトを JSON 文字列へ変換する",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "structuredClone",
+      "desc": "オブジェクトを深い複製(ディープコピー)する",
+      "category": "ts-object"
+    },
+    {
+      "cmd": "Promise.all",
+      "desc": "すべての完了を待ち、結果の配列で解決する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "Promise.race",
+      "desc": "最初に確定した結果をそのまま採用する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "Promise.any",
+      "desc": "最初に成功した結果で解決する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "Promise.allSettled",
+      "desc": "全件の成否が確定するまで待って列挙する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "Promise.resolve",
+      "desc": "指定した値で解決済みの Promise を作る",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "Promise.reject",
+      "desc": "指定した理由で拒否された Promise を作る",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "async",
+      "desc": "Promise を返す非同期関数を定義する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "await",
+      "desc": "Promise の解決を待って値を取り出す",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "then",
+      "desc": "Promise 解決後の処理をつなげる",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "catch",
+      "desc": "Promise の失敗を捕捉して処理する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "finally",
+      "desc": "成否によらず最後に実行される処理を登録",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "queueMicrotask",
+      "desc": "マイクロタスクとして関数を予約実行する",
+      "category": "ts-async"
+    },
+    {
+      "cmd": "class",
+      "desc": "クラスを定義するキーワード",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "extends",
+      "desc": "クラスの継承や型の制約を表す",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "implements",
+      "desc": "クラスがインターフェースを満たすと宣言",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "constructor",
+      "desc": "インスタンス生成時に走る初期化メソッド",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "super",
+      "desc": "親クラスのコンストラクタやメソッドを呼ぶ",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "static",
+      "desc": "インスタンスでなくクラスに属するメンバー",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "private",
+      "desc": "クラス内部からのみ触れるアクセス修飾子",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "protected",
+      "desc": "自身とサブクラスから触れるアクセス修飾子",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "public",
+      "desc": "どこからでも触れる既定のアクセス修飾子",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "abstract",
+      "desc": "実装を持たない抽象クラス・メソッドを宣言",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "export",
+      "desc": "モジュールから外部へ公開するキーワード",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "import",
+      "desc": "他モジュールの公開物を読み込む",
+      "category": "ts-class"
+    },
+    {
+      "cmd": "Map",
+      "desc": "任意のキーで値を引けるコレクション",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "Set",
+      "desc": "重複しない値の集合を保持するコレクション",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "WeakMap",
+      "desc": "キーを弱参照で保持するマップ",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "WeakSet",
+      "desc": "オブジェクトを弱参照で保持する集合",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "Array.from",
+      "desc": "イテラブル等から新しい配列を作る",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "Array.of",
+      "desc": "引数の並びから新しい配列を作る",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "Array.isArray",
+      "desc": "値が配列かどうかを判定する",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "Symbol.iterator",
+      "desc": "for-of で使う反復処理の規約シンボル",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "flat",
+      "desc": "入れ子の配列を指定の深さまで平坦化する",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "flatMap",
+      "desc": "map した結果を 1 段階平坦化して返す",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "entries",
+      "desc": "添字と要素の組のイテレータを返す",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "keys",
+      "desc": "添字(キー)のイテレータを返す",
+      "category": "ts-collection"
+    },
+    {
+      "cmd": "Partial",
+      "desc": "全プロパティを省略可能にするユーティリティ型",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Required",
+      "desc": "全プロパティを必須にするユーティリティ型",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Readonly",
+      "desc": "全プロパティを読み取り専用にする型",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Record",
+      "desc": "キーと値の型からオブジェクト型を作る",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Pick",
+      "desc": "指定したプロパティだけを取り出した型を作る",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Omit",
+      "desc": "指定したプロパティを除いた型を作る",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Exclude",
+      "desc": "ユニオン型から指定の型を取り除く",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "Extract",
+      "desc": "ユニオン型から指定の型だけを取り出す",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "NonNullable",
+      "desc": "null と undefined を除いた型を作る",
+      "category": "ts-utility"
+    },
+    {
+      "cmd": "keyof",
+      "desc": "型のプロパティ名をユニオン型として得る",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "typeof",
+      "desc": "値から型を取り出す型演算子(型文脈)",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "infer",
+      "desc": "条件型の中で型を推論して取り出す",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "satisfies",
+      "desc": "推論を保ったまま型への適合を検査する",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "is",
+      "desc": "型ガード関数の戻り値で絞り込みを宣言する",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "in",
+      "desc": "マップド型でプロパティ名を走査する",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "as",
+      "desc": "型アサーションで型を上書きする",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "declare",
+      "desc": "実体なしで型情報だけを宣言する",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "namespace",
+      "desc": "名前空間で宣言をグループ化する",
+      "category": "ts-type-ops"
+    },
+    {
+      "cmd": "ReturnType",
+      "desc": "関数型から戻り値の型を取り出す",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "Parameters",
+      "desc": "関数型から引数の型のタプルを取り出す",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "Awaited",
+      "desc": "Promise が解決する値の型を取り出す",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "ConstructorParameters",
+      "desc": "コンストラクタの引数型のタプルを得る",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "InstanceType",
+      "desc": "コンストラクタ型からインスタンス型を得る",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "ThisType",
+      "desc": "オブジェクト内の this の型を指定する",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "Uppercase",
+      "desc": "文字列リテラル型を大文字に変換する",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "Lowercase",
+      "desc": "文字列リテラル型を小文字に変換する",
+      "category": "ts-utility-adv"
+    },
+    {
+      "cmd": "querySelector",
+      "desc": "CSS セレクタに一致する最初の要素を返す",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "querySelectorAll",
+      "desc": "CSS セレクタに一致する全要素を返す",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "addEventListener",
+      "desc": "要素にイベントリスナーを登録する",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "removeEventListener",
+      "desc": "登録済みのイベントリスナーを外す",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "getElementById",
+      "desc": "id 属性で要素を 1 つ取得する",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "createElement",
+      "desc": "指定タグ名の要素ノードを生成する",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "appendChild",
+      "desc": "ノードを親要素の末尾に追加する",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "classList",
+      "desc": "要素のクラスを追加・削除・切替する",
+      "category": "ts-dom"
+    },
+    {
+      "cmd": "bind",
+      "desc": "this と先頭引数を固定した関数を作る",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "call",
+      "desc": "this を指定して関数を即時に呼び出す",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "apply",
+      "desc": "this と引数配列を指定して呼び出す",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "setTimeout",
+      "desc": "指定ミリ秒後に関数を 1 回実行する",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "setInterval",
+      "desc": "指定間隔で関数を繰り返し実行する",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "clearTimeout",
+      "desc": "setTimeout の予約を取り消す",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "requestAnimationFrame",
+      "desc": "次の描画フレームで関数を実行する",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "instanceof",
+      "desc": "オブジェクトがクラスの実例か判定する",
+      "category": "ts-function"
+    },
+    {
+      "cmd": "tsc",
+      "desc": "TypeScript の公式コンパイラ",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "tsx",
+      "desc": "TypeScript を直接実行するランナー",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "npx",
+      "desc": "パッケージのコマンドを都度実行する",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "esbuild",
+      "desc": "高速な JavaScript/TS バンドラ",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "vitest",
+      "desc": "Vite ベースの高速テストランナー",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "eslint",
+      "desc": "コードの問題を検出する静的解析ツール",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "prettier",
+      "desc": "コード整形を自動化するフォーマッタ",
+      "category": "ts-tooling"
+    },
+    {
+      "cmd": "tsconfig.json",
+      "desc": "TypeScript のコンパイル設定ファイル",
+      "category": "ts-tooling"
+    }
+  ]
+}
