@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { datasets } from "@/core/data";
+import { datasets, TRACK_GROUPS } from "@/core/data";
 import { loadHighScore } from "@/core/highscore";
 import type { PlayLevel, TrackId } from "@/core/types";
 import { browserStore } from "@/lib/storage";
@@ -65,6 +65,24 @@ const LEVEL_DESC: Record<TrackId, Record<PlayLevel, string>> = {
     advanced: "IaC・監視・セキュリティ・コスト・設計ほか 50 問",
     mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
   },
+  http: {
+    beginner: "メソッド・ステータスコード・基本ヘッダの 50 問",
+    intermediate: "キャッシュ・セキュリティ・認証・プロトコルの 50 問",
+    advanced: "エンコーディング・API 設計・DNS・標準化ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  pyweb: {
+    beginner: "FastAPI・pydantic・Django の基本 50 問",
+    intermediate: "Flask・ORM・非同期サーバ・認証の 50 問",
+    advanced: "テスト・タスクキュー・運用・GraphQL ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  mcp: {
+    beginner: "基本概念・ライフサイクル・JSON-RPC の 50 問",
+    intermediate: "ツール・リソース・プロンプト・サンプリングの 50 問",
+    advanced: "SDK・認可・実装・設計パターンほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
   typescript: {
     beginner: "基本型・配列・文字列メソッドの基本 50 問",
     intermediate: "Object/JSON・非同期・クラス・コレクションの 50 問",
@@ -116,6 +134,10 @@ const TAGLINE: Record<TrackId, string> = {
   react:
     "落ちてくる React / フロントエンドの API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   aws: "落ちてくる AWS のサービス名・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  http: "落ちてくる HTTP / Web 標準の語彙を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  pyweb:
+    "落ちてくる Python Web 開発の API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  mcp: "落ちてくる MCP(Model Context Protocol)の語彙を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   typescript:
     "落ちてくる TypeScript の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   java: "落ちてくる Java の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
@@ -159,20 +181,33 @@ export function LevelSelect({
       <h1 className="title">
         <span className="prompt">&gt;</span> command-type
       </h1>
-      <div className="track-tabs" role="tablist" aria-label="トラック選択">
-        {[...datasets.values()].map((d) => (
-          <button
-            key={d.track.id}
-            role="tab"
-            aria-selected={d.track.id === track}
-            className={
-              d.track.id === track ? "track-tab active" : "track-tab"
-            }
-            onClick={() => onTrackChange(d.track.id)}
-          >
-            {d.track.name}
-          </button>
-        ))}
+      <div className="track-groups" role="tablist" aria-label="トラック選択">
+        {TRACK_GROUPS.map((group) => {
+          // データ未提供のトラックは選択肢に出さない(F-15)
+          const available = group.tracks.filter((id) => datasets.has(id));
+          if (available.length === 0) return null;
+          return (
+            <div key={group.label} className="track-group">
+              <span className="track-group-label">{group.label}</span>
+              <div className="track-tabs">
+                {available.map((id) => {
+                  const d = datasets.get(id)!;
+                  return (
+                    <button
+                      key={id}
+                      role="tab"
+                      aria-selected={id === track}
+                      className={id === track ? "track-tab active" : "track-tab"}
+                      onClick={() => onTrackChange(id)}
+                    >
+                      {d.track.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
       <p className="tagline">{TAGLINE[track]}</p>
       <div className="level-list">

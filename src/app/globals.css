@@ -251,13 +251,66 @@ button {
   --track-sub: #232f3e;
 }
 
+.track-http {
+  --track-main: #005a9c;
+  --track-fg: #ffffff;
+  --track-sub: #4d9fd6;
+}
+
+.track-pyweb {
+  --track-main: #092e20;
+  --track-fg: #ffffff;
+  --track-sub: #44b78b;
+}
+
+.track-mcp {
+  --track-main: #cc785c;
+  --track-fg: #000000;
+  --track-sub: #191919;
+}
+
+.track-groups {
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+  margin: 0 auto 1.2em;
+}
+
+.track-group {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.track-group-label {
+  flex: 0 0 9.5em;
+  text-align: right;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
 .track-tabs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  max-width: 720px;
-  margin: 0 auto 1.2em;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .track-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .track-group-label {
+    flex: none;
+    text-align: center;
+  }
+
+  .track-tabs {
+    justify-content: center;
+  }
 }
 
 .track-tab {

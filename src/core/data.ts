@@ -2,6 +2,7 @@ import aws from "../../data/tracks/aws.json";
 import docker from "../../data/tracks/docker.json";
 import git from "../../data/tracks/git.json";
 import htmlcss from "../../data/tracks/htmlcss.json";
+import http from "../../data/tracks/http.json";
 import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
 import powershell from "../../data/tracks/powershell.json";
@@ -36,6 +37,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["r", r as Dataset],
   ["typescript", typescript as Dataset],
   ["react", react as Dataset],
+  ["http", http as Dataset],
   ["java", java as Dataset],
   ["git", git as Dataset],
   ["docker", docker as Dataset],
@@ -43,6 +45,20 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["htmlcss", htmlcss as Dataset],
   ["powershell", powershell as Dataset],
 ]);
+
+/**
+ * トラック選択タブのグループ定義(F-15 / §1 の正)。
+ * 全登録トラックがちょうど 1 グループに属することを T-035 が保証する。
+ */
+export const TRACK_GROUPS: readonly {
+  label: string;
+  tracks: readonly TrackId[];
+}[] = [
+  { label: "インフラ・OS", tracks: ["linux", "git", "docker", "aws", "powershell"] },
+  { label: "データ・分析", tracks: ["sql", "python", "pyml", "pyauto", "r"] },
+  { label: "Web・フロントエンド", tracks: ["typescript", "react", "htmlcss", "http"] },
+  { label: "バックエンド・AI", tracks: ["java", "pyweb", "mcp"] },
+];
 
 function trackDataset(track: TrackId): Dataset {
   const d = datasets.get(track);
