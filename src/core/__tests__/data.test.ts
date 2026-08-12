@@ -114,7 +114,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "dk-internals": { level: "advanced", count: 8 },
     },
   },
-  htmlcss: undefined, // loop_025 で §4.7 の表を書き写す
+  htmlcss: {
+    total: 150,
+    charset: /^[a-z0-9-]+$/,
+    categories: {
+      "hc-structure": { level: "beginner", count: 18 },
+      "hc-content": { level: "beginner", count: 17 },
+      "hc-css-basic": { level: "beginner", count: 15 },
+      "hc-layout": { level: "intermediate", count: 14 },
+      "hc-text-color": { level: "intermediate", count: 12 },
+      "hc-attr": { level: "intermediate", count: 12 },
+      "hc-responsive": { level: "intermediate", count: 12 },
+      "hc-animation": { level: "advanced", count: 9 },
+      "hc-selector": { level: "advanced", count: 9 },
+      "hc-modern": { level: "advanced", count: 8 },
+      "hc-a11y": { level: "advanced", count: 8 },
+      "hc-graphics": { level: "advanced", count: 8 },
+      "hc-function": { level: "advanced", count: 8 },
+    },
+  },
   powershell: undefined, // loop_026 で §4.8 の表を書き写す
   typescript: {
     total: 150,
