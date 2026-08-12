@@ -76,7 +76,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "java-tools": { level: "advanced", count: 8 },
     },
   },
-  git: undefined, // loop_023 で §4.5 の表を書き写す
+  git: {
+    total: 150,
+    charset: /^[A-Za-z0-9+._-]+$/,
+    categories: {
+      "git-basic": { level: "beginner", count: 18 },
+      "git-branch": { level: "beginner", count: 17 },
+      "git-sync": { level: "beginner", count: 15 },
+      "git-inspect": { level: "intermediate", count: 14 },
+      "git-undo": { level: "intermediate", count: 12 },
+      "git-stash-tag": { level: "intermediate", count: 12 },
+      "git-config": { level: "intermediate", count: 12 },
+      "git-rewrite": { level: "advanced", count: 9 },
+      "git-internals": { level: "advanced", count: 9 },
+      "git-search": { level: "advanced", count: 8 },
+      "git-hooks": { level: "advanced", count: 8 },
+      "git-advanced": { level: "advanced", count: 8 },
+      "git-collab": { level: "advanced", count: 8 },
+    },
+  },
   docker: undefined, // loop_024 で §4.6 の表を書き写す
   htmlcss: undefined, // loop_025 で §4.7 の表を書き写す
   powershell: undefined, // loop_026 で §4.8 の表を書き写す
