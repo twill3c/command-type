@@ -95,7 +95,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "git-collab": { level: "advanced", count: 8 },
     },
   },
-  docker: undefined, // loop_024 で §4.6 の表を書き写す
+  docker: {
+    total: 150,
+    charset: /^[A-Za-z0-9+._-]+$/,
+    categories: {
+      "dk-basic": { level: "beginner", count: 18 },
+      "dk-image": { level: "beginner", count: 17 },
+      "dk-compose": { level: "beginner", count: 15 },
+      "dk-k8s-basic": { level: "intermediate", count: 14 },
+      "dk-k8s-workload": { level: "intermediate", count: 12 },
+      "dk-k8s-net": { level: "intermediate", count: 12 },
+      "dk-registry": { level: "intermediate", count: 12 },
+      "dk-k8s-ops": { level: "advanced", count: 9 },
+      "dk-k8s-storage": { level: "advanced", count: 9 },
+      "dk-security": { level: "advanced", count: 8 },
+      "dk-observ": { level: "advanced", count: 8 },
+      "dk-helm": { level: "advanced", count: 8 },
+      "dk-internals": { level: "advanced", count: 8 },
+    },
+  },
   htmlcss: undefined, // loop_025 で §4.7 の表を書き写す
   powershell: undefined, // loop_026 で §4.8 の表を書き写す
   typescript: {
