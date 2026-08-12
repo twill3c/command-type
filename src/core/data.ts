@@ -1,3 +1,4 @@
+import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
 import python from "../../data/tracks/python.json";
 import typescript from "../../data/tracks/typescript.json";
@@ -19,6 +20,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["linux", linux as Dataset],
   ["python", python as Dataset],
   ["typescript", typescript as Dataset],
+  ["java", java as Dataset],
 ]);
 
 function trackDataset(track: TrackId): Dataset {

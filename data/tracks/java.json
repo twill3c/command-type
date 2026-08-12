@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.4",
+  "track": {
+    "id": "java",
+    "name": "Java"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "java-basic",
+      "name": "基本構文・キーワード",
+      "level": "beginner"
+    },
+    {
+      "id": "java-string",
+      "name": "文字列操作",
+      "level": "beginner"
+    },
+    {
+      "id": "java-collections",
+      "name": "コレクション基礎",
+      "level": "beginner"
+    },
+    {
+      "id": "java-oop",
+      "name": "クラス・継承",
+      "level": "intermediate"
+    },
+    {
+      "id": "java-exception",
+      "name": "例外処理",
+      "level": "intermediate"
+    },
+    {
+      "id": "java-stream",
+      "name": "Stream・ラムダ",
+      "level": "intermediate"
+    },
+    {
+      "id": "java-util",
+      "name": "標準ライブラリ",
+      "level": "intermediate"
+    },
+    {
+      "id": "java-concurrent",
+      "name": "並行処理",
+      "level": "advanced"
+    },
+    {
+      "id": "java-interface",
+      "name": "関数型・マーカーインターフェース",
+      "level": "advanced"
+    },
+    {
+      "id": "java-io",
+      "name": "入出力・ファイル",
+      "level": "advanced"
+    },
+    {
+      "id": "java-time",
+      "name": "日付・時刻",
+      "level": "advanced"
+    },
+    {
+      "id": "java-modern",
+      "name": "モダン Java",
+      "level": "advanced"
+    },
+    {
+      "id": "java-tools",
+      "name": "ビルド・開発ツール",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "class",
+      "desc": "クラスを定義するキーワード",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "public",
+      "desc": "どこからでも参照できる公開修飾子",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "private",
+      "desc": "クラス内部からのみ参照できる修飾子",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "static",
+      "desc": "インスタンスでなくクラスに属させる修飾子",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "final",
+      "desc": "再代入・継承・オーバーライドを禁止する",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "void",
+      "desc": "戻り値が無いことを表す型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "int",
+      "desc": "32 ビット整数のプリミティブ型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "long",
+      "desc": "64 ビット整数のプリミティブ型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "double",
+      "desc": "64 ビット浮動小数点数のプリミティブ型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "boolean",
+      "desc": "true / false の真偽値プリミティブ型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "char",
+      "desc": "文字 1 つを表すプリミティブ型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "String",
+      "desc": "文字列を表す不変の参照型",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "new",
+      "desc": "インスタンスを生成する演算子",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "return",
+      "desc": "メソッドから値を返して抜ける",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "if",
+      "desc": "条件が真のときだけ処理を実行する",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "for",
+      "desc": "回数や範囲で繰り返す制御構文",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "while",
+      "desc": "条件が真の間繰り返す制御構文",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "import",
+      "desc": "他パッケージのクラスを取り込む宣言",
+      "category": "java-basic"
+    },
+    {
+      "cmd": "length",
+      "desc": "文字列の文字数を返すメソッド",
+      "category": "java-string"
+    },
+    {
+      "cmd": "charAt",
+      "desc": "指定位置の文字を返すメソッド",
+      "category": "java-string"
+    },
+    {
+      "cmd": "substring",
+      "desc": "指定範囲の部分文字列を返す",
+      "category": "java-string"
+    },
+    {
+      "cmd": "indexOf",
+      "desc": "部分文字列の位置を返す。無ければ -1",
+      "category": "java-string"
+    },
+    {
+      "cmd": "equals",
+      "desc": "文字列の内容が等しいかを判定する",
+      "category": "java-string"
+    },
+    {
+      "cmd": "equalsIgnoreCase",
+      "desc": "大文字小文字を無視して等価判定する",
+      "category": "java-string"
+    },
+    {
+      "cmd": "toUpperCase",
+      "desc": "すべての文字を大文字にして返す",
+      "category": "java-string"
+    },
+    {
+      "cmd": "toLowerCase",
+      "desc": "すべての文字を小文字にして返す",
+      "category": "java-string"
+    },
+    {
+      "cmd": "trim",
+      "desc": "先頭と末尾の空白を取り除いて返す",
+      "category": "java-string"
+    },
+    {
+      "cmd": "split",
+      "desc": "正規表現で文字列を分割して配列にする",
+      "category": "java-string"
+    },
+    {
+      "cmd": "replace",
+      "desc": "一致した部分を置き換えた文字列を返す",
+      "category": "java-string"
+    },
+    {
+      "cmd": "contains",
+      "desc": "部分文字列が含まれるかを判定する",
+      "category": "java-string"
+    },
+    {
+      "cmd": "startsWith",
+      "desc": "指定の接頭辞で始まるかを判定する",
+      "category": "java-string"
+    },
+    {
+      "cmd": "endsWith",
+      "desc": "指定の接尾辞で終わるかを判定する",
+      "category": "java-string"
+    },
+    {
+      "cmd": "concat",
+      "desc": "文字列を連結した新しい文字列を返す",
+      "category": "java-string"
+    },
+    {
+      "cmd": "String.format",
+      "desc": "書式指定に値を埋め込んで文字列を作る",
+      "category": "java-string"
+    },
+    {
+      "cmd": "String.join",
+      "desc": "区切り文字で複数の文字列を連結する",
+      "category": "java-string"
+    },
+    {
+      "cmd": "ArrayList",
+      "desc": "配列ベースの可変長リスト実装",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "LinkedList",
+      "desc": "双方向連結リストのリスト実装",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "HashMap",
+      "desc": "ハッシュ表によるキーと値のマップ",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "HashSet",
+      "desc": "重複を許さないハッシュ集合",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "TreeMap",
+      "desc": "キーの順序で整列されたマップ",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "List.of",
+      "desc": "不変のリストを作るファクトリメソッド",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "Map.of",
+      "desc": "不変のマップを作るファクトリメソッド",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "Set.of",
+      "desc": "不変の集合を作るファクトリメソッド",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "add",
+      "desc": "コレクションに要素を追加する",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "put",
+      "desc": "マップにキーと値の組を登録する",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "get",
+      "desc": "指定のキーや位置の要素を取り出す",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "remove",
+      "desc": "指定の要素やキーを取り除く",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "size",
+      "desc": "コレクションの要素数を返す",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "isEmpty",
+      "desc": "コレクションが空かどうかを判定する",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "iterator",
+      "desc": "要素を順に走査するイテレータを返す",
+      "category": "java-collections"
+    },
+    {
+      "cmd": "extends",
+      "desc": "クラスを継承するキーワード",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "implements",
+      "desc": "インターフェースを実装すると宣言する",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "interface",
+      "desc": "実装すべきメソッド群を定義する型",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "abstract",
+      "desc": "実装を持たない抽象クラス・メソッドを宣言",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "super",
+      "desc": "親クラスのメンバーやコンストラクタを呼ぶ",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "this",
+      "desc": "自分自身のインスタンスを指す参照",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "enum",
+      "desc": "名前付き定数の集合を定義する列挙型",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "record",
+      "desc": "不変のデータキャリアを簡潔に定義する",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "instanceof",
+      "desc": "オブジェクトが指定型の実例か判定する",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "protected",
+      "desc": "自身とサブクラス等から参照できる修飾子",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "Override",
+      "desc": "オーバーライドを明示するアノテーション",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "getClass",
+      "desc": "実行時のクラス情報を取得する",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "hashCode",
+      "desc": "ハッシュ値を返す。equals と対で実装する",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "toString",
+      "desc": "オブジェクトの文字列表現を返す",
+      "category": "java-oop"
+    },
+    {
+      "cmd": "try",
+      "desc": "例外が起こり得る処理ブロックを開始する",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "catch",
+      "desc": "送出された例外を捕捉して処理する",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "finally",
+      "desc": "例外の有無によらず必ず実行される節",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "throw",
+      "desc": "例外を明示的に送出するキーワード",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "throws",
+      "desc": "メソッドが投げ得る例外を宣言する",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "Exception",
+      "desc": "検査例外を含む例外の基底クラス",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "RuntimeException",
+      "desc": "非検査例外の基底クラス",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "NullPointerException",
+      "desc": "null 参照へのアクセスで起こる例外",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "IllegalArgumentException",
+      "desc": "不正な引数を渡されたときの例外",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "IllegalStateException",
+      "desc": "不正な状態で呼ばれたときの例外",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "ClassCastException",
+      "desc": "不正な型変換で起こる例外",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "ArithmeticException",
+      "desc": "ゼロ除算などの算術エラーの例外",
+      "category": "java-exception"
+    },
+    {
+      "cmd": "stream",
+      "desc": "コレクションからストリームを得る",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "map",
+      "desc": "各要素を変換するストリーム中間操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "filter",
+      "desc": "条件を満たす要素だけを残す中間操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "collect",
+      "desc": "ストリームの結果を集約する終端操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "Collectors.toList",
+      "desc": "結果をリストへ集める Collector",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "forEach",
+      "desc": "各要素に処理を適用する終端操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "reduce",
+      "desc": "要素を畳み込んで 1 つの値に集約する",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "sorted",
+      "desc": "要素を並べ替える中間操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "distinct",
+      "desc": "重複する要素を取り除く中間操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "limit",
+      "desc": "先頭から指定件数に切り詰める中間操作",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "anyMatch",
+      "desc": "条件を満たす要素があるか判定する",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "findFirst",
+      "desc": "先頭の要素を Optional で返す",
+      "category": "java-stream"
+    },
+    {
+      "cmd": "Optional",
+      "desc": "値が無いかもしれないことを表す入れ物",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Optional.ofNullable",
+      "desc": "null かもしれない値を包んで作る",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Math.max",
+      "desc": "2 つの数値の大きい方を返す",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Math.abs",
+      "desc": "数値の絶対値を返す",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Integer.parseInt",
+      "desc": "文字列を int へ変換する",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Double.parseDouble",
+      "desc": "文字列を double へ変換する",
+      "category": "java-util"
+    },
+    {
+      "cmd": "StringBuilder",
+      "desc": "可変の文字列を効率よく組み立てる",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Arrays.asList",
+      "desc": "配列を固定サイズのリストとして見る",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Arrays.sort",
+      "desc": "配列をその場で並べ替える",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Objects.equals",
+      "desc": "null 安全に等価比較する",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Scanner",
+      "desc": "標準入力等から値を読み取るクラス",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Random",
+      "desc": "擬似乱数を生成するクラス",
+      "category": "java-util"
+    },
+    {
+      "cmd": "Thread",
+      "desc": "スレッドを表す並行処理の基本クラス",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "Runnable",
+      "desc": "実行処理を表す関数型インターフェース",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "synchronized",
+      "desc": "同時実行を 1 スレッドに制限する",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "volatile",
+      "desc": "変数の可視性をスレッド間で保証する",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "ExecutorService",
+      "desc": "スレッドプールでタスクを実行する",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "CompletableFuture",
+      "desc": "非同期処理の完了と合成を扱う",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "ConcurrentHashMap",
+      "desc": "スレッドセーフなハッシュマップ",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "CountDownLatch",
+      "desc": "他スレッドの完了を待ち合わせる",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "AtomicInteger",
+      "desc": "原子的に更新できる整数クラス",
+      "category": "java-concurrent"
+    },
+    {
+      "cmd": "Comparable",
+      "desc": "自然順序の比較を定義するインターフェース",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Comparator",
+      "desc": "並べ替え規則を外から与える比較器",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Iterable",
+      "desc": "for-each で走査できることを表す",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Serializable",
+      "desc": "直列化可能を示すマーカーインターフェース",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Cloneable",
+      "desc": "clone 可能を示すマーカーインターフェース",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "AutoCloseable",
+      "desc": "try-with-resources で自動クローズできる",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Function",
+      "desc": "1 引数 1 戻り値の関数型インターフェース",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Supplier",
+      "desc": "引数なしで値を供給する関数型",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Consumer",
+      "desc": "値を受け取って消費する関数型",
+      "category": "java-interface"
+    },
+    {
+      "cmd": "Files.readAllLines",
+      "desc": "テキストファイルを行のリストで読む",
+      "category": "java-io"
+    },
+    {
+      "cmd": "Files.write",
+      "desc": "バイト列や行をファイルへ書き込む",
+      "category": "java-io"
+    },
+    {
+      "cmd": "Path.of",
+      "desc": "パス文字列から Path を作る",
+      "category": "java-io"
+    },
+    {
+      "cmd": "Paths.get",
+      "desc": "パス文字列から Path を作る(旧 API)",
+      "category": "java-io"
+    },
+    {
+      "cmd": "BufferedReader",
+      "desc": "バッファ付きで効率よく読み込む",
+      "category": "java-io"
+    },
+    {
+      "cmd": "InputStream",
+      "desc": "バイト入力ストリームの抽象クラス",
+      "category": "java-io"
+    },
+    {
+      "cmd": "OutputStream",
+      "desc": "バイト出力ストリームの抽象クラス",
+      "category": "java-io"
+    },
+    {
+      "cmd": "FileReader",
+      "desc": "文字単位でファイルを読むクラス",
+      "category": "java-io"
+    },
+    {
+      "cmd": "LocalDate",
+      "desc": "タイムゾーンなしの日付を表す",
+      "category": "java-time"
+    },
+    {
+      "cmd": "LocalDateTime",
+      "desc": "タイムゾーンなしの日時を表す",
+      "category": "java-time"
+    },
+    {
+      "cmd": "LocalTime",
+      "desc": "タイムゾーンなしの時刻を表す",
+      "category": "java-time"
+    },
+    {
+      "cmd": "Instant",
+      "desc": "エポックからの時点を表すクラス",
+      "category": "java-time"
+    },
+    {
+      "cmd": "Duration",
+      "desc": "時間ベースの長さ(期間)を表す",
+      "category": "java-time"
+    },
+    {
+      "cmd": "Period",
+      "desc": "日付ベースの長さ(期間)を表す",
+      "category": "java-time"
+    },
+    {
+      "cmd": "ZonedDateTime",
+      "desc": "タイムゾーン付きの日時を表す",
+      "category": "java-time"
+    },
+    {
+      "cmd": "DateTimeFormatter",
+      "desc": "日時の書式化・解析を行う",
+      "category": "java-time"
+    },
+    {
+      "cmd": "var",
+      "desc": "ローカル変数の型をコンパイラに推論させる",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "sealed",
+      "desc": "継承できるクラスを限定する修飾子",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "permits",
+      "desc": "sealed 型の許可サブクラスを列挙する",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "yield",
+      "desc": "switch 式から値を返すキーワード",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "Stream.toList",
+      "desc": "ストリームを不変リストへ集める終端操作",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "String.formatted",
+      "desc": "文字列自身を書式化するメソッド",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "Runtime.version",
+      "desc": "実行中の Java バージョンを得る",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "HttpClient",
+      "desc": "標準の HTTP クライアント API",
+      "category": "java-modern"
+    },
+    {
+      "cmd": "javac",
+      "desc": "Java ソースをコンパイルするコマンド",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "jar",
+      "desc": "クラス群を JAR にまとめるコマンド",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "mvn",
+      "desc": "Maven のビルド・依存管理コマンド",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "gradle",
+      "desc": "Gradle のビルド・依存管理コマンド",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "junit",
+      "desc": "デファクトのテスティングフレームワーク",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "javadoc",
+      "desc": "コメントから API 文書を生成する",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "jshell",
+      "desc": "対話的に Java を実行できる REPL",
+      "category": "java-tools"
+    },
+    {
+      "cmd": "jconsole",
+      "desc": "JVM を監視する GUI ツール",
+      "category": "java-tools"
+    }
+  ]
+}
