@@ -133,11 +133,18 @@ button {
   text-align: center;
 }
 
-/* ---------- ライセンス表記フッター(F-16) ---------- */
+/* ---------- ライセンス表記フッター(F-16: 下部固定・常時視認) ---------- */
 
 .app-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
   text-align: center;
-  padding: 20px 0 14px;
+  padding: 10px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
   color: var(--text-dim);
   font-size: 0.85rem;
 }
