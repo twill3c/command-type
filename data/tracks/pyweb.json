@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.16",
+  "track": {
+    "id": "pyweb",
+    "name": "Python Web"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "pyweb-fastapi",
+      "name": "FastAPI 基礎",
+      "level": "beginner"
+    },
+    {
+      "id": "pyweb-pydantic",
+      "name": "pydantic",
+      "level": "beginner"
+    },
+    {
+      "id": "pyweb-django",
+      "name": "Django 基礎",
+      "level": "beginner"
+    },
+    {
+      "id": "pyweb-flask",
+      "name": "Flask・テンプレート",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyweb-sqlalchemy",
+      "name": "DB・ORM",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyweb-async",
+      "name": "非同期・サーバ",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyweb-auth",
+      "name": "認証・セキュリティ",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyweb-test",
+      "name": "テスト",
+      "level": "advanced"
+    },
+    {
+      "id": "pyweb-tasks",
+      "name": "非同期タスク・キュー",
+      "level": "advanced"
+    },
+    {
+      "id": "pyweb-deploy",
+      "name": "デプロイ・運用",
+      "level": "advanced"
+    },
+    {
+      "id": "pyweb-api",
+      "name": "API 設計・文書",
+      "level": "advanced"
+    },
+    {
+      "id": "pyweb-graphql",
+      "name": "GraphQL",
+      "level": "advanced"
+    },
+    {
+      "id": "pyweb-frameworks",
+      "name": "その他フレームワーク",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "FastAPI",
+      "desc": "型ヒント駆動の高速 Web フレームワーク",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "APIRouter",
+      "desc": "エンドポイントを分割して束ねるルータ",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Depends",
+      "desc": "依存性注入を宣言する仕組み",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "HTTPException",
+      "desc": "ステータス付きのエラーを返す例外",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Query",
+      "desc": "クエリパラメータの検証・既定値を宣言",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Body",
+      "desc": "リクエストボディの取り出しを宣言",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Header",
+      "desc": "ヘッダ値の取り出しを宣言する",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Form",
+      "desc": "フォームフィールドの取り出しを宣言",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "UploadFile",
+      "desc": "アップロードファイルを受け取る型",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "File",
+      "desc": "ファイルフィールドの取り出しを宣言",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "BackgroundTasks",
+      "desc": "応答後に走る後処理を登録する",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Request",
+      "desc": "生のリクエスト情報へアクセスする",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "Response",
+      "desc": "応答を細かく制御する基底クラス",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "JSONResponse",
+      "desc": "JSON を返す応答クラス",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "StreamingResponse",
+      "desc": "逐次生成する本文を流す応答クラス",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "include_router",
+      "desc": "ルータをアプリへ組み込む",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "app.get",
+      "desc": "GET エンドポイントを定義するデコレータ",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "app.post",
+      "desc": "POST エンドポイントを定義するデコレータ",
+      "category": "pyweb-fastapi"
+    },
+    {
+      "cmd": "BaseModel",
+      "desc": "検証付きデータモデルの基底クラス",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "Field",
+      "desc": "制約や既定値を項目へ付与する",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "field_validator",
+      "desc": "単一項目の検証関数を登録する",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "model_validator",
+      "desc": "モデル全体の検証関数を登録する",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "model_dump",
+      "desc": "モデルを辞書へ変換する",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "model_validate",
+      "desc": "辞書等からモデルを検証付きで作る",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "ConfigDict",
+      "desc": "モデルの挙動設定をまとめる",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "EmailStr",
+      "desc": "メールアドレス形式を検証する型",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "HttpUrl",
+      "desc": "URL 形式を検証する型",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "ValidationError",
+      "desc": "検証失敗の詳細を持つ例外",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "TypeAdapter",
+      "desc": "任意の型に検証・変換を適用する",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "computed_field",
+      "desc": "算出プロパティを出力に含める",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "alias",
+      "desc": "外部名と内部名の対応を付ける設定",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "exclude",
+      "desc": "出力から特定の項目を除く指定",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "response_model",
+      "desc": "応答の形を宣言する FastAPI 連携",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "BaseSettings",
+      "desc": "環境変数から設定を読むモデル",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "SecretStr",
+      "desc": "値を伏せ字で扱う秘密文字列型",
+      "category": "pyweb-pydantic"
+    },
+    {
+      "cmd": "django",
+      "desc": "フルスタックの定番 Web フレームワーク",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "models.Model",
+      "desc": "テーブルに対応するモデルの基底",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "CharField",
+      "desc": "文字列カラムを定義するフィールド",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "ForeignKey",
+      "desc": "他モデルへの参照を定義する",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "QuerySet",
+      "desc": "遅延評価されるクエリ結果の集合",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "objects.filter",
+      "desc": "条件で絞り込んだクエリを作る",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "migrate",
+      "desc": "マイグレーションを DB へ適用する",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "makemigrations",
+      "desc": "モデル変更から移行ファイルを作る",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "runserver",
+      "desc": "開発用サーバを起動する",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "urls.py",
+      "desc": "URL とビューの対応を書くファイル",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "views.py",
+      "desc": "リクエスト処理を書くファイル",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "settings.py",
+      "desc": "プロジェクト設定を書くファイル",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "admin",
+      "desc": "自動生成される管理画面",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "template",
+      "desc": "HTML を生成するテンプレート層",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "ORM",
+      "desc": "オブジェクトで DB を操作する仕組み",
+      "category": "pyweb-django"
+    },
+    {
+      "cmd": "Flask",
+      "desc": "軽量で拡張自在なマイクロフレームワーク",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "Blueprint",
+      "desc": "アプリを分割して構成する単位",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "render_template",
+      "desc": "テンプレートから HTML を生成する",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "url_for",
+      "desc": "エンドポイント名から URL を逆引きする",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "request.args",
+      "desc": "クエリパラメータへアクセスする",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "jsonify",
+      "desc": "辞書等を JSON 応答へ変換する",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "Jinja2",
+      "desc": "Flask 標準のテンプレートエンジン",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "app.route",
+      "desc": "URL と関数を結ぶデコレータ",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "before_request",
+      "desc": "各リクエスト前に走る処理を登録",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "after_request",
+      "desc": "各リクエスト後に走る処理を登録",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "static_folder",
+      "desc": "静的ファイルの置き場所の設定",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "macro",
+      "desc": "テンプレート内で再利用する部品定義",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "autoescape",
+      "desc": "HTML を自動エスケープする機能",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "werkzeug",
+      "desc": "Flask を支える WSGI ユーティリティ",
+      "category": "pyweb-flask"
+    },
+    {
+      "cmd": "SQLAlchemy",
+      "desc": "Python の代表的な ORM・SQL ツール",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "create_engine",
+      "desc": "DB への接続エンジンを作る",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "Session",
+      "desc": "変更を追跡し取引を管理する単位",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "sessionmaker",
+      "desc": "Session のファクトリを作る",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "declarative_base",
+      "desc": "モデルの基底クラスを作る旧 API",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "relationship",
+      "desc": "モデル間の関連を定義する",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "select",
+      "desc": "SELECT 文を構築する 2.0 スタイル API",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "Mapped",
+      "desc": "型注釈でカラムを宣言する型",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "mapped_column",
+      "desc": "カラム定義の 2.0 スタイル関数",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "alembic",
+      "desc": "スキーマ移行を管理するツール",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "revision",
+      "desc": "移行ファイル(版)を作成する",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "autogenerate",
+      "desc": "モデル差分から移行を自動生成する",
+      "category": "pyweb-sqlalchemy"
+    },
+    {
+      "cmd": "uvicorn",
+      "desc": "ASGI 対応の高速アプリサーバ",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "gunicorn",
+      "desc": "実績ある WSGI アプリサーバ",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "ASGI",
+      "desc": "非同期対応のサーバ・アプリ間規約",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "WSGI",
+      "desc": "同期型のサーバ・アプリ間規約",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "asyncpg",
+      "desc": "PostgreSQL の高速非同期ドライバ",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "aiohttp",
+      "desc": "非同期の HTTP クライアント・サーバ",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "websockets",
+      "desc": "WebSocket 通信のライブラリ",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "lifespan",
+      "desc": "起動・終了時の処理を仕込む仕組み",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "startup",
+      "desc": "アプリ起動時のイベント",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "shutdown",
+      "desc": "アプリ終了時のイベント",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "workers",
+      "desc": "並列に立てるプロセス数の設定",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "reload",
+      "desc": "コード変更で自動再起動する開発設定",
+      "category": "pyweb-async"
+    },
+    {
+      "cmd": "OAuth2PasswordBearer",
+      "desc": "トークン取得先を宣言する FastAPI 部品",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "get_current_user",
+      "desc": "トークンから利用者を解決する依存関数",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "passlib",
+      "desc": "パスワードハッシュのライブラリ",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "bcrypt",
+      "desc": "定番のパスワードハッシュ方式",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "pyjwt",
+      "desc": "JWT の発行・検証ライブラリ",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "encode",
+      "desc": "ペイロードへ署名して JWT を作る",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "decode",
+      "desc": "JWT を検証してペイロードを取り出す",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "csrf_token",
+      "desc": "CSRF 対策の使い捨てトークン",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "SessionMiddleware",
+      "desc": "署名付きセッションを提供する層",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "CORSMiddleware",
+      "desc": "CORS ヘッダを付与する層",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "TrustedHostMiddleware",
+      "desc": "Host ヘッダを検証する層",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "itsdangerous",
+      "desc": "署名付きトークンを作るライブラリ",
+      "category": "pyweb-auth"
+    },
+    {
+      "cmd": "TestClient",
+      "desc": "アプリをテスト内で直接呼ぶクライアント",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "pytest.fixture",
+      "desc": "テストの前提を用意する仕組み",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "monkeypatch",
+      "desc": "属性や環境変数を一時的に差し替える",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "anyio",
+      "desc": "非同期テストを走らせる基盤",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "httpx.AsyncClient",
+      "desc": "非同期でアプリを叩くクライアント",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "faker",
+      "desc": "ダミーデータを生成するライブラリ",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "parametrize",
+      "desc": "同じテストを複数入力で走らせる",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "coverage",
+      "desc": "テストのカバレッジを計測する",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "unittest.mock",
+      "desc": "依存を偽物に差し替える標準機能",
+      "category": "pyweb-test"
+    },
+    {
+      "cmd": "celery",
+      "desc": "分散タスクキューの定番ライブラリ",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "redis",
+      "desc": "ブローカー等に使うインメモリストア",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "delay",
+      "desc": "タスクを非同期に投入する簡易 API",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "apply_async",
+      "desc": "実行時刻等を指定してタスクを投入",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "beat",
+      "desc": "定期実行をスケジュールする仕組み",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "broker",
+      "desc": "タスクを仲介するメッセージ基盤",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "backend",
+      "desc": "タスク結果を保存する先",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "countdown",
+      "desc": "指定秒後に実行する遅延指定",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "rq",
+      "desc": "Redis ベースの軽量ジョブキュー",
+      "category": "pyweb-tasks"
+    },
+    {
+      "cmd": "nginx",
+      "desc": "前段に置く定番のリバースプロキシ",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "reverse_proxy",
+      "desc": "アプリの前で受けて転送する構成",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "healthcheck",
+      "desc": "死活監視用のエンドポイント",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "env_file",
+      "desc": "環境変数をファイルで渡す仕組み",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "twelve_factor",
+      "desc": "設定と環境を分離する設計原則",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "logging_config",
+      "desc": "ログ出力の構成を定義する",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "sentry",
+      "desc": "エラーを収集・通知するサービス",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "opentelemetry",
+      "desc": "トレース・計測の標準規格",
+      "category": "pyweb-deploy"
+    },
+    {
+      "cmd": "openapi",
+      "desc": "API 仕様を機械可読に記述する標準",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "swagger",
+      "desc": "対話的な API ドキュメント UI",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "redoc",
+      "desc": "読みやすい API ドキュメント UI",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "docs_url",
+      "desc": "ドキュメント UI の公開パス設定",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "operation_id",
+      "desc": "各操作へ一意な名前を付ける",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "tags",
+      "desc": "エンドポイントを分類する見出し",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "response_class",
+      "desc": "応答クラスを切り替える指定",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "examples",
+      "desc": "リクエスト・応答の例を文書へ載せる",
+      "category": "pyweb-api"
+    },
+    {
+      "cmd": "strawberry",
+      "desc": "型ヒント流の GraphQL ライブラリ",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "graphene",
+      "desc": "老舗の GraphQL ライブラリ",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "resolver",
+      "desc": "フィールドの値を解決する関数",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "mutation",
+      "desc": "データを変更する GraphQL 操作",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "subscription",
+      "desc": "変更を購読するリアルタイム操作",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "dataloader",
+      "desc": "N+1 問題を防ぐバッチ取得部品",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "sdl",
+      "desc": "スキーマ定義言語(型の宣言文書)",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "introspection",
+      "desc": "スキーマ自体を問い合わせる機能",
+      "category": "pyweb-graphql"
+    },
+    {
+      "cmd": "starlette",
+      "desc": "FastAPI の土台の ASGI フレームワーク",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "litestar",
+      "desc": "高性能な新鋭 ASGI フレームワーク",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "tornado",
+      "desc": "非同期の老舗フレームワーク",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "bottle",
+      "desc": "1 ファイルで完結する超軽量 WF",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "sanic",
+      "desc": "高速さを掲げる非同期 WF",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "quart",
+      "desc": "Flask 互換の非同期フレームワーク",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "streamlit",
+      "desc": "データアプリを即席で作る UI 基盤",
+      "category": "pyweb-frameworks"
+    },
+    {
+      "cmd": "reflex",
+      "desc": "Python だけでフロントも書く WF",
+      "category": "pyweb-frameworks"
+    }
+  ]
+}

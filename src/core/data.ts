@@ -9,6 +9,7 @@ import powershell from "../../data/tracks/powershell.json";
 import pyauto from "../../data/tracks/pyauto.json";
 import pyml from "../../data/tracks/pyml.json";
 import python from "../../data/tracks/python.json";
+import pyweb from "../../data/tracks/pyweb.json";
 import r from "../../data/tracks/r.json";
 import react from "../../data/tracks/react.json";
 import sql from "../../data/tracks/sql.json";
@@ -39,6 +40,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["react", react as Dataset],
   ["http", http as Dataset],
   ["java", java as Dataset],
+  ["pyweb", pyweb as Dataset],
   ["git", git as Dataset],
   ["docker", docker as Dataset],
   ["aws", aws as Dataset],
