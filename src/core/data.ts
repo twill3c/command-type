@@ -1,4 +1,5 @@
 import linux from "../../data/tracks/linux.json";
+import python from "../../data/tracks/python.json";
 import type {
   CategoryDef,
   CommandEntry,
@@ -15,6 +16,7 @@ import type {
  */
 export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["linux", linux as Dataset],
+  ["python", python as Dataset],
 ]);
 
 function trackDataset(track: TrackId): Dataset {

@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.2",
+  "track": {
+    "id": "python",
+    "name": "Python"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "py-builtin",
+      "name": "組み込み関数",
+      "level": "beginner"
+    },
+    {
+      "id": "py-string",
+      "name": "文字列メソッド",
+      "level": "beginner"
+    },
+    {
+      "id": "py-list-dict",
+      "name": "リスト・辞書・集合",
+      "level": "beginner"
+    },
+    {
+      "id": "py-iter-func",
+      "name": "イテレーション・高階関数",
+      "level": "intermediate"
+    },
+    {
+      "id": "py-file-os",
+      "name": "ファイル・OS 操作",
+      "level": "intermediate"
+    },
+    {
+      "id": "py-stdlib",
+      "name": "標準ライブラリ基礎",
+      "level": "intermediate"
+    },
+    {
+      "id": "py-exception",
+      "name": "例外処理",
+      "level": "intermediate"
+    },
+    {
+      "id": "py-oop",
+      "name": "クラス・特殊メソッド",
+      "level": "advanced"
+    },
+    {
+      "id": "py-collections",
+      "name": "高度なコレクション・関数ツール",
+      "level": "advanced"
+    },
+    {
+      "id": "py-typing",
+      "name": "型ヒント・データクラス",
+      "level": "advanced"
+    },
+    {
+      "id": "py-async",
+      "name": "並行・非同期",
+      "level": "advanced"
+    },
+    {
+      "id": "py-datetime",
+      "name": "日付・時刻",
+      "level": "advanced"
+    },
+    {
+      "id": "py-dev-tools",
+      "name": "開発・デバッグツール",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "print",
+      "desc": "値を標準出力へ表示する組み込み関数",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "len",
+      "desc": "シーケンスやコレクションの要素数を返す",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "range",
+      "desc": "連続する整数列を生成するイミュータブル型",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "input",
+      "desc": "標準入力から 1 行を文字列として読み取る",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "type",
+      "desc": "オブジェクトの型を返す組み込み関数",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "int",
+      "desc": "整数型。文字列や小数を整数へ変換する",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "float",
+      "desc": "浮動小数点数型。数値や文字列を小数へ変換",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "str",
+      "desc": "文字列型。オブジェクトを文字列へ変換する",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "bool",
+      "desc": "真偽値型。値の真理値判定にも使う",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "list",
+      "desc": "可変長の配列型。イテラブルからリストを作る",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "tuple",
+      "desc": "不変のシーケンス型。要素の変更ができない",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "dict",
+      "desc": "キーと値を対応づける辞書(連想配列)型",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "set",
+      "desc": "重複のない要素の集合型。集合演算ができる",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "sum",
+      "desc": "イテラブルの数値要素の合計を返す",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "max",
+      "desc": "引数またはイテラブルの最大値を返す",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "min",
+      "desc": "引数またはイテラブルの最小値を返す",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "abs",
+      "desc": "数値の絶対値を返す組み込み関数",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "round",
+      "desc": "数値を指定桁数で丸める(偶数への丸め)",
+      "category": "py-builtin"
+    },
+    {
+      "cmd": "str.split",
+      "desc": "区切り文字で文字列を分割しリストを返す",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.join",
+      "desc": "イテラブルの文字列を区切り文字で連結する",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.strip",
+      "desc": "先頭と末尾の空白や指定文字を取り除く",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.replace",
+      "desc": "部分文字列を別の文字列に置き換える",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.upper",
+      "desc": "すべての文字を大文字にした文字列を返す",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.lower",
+      "desc": "すべての文字を小文字にした文字列を返す",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.find",
+      "desc": "部分文字列の位置を返す。無ければ -1",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.count",
+      "desc": "部分文字列が現れる回数を数える",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.startswith",
+      "desc": "指定の接頭辞で始まるかを判定する",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.endswith",
+      "desc": "指定の接尾辞で終わるかを判定する",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.format",
+      "desc": "書式指定に値を埋め込んで文字列を作る",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.title",
+      "desc": "各単語の先頭を大文字にした文字列を返す",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.capitalize",
+      "desc": "先頭のみ大文字にし、残りを小文字にする",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.isdigit",
+      "desc": "すべての文字が数字かどうかを判定する",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.isalpha",
+      "desc": "すべての文字が英字等の文字か判定する",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.zfill",
+      "desc": "指定幅になるよう左側をゼロで埋める",
+      "category": "py-string"
+    },
+    {
+      "cmd": "str.splitlines",
+      "desc": "改行で分割して行のリストを返す",
+      "category": "py-string"
+    },
+    {
+      "cmd": "list.append",
+      "desc": "リストの末尾に要素を 1 つ追加する",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.extend",
+      "desc": "イテラブルの全要素をリスト末尾へ追加する",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.insert",
+      "desc": "リストの指定位置に要素を挿入する",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.remove",
+      "desc": "最初に一致した要素をリストから削除する",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.pop",
+      "desc": "指定位置の要素を取り除いて返す(既定は末尾)",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.sort",
+      "desc": "リストをその場で並べ替える(安定ソート)",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.reverse",
+      "desc": "リストの要素順をその場で逆にする",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.index",
+      "desc": "一致する最初の要素の位置を返す",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "list.count",
+      "desc": "リスト内で一致する要素の個数を数える",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "dict.get",
+      "desc": "キーに対応する値を返す。無ければ既定値",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "dict.keys",
+      "desc": "辞書の全キーのビューを返す",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "dict.values",
+      "desc": "辞書の全値のビューを返す",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "dict.items",
+      "desc": "辞書のキーと値の組のビューを返す",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "dict.update",
+      "desc": "別の辞書やキーワード引数で辞書を更新する",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "set.add",
+      "desc": "集合に要素を 1 つ追加する",
+      "category": "py-list-dict"
+    },
+    {
+      "cmd": "enumerate",
+      "desc": "要素と連番の組を順に返すイテレータを作る",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "zip",
+      "desc": "複数のイテラブルを並行に束ねて組にする",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "map",
+      "desc": "全要素に関数を適用するイテレータを返す",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "filter",
+      "desc": "条件を満たす要素だけを残すイテレータを返す",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "sorted",
+      "desc": "並べ替えた新しいリストを返す(key 指定可)",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "reversed",
+      "desc": "逆順のイテレータを返す組み込み関数",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "any",
+      "desc": "いずれかの要素が真なら True を返す",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "all",
+      "desc": "すべての要素が真なら True を返す",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "iter",
+      "desc": "イテラブルからイテレータを取得する",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "next",
+      "desc": "イテレータから次の要素を取り出す",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "lambda",
+      "desc": "無名関数を式として定義するキーワード",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "functools.reduce",
+      "desc": "要素を先頭から畳み込んで 1 つの値に集約",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "itertools.chain",
+      "desc": "複数のイテラブルを連結して順に走査する",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "itertools.product",
+      "desc": "複数イテラブルの直積(全組合せ)を生成",
+      "category": "py-iter-func"
+    },
+    {
+      "cmd": "open",
+      "desc": "ファイルを開いてファイルオブジェクトを返す",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.getcwd",
+      "desc": "現在の作業ディレクトリのパスを返す",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.listdir",
+      "desc": "ディレクトリ内のエントリ名を一覧で返す",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.makedirs",
+      "desc": "中間ディレクトリごとまとめて作成する",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.remove",
+      "desc": "指定したパスのファイルを削除する",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.rename",
+      "desc": "ファイルやディレクトリの名前を変更する",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.environ",
+      "desc": "環境変数を保持するマッピングオブジェクト",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.path.join",
+      "desc": "パス要素を OS の区切り文字で連結する",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "os.path.exists",
+      "desc": "パスが存在するかどうかを判定する",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "shutil.copy",
+      "desc": "ファイルを別の場所へコピーする",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "shutil.move",
+      "desc": "ファイルやディレクトリを移動する",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "pathlib.Path",
+      "desc": "パスをオブジェクトとして操作するクラス",
+      "category": "py-file-os"
+    },
+    {
+      "cmd": "json.loads",
+      "desc": "JSON 文字列を Python オブジェクトへ変換",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "json.dumps",
+      "desc": "オブジェクトを JSON 文字列へ変換する",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "re.match",
+      "desc": "文字列の先頭が正規表現に一致するか調べる",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "re.search",
+      "desc": "正規表現に一致する最初の箇所を探す",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "re.sub",
+      "desc": "正規表現に一致した部分を置換する",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "re.findall",
+      "desc": "正規表現に一致する部分をすべて列挙する",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "re.compile",
+      "desc": "正規表現をコンパイルして再利用する",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "random.choice",
+      "desc": "シーケンスから要素を 1 つ無作為に選ぶ",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "random.randint",
+      "desc": "指定範囲の整数を無作為に返す(両端含む)",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "random.shuffle",
+      "desc": "リストをその場で無作為に並べ替える",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "math.sqrt",
+      "desc": "数値の平方根を浮動小数点数で返す",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "math.floor",
+      "desc": "数値以下で最大の整数(切り捨て)を返す",
+      "category": "py-stdlib"
+    },
+    {
+      "cmd": "try",
+      "desc": "例外が起こり得る処理のブロックを開始する",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "except",
+      "desc": "送出された例外を捕捉して処理する節",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "finally",
+      "desc": "例外の有無によらず必ず実行される節",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "raise",
+      "desc": "例外を明示的に送出するキーワード",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "assert",
+      "desc": "条件が偽なら AssertionError を送出",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "ValueError",
+      "desc": "値が不正なときに送出される組み込み例外",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "TypeError",
+      "desc": "型が不正な操作をしたときの組み込み例外",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "KeyError",
+      "desc": "辞書に存在しないキーを参照したときの例外",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "IndexError",
+      "desc": "シーケンスの範囲外アクセスで起こる例外",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "AttributeError",
+      "desc": "存在しない属性を参照したときの例外",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "RuntimeError",
+      "desc": "他に分類できない実行時エラーの例外",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "Exception",
+      "desc": "ほとんどの組み込み例外の基底クラス",
+      "category": "py-exception"
+    },
+    {
+      "cmd": "__init__",
+      "desc": "インスタンスの初期化を行う特殊メソッド",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "__repr__",
+      "desc": "デバッグ向けの正式な文字列表現を返す",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "__str__",
+      "desc": "print 等で使われる文字列表現を返す",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "__len__",
+      "desc": "len() の結果を定義する特殊メソッド",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "__eq__",
+      "desc": "== による等価比較を定義する特殊メソッド",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "super",
+      "desc": "親クラスのメソッドを呼び出すための組み込み",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "property",
+      "desc": "メソッドを属性のように見せるデコレータ",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "classmethod",
+      "desc": "クラス自身を第 1 引数に受けるメソッドに",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "staticmethod",
+      "desc": "self を受け取らないメソッドにする",
+      "category": "py-oop"
+    },
+    {
+      "cmd": "collections.Counter",
+      "desc": "要素の出現回数を数える辞書のサブクラス",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "collections.defaultdict",
+      "desc": "無いキーに既定値を作る辞書のサブクラス",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "collections.deque",
+      "desc": "両端の追加と削除が速い両端キュー",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "collections.namedtuple",
+      "desc": "名前付きフィールドを持つタプル型を作る",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "functools.lru_cache",
+      "desc": "関数の結果をキャッシュするデコレータ",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "functools.partial",
+      "desc": "引数を部分適用した新しい関数を作る",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "functools.wraps",
+      "desc": "デコレータで元の関数の情報を引き継ぐ",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "itertools.groupby",
+      "desc": "連続する同じキーの要素をグループ化する",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "itertools.islice",
+      "desc": "イテレータをスライスのように切り出す",
+      "category": "py-collections"
+    },
+    {
+      "cmd": "typing.Optional",
+      "desc": "None を許容する型を表す型ヒント",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "typing.Union",
+      "desc": "複数の型のいずれかを表す型ヒント",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "typing.Any",
+      "desc": "任意の型を許容する特別な型ヒント",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "typing.Callable",
+      "desc": "呼び出し可能オブジェクトの型を表す",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "typing.TypeVar",
+      "desc": "ジェネリクスで使う型変数を定義する",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "typing.Protocol",
+      "desc": "構造的部分型(ダックタイピング)を定義",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "dataclasses.dataclass",
+      "desc": "定型的なクラス定義を自動生成するデコレータ",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "dataclasses.field",
+      "desc": "データクラスの属性の既定値などを設定する",
+      "category": "py-typing"
+    },
+    {
+      "cmd": "async",
+      "desc": "コルーチン関数を定義するキーワード",
+      "category": "py-async"
+    },
+    {
+      "cmd": "await",
+      "desc": "コルーチンの完了を待って結果を得る",
+      "category": "py-async"
+    },
+    {
+      "cmd": "asyncio.run",
+      "desc": "コルーチンをイベントループで実行する",
+      "category": "py-async"
+    },
+    {
+      "cmd": "asyncio.sleep",
+      "desc": "指定した秒数だけ非同期に待機する",
+      "category": "py-async"
+    },
+    {
+      "cmd": "asyncio.gather",
+      "desc": "複数のコルーチンを並行実行して集約する",
+      "category": "py-async"
+    },
+    {
+      "cmd": "asyncio.create_task",
+      "desc": "コルーチンをタスクとして即時開始する",
+      "category": "py-async"
+    },
+    {
+      "cmd": "threading.Thread",
+      "desc": "スレッドを生成して並行処理を行うクラス",
+      "category": "py-async"
+    },
+    {
+      "cmd": "multiprocessing.Pool",
+      "desc": "プロセスプールで並列処理を行うクラス",
+      "category": "py-async"
+    },
+    {
+      "cmd": "datetime.datetime",
+      "desc": "日付と時刻をあわせて表す標準クラス",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "datetime.date.today",
+      "desc": "今日の日付を返すクラスメソッド",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "datetime.timedelta",
+      "desc": "日時の差分(期間)を表すクラス",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "time.time",
+      "desc": "エポックからの経過秒を浮動小数点数で返す",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "time.sleep",
+      "desc": "指定した秒数だけ処理を停止する",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "time.perf_counter",
+      "desc": "高精度な経過時間計測用のカウンタを返す",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "calendar.isleap",
+      "desc": "指定した年がうるう年かどうか判定する",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "zoneinfo.ZoneInfo",
+      "desc": "IANA タイムゾーン情報を扱うクラス",
+      "category": "py-datetime"
+    },
+    {
+      "cmd": "pip",
+      "desc": "パッケージを導入する標準の管理ツール",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "venv",
+      "desc": "仮想環境を作成する標準モジュール",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "pytest",
+      "desc": "広く使われるテストフレームワーク",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "unittest",
+      "desc": "標準ライブラリのテストフレームワーク",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "doctest",
+      "desc": "docstring 内の例を実行して検証する",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "breakpoint",
+      "desc": "デバッガを起動する組み込み関数",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "pdb.set_trace",
+      "desc": "対話型デバッガ pdb を開始する",
+      "category": "py-dev-tools"
+    },
+    {
+      "cmd": "timeit",
+      "desc": "小さなコードの実行時間を計測する",
+      "category": "py-dev-tools"
+    }
+  ]
+}
