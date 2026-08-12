@@ -190,7 +190,25 @@ const TRACK_EXPECTATIONS: Record<TrackId, TrackExpectation | undefined> = {
       "pyauto-robust": { level: "advanced", count: 8 },
     },
   },
-  react: undefined, // loop_030 で §4.12 の表を書き写す
+  react: {
+    total: 150,
+    charset: /^[A-Za-z0-9_.-]+$/,
+    categories: {
+      "react-hooks": { level: "beginner", count: 18 },
+      "react-component": { level: "beginner", count: 17 },
+      "react-state": { level: "beginner", count: 15 },
+      "react-router": { level: "intermediate", count: 14 },
+      "react-nextjs": { level: "intermediate", count: 12 },
+      "react-styling": { level: "intermediate", count: 12 },
+      "react-forms": { level: "intermediate", count: 12 },
+      "react-perf": { level: "advanced", count: 9 },
+      "react-test": { level: "advanced", count: 9 },
+      "react-events": { level: "advanced", count: 8 },
+      "react-server": { level: "advanced", count: 8 },
+      "react-motion": { level: "advanced", count: 8 },
+      "react-tools": { level: "advanced", count: 8 },
+    },
+  },
   aws: undefined, // loop_031 で §4.13 の表を書き写す
   r: undefined, // loop_032 で §4.14 の表を書き写す
   pyml: {
