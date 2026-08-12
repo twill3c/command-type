@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.5",
+  "track": {
+    "id": "git",
+    "name": "Git"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "git-basic",
+      "name": "基本操作",
+      "level": "beginner"
+    },
+    {
+      "id": "git-branch",
+      "name": "ブランチ・マージ",
+      "level": "beginner"
+    },
+    {
+      "id": "git-sync",
+      "name": "リモート同期",
+      "level": "beginner"
+    },
+    {
+      "id": "git-inspect",
+      "name": "履歴・差分の調査",
+      "level": "intermediate"
+    },
+    {
+      "id": "git-undo",
+      "name": "取り消し・やり直し",
+      "level": "intermediate"
+    },
+    {
+      "id": "git-stash-tag",
+      "name": "スタッシュ・タグ",
+      "level": "intermediate"
+    },
+    {
+      "id": "git-config",
+      "name": "設定・無視ファイル",
+      "level": "intermediate"
+    },
+    {
+      "id": "git-rewrite",
+      "name": "履歴改変",
+      "level": "advanced"
+    },
+    {
+      "id": "git-internals",
+      "name": "内部構造",
+      "level": "advanced"
+    },
+    {
+      "id": "git-search",
+      "name": "検索・デバッグ",
+      "level": "advanced"
+    },
+    {
+      "id": "git-hooks",
+      "name": "フック・自動化",
+      "level": "advanced"
+    },
+    {
+      "id": "git-advanced",
+      "name": "高度な操作",
+      "level": "advanced"
+    },
+    {
+      "id": "git-collab",
+      "name": "共同開発",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "init",
+      "desc": "カレントディレクトリにリポジトリを作る",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "clone",
+      "desc": "リモートリポジトリを複製して取得する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "add",
+      "desc": "変更をステージング領域に登録する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "commit",
+      "desc": "ステージした変更を履歴に記録する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "status",
+      "desc": "作業ツリーとステージの状態を表示する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "log",
+      "desc": "コミット履歴を新しい順に表示する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "diff",
+      "desc": "変更内容の差分を表示する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "show",
+      "desc": "コミットやオブジェクトの内容を表示する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "push",
+      "desc": "ローカルのコミットをリモートへ送る",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "pull",
+      "desc": "リモートの変更を取得して統合する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "fetch",
+      "desc": "リモートの変更を取得だけする(統合しない)",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "checkout",
+      "desc": "ブランチ切替やファイル復元を行う旧来の万能コマンド",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "switch",
+      "desc": "ブランチを切り替える専用コマンド",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "restore",
+      "desc": "作業ツリーやステージの変更を元に戻す",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "rm",
+      "desc": "ファイルを削除してステージに記録する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "mv",
+      "desc": "ファイルを移動・改名してステージに記録する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "help",
+      "desc": "コマンドのヘルプを表示する",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "version",
+      "desc": "インストール済み Git のバージョンを表示",
+      "category": "git-basic"
+    },
+    {
+      "cmd": "branch",
+      "desc": "ブランチの一覧・作成・削除を行う",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "merge",
+      "desc": "別ブランチの変更を取り込み統合する",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "rebase",
+      "desc": "コミットを別の基点に付け替える",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "HEAD",
+      "desc": "現在チェックアウト中の位置を指す参照",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "main",
+      "desc": "既定の主ブランチとして使われる名前",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "master",
+      "desc": "従来の既定ブランチ名",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "fast-forward",
+      "desc": "分岐がないとき参照だけ前進させる統合",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "merge-base",
+      "desc": "2 つのブランチの共通祖先を求める",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "conflict",
+      "desc": "同じ箇所への変更が衝突した状態",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "ours",
+      "desc": "衝突解決で自分側の変更を採用する指定",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "theirs",
+      "desc": "衝突解決で相手側の変更を採用する指定",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "squash",
+      "desc": "複数のコミットを 1 つにまとめる",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "onto",
+      "desc": "rebase で新しい基点を指定するオプション",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "detach",
+      "desc": "ブランチから切り離した HEAD 状態にする",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "orphan",
+      "desc": "履歴を持たない新しいブランチを作る",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "track",
+      "desc": "リモートブランチへの追跡関係を設定する",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "no-ff",
+      "desc": "fast-forward せず必ずマージコミットを作る",
+      "category": "git-branch"
+    },
+    {
+      "cmd": "remote",
+      "desc": "リモートリポジトリの登録・管理を行う",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "origin",
+      "desc": "clone 元に付く既定のリモート名",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "upstream",
+      "desc": "追跡先や本家リポジトリを指す慣用名",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "fork",
+      "desc": "他人のリポジトリを自分の領域へ複製する",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "submodule",
+      "desc": "リポジトリ内に別リポジトリを埋め込む",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "subtree",
+      "desc": "別リポジトリを履歴ごと取り込む方式",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "ls-remote",
+      "desc": "リモートの参照一覧を問い合わせる",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "refspec",
+      "desc": "ローカルとリモートの参照の対応規則",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "tracking",
+      "desc": "リモートブランチを追跡するローカルの状態",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "mirror",
+      "desc": "全参照を完全同期するクローン・プッシュ",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "bare",
+      "desc": "作業ツリーを持たない共有用リポジトリ",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "shallow",
+      "desc": "履歴を絞って浅く取得したクローン",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "prune",
+      "desc": "リモートで消えた参照をローカルから掃除",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "force-with-lease",
+      "desc": "他人の更新を壊さない安全な強制プッシュ",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "tags",
+      "desc": "タグをまとめて取得・送信する指定",
+      "category": "git-sync"
+    },
+    {
+      "cmd": "blame",
+      "desc": "各行を最後に変更したコミットを表示する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "shortlog",
+      "desc": "作者ごとにコミットを要約して表示する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "describe",
+      "desc": "最寄りのタグを基準にコミットを表す",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "reflog",
+      "desc": "HEAD 移動の記録を時系列で表示する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "cherry",
+      "desc": "上流に取り込まれていないコミットを探す",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "range-diff",
+      "desc": "2 つのコミット列の差分を比較する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "whatchanged",
+      "desc": "変更ファイル付きで履歴を表示する旧コマンド",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "annotate",
+      "desc": "blame と同様に行ごとの由来を表示する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "difftool",
+      "desc": "外部ツールで差分を表示する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "show-branch",
+      "desc": "複数ブランチの関係を並べて表示する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "name-rev",
+      "desc": "コミット ID を参照名で言い換える",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "rev-list",
+      "desc": "コミット ID の一覧を条件付きで出力する",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "count-objects",
+      "desc": "オブジェクト数とディスク使用量を数える",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "graph",
+      "desc": "履歴を分岐グラフ付きで表示する指定",
+      "category": "git-inspect"
+    },
+    {
+      "cmd": "reset",
+      "desc": "HEAD やステージ・作業ツリーを巻き戻す",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "revert",
+      "desc": "打ち消しコミットで変更を取り消す",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "amend",
+      "desc": "直前のコミットを作り直す指定",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "clean",
+      "desc": "追跡されていないファイルを削除する",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "soft",
+      "desc": "reset で履歴だけ戻し変更を残す指定",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "mixed",
+      "desc": "reset の既定。ステージも解除する",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "hard",
+      "desc": "reset で作業ツリーごと完全に戻す指定",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "ORIG_HEAD",
+      "desc": "危険な操作の直前の HEAD を指す参照",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "rerere",
+      "desc": "一度解決した衝突の解決内容を再利用する",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "autostash",
+      "desc": "rebase 前に自動で退避し後で戻す設定",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "abort",
+      "desc": "進行中のマージや rebase を中止する指定",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "continue",
+      "desc": "衝突解決後に中断中の操作を再開する指定",
+      "category": "git-undo"
+    },
+    {
+      "cmd": "stash",
+      "desc": "未コミットの変更を一時的に退避する",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "pop",
+      "desc": "退避した変更を戻して退避から消す",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "apply",
+      "desc": "退避した変更を戻す(退避は残す)",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "drop",
+      "desc": "退避した変更を 1 つ削除する",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "tag",
+      "desc": "コミットに目印となるタグを付ける",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "lightweight",
+      "desc": "参照だけの軽量タグ",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "annotated",
+      "desc": "作成者やメッセージを持つ注釈付きタグ",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "archive",
+      "desc": "指定コミットの内容を書庫として出力する",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "bundle",
+      "desc": "履歴をファイルにまとめて持ち運ぶ",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "keep-index",
+      "desc": "stash でステージ済みの変更は残す指定",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "untracked",
+      "desc": "未追跡ファイルも stash に含める指定",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "verify-tag",
+      "desc": "タグの GPG 署名を検証する",
+      "category": "git-stash-tag"
+    },
+    {
+      "cmd": "config",
+      "desc": "リポジトリやユーザーの設定を読み書きする",
+      "category": "git-config"
+    },
+    {
+      "cmd": "alias",
+      "desc": "長いコマンドに短い別名を定義する設定",
+      "category": "git-config"
+    },
+    {
+      "cmd": ".gitignore",
+      "desc": "追跡しないファイルのパターンを列挙する",
+      "category": "git-config"
+    },
+    {
+      "cmd": ".gitconfig",
+      "desc": "ユーザー全体の設定ファイル",
+      "category": "git-config"
+    },
+    {
+      "cmd": ".gitattributes",
+      "desc": "パスごとの属性(改行・差分等)を指定",
+      "category": "git-config"
+    },
+    {
+      "cmd": ".gitmodules",
+      "desc": "サブモジュールの定義ファイル",
+      "category": "git-config"
+    },
+    {
+      "cmd": "user.name",
+      "desc": "コミットに記録される作者名の設定",
+      "category": "git-config"
+    },
+    {
+      "cmd": "user.email",
+      "desc": "コミットに記録されるメールアドレス設定",
+      "category": "git-config"
+    },
+    {
+      "cmd": "core.editor",
+      "desc": "コミットメッセージ編集に使うエディタ設定",
+      "category": "git-config"
+    },
+    {
+      "cmd": "init.defaultBranch",
+      "desc": "init 時の既定ブランチ名の設定",
+      "category": "git-config"
+    },
+    {
+      "cmd": "pull.rebase",
+      "desc": "pull を rebase 方式にする設定",
+      "category": "git-config"
+    },
+    {
+      "cmd": "credential",
+      "desc": "認証情報の保存・取得の仕組み",
+      "category": "git-config"
+    },
+    {
+      "cmd": "interactive",
+      "desc": "rebase -i で履歴を対話的に編集する方式",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "fixup",
+      "desc": "直前の指定コミットへ黙って併合する指定",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "reword",
+      "desc": "コミットメッセージだけを書き換える指定",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "edit",
+      "desc": "rebase 中にそのコミットで停止して修正する",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "exec",
+      "desc": "rebase の各段でコマンドを実行する指定",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "autosquash",
+      "desc": "fixup! 等の印から並べ替えを自動化する",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "filter-branch",
+      "desc": "履歴全体を書き換える旧来のコマンド",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "filter-repo",
+      "desc": "履歴の一括書き換えを行う推奨ツール",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "force",
+      "desc": "履歴改変後のプッシュに必要な強制指定",
+      "category": "git-rewrite"
+    },
+    {
+      "cmd": "blob",
+      "desc": "ファイル内容を保存するオブジェクト",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "tree",
+      "desc": "ディレクトリ構造を表すオブジェクト",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "ref",
+      "desc": "コミットを指す名前付きポインタ",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "packfile",
+      "desc": "オブジェクトを圧縮して束ねた保存形式",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "index",
+      "desc": "コミット予定の状態を保持する領域",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "cat-file",
+      "desc": "オブジェクトの種類や内容を表示する",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "hash-object",
+      "desc": "内容からオブジェクト ID を計算・登録する",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "update-ref",
+      "desc": "参照を直接書き換える低水準コマンド",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "symbolic-ref",
+      "desc": "HEAD 等のシンボリック参照を操作する",
+      "category": "git-internals"
+    },
+    {
+      "cmd": "grep",
+      "desc": "追跡中のファイルからパターンを検索する",
+      "category": "git-search"
+    },
+    {
+      "cmd": "bisect",
+      "desc": "二分探索で問題のコミットを特定する",
+      "category": "git-search"
+    },
+    {
+      "cmd": "good",
+      "desc": "bisect で正常と分かった地点の印",
+      "category": "git-search"
+    },
+    {
+      "cmd": "bad",
+      "desc": "bisect で問題ありと分かった地点の印",
+      "category": "git-search"
+    },
+    {
+      "cmd": "pickaxe",
+      "desc": "特定文字列の増減で履歴を絞り込む検索",
+      "category": "git-search"
+    },
+    {
+      "cmd": "fsck",
+      "desc": "オブジェクトの整合性を検査する",
+      "category": "git-search"
+    },
+    {
+      "cmd": "gc",
+      "desc": "不要オブジェクトの回収と最適化を行う",
+      "category": "git-search"
+    },
+    {
+      "cmd": "verify-pack",
+      "desc": "packfile の整合性を検証する",
+      "category": "git-search"
+    },
+    {
+      "cmd": "pre-commit",
+      "desc": "コミット直前に走る検査用フック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "commit-msg",
+      "desc": "コミットメッセージを検査するフック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "pre-push",
+      "desc": "プッシュ直前に走る検査用フック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "post-merge",
+      "desc": "マージ完了後に走るフック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "post-checkout",
+      "desc": "チェックアウト後に走るフック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "prepare-commit-msg",
+      "desc": "メッセージの雛形を用意するフック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "pre-rebase",
+      "desc": "rebase 開始前に走る検査用フック",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "hooksPath",
+      "desc": "フック置き場を変更する設定キー",
+      "category": "git-hooks"
+    },
+    {
+      "cmd": "cherry-pick",
+      "desc": "特定のコミットだけを現在の枝へ適用する",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "worktree",
+      "desc": "1 リポジトリに複数の作業ツリーを持つ",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "sparse-checkout",
+      "desc": "作業ツリーを一部のパスに絞る",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "notes",
+      "desc": "コミットを変えずに注記を付加する",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "replace",
+      "desc": "オブジェクトを別物に見せる差し替え参照",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "maintenance",
+      "desc": "バックグラウンドの保守作業を管理する",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "fsmonitor",
+      "desc": "ファイル変更監視で status を高速化する",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "scalar",
+      "desc": "大規模リポジトリ向けの管理ツール",
+      "category": "git-advanced"
+    },
+    {
+      "cmd": "request-pull",
+      "desc": "取り込み依頼の要約文を生成する",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "send-email",
+      "desc": "パッチをメールで送信する",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "format-patch",
+      "desc": "コミットをパッチファイルに書き出す",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "am",
+      "desc": "メール形式のパッチを適用する",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "mailmap",
+      "desc": "作者名・メールの表記ゆれを対応付ける",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "signoff",
+      "desc": "Signed-off-by 行をコミットに付ける指定",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "trailer",
+      "desc": "コミット末尾のキー: 値行を扱う仕組み",
+      "category": "git-collab"
+    },
+    {
+      "cmd": "CODEOWNERS",
+      "desc": "パスごとのレビュー担当を定める規約ファイル",
+      "category": "git-collab"
+    }
+  ]
+}
