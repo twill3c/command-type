@@ -10,7 +10,8 @@ Linux コマンド・Python・TypeScript のタイピング練習ゲーム(多�
 
 Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/API を
 「落ちものゲーム × タイピング」の形式で楽しく反復学習する Web アプリを提供する。
-出題は**トラック**(学習科目)単位で選ぶ。v1 のトラックは `linux` / `python` / `typescript` の 3 つ。
+出題は**トラック**(学習科目)単位で選ぶ。トラックは `linux` / `python` / `typescript` /
+`java` / `git` / `docker` / `htmlcss` / `powershell` の 8 つ(P9 で 5 トラック追加)。
 出題文字列を打鍵しながら、短い解説文とカテゴリ名を同時に目にすることで、
 タイピング練習と知識の定着を一度に実現する。
 
@@ -32,7 +33,7 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | F-12 | ハイスコアをトラック×モード別に localStorage へ保存し、レベル選択画面に表示する。トラック導入(P7)前の旧キー(モードのみ)は linux トラックの値として読み継ぐ | should |
 | F-13 | 効果音と演出: クリア(上昇音 + 緑フラッシュ)・不一致 Enter(ブザー)・落下(下降音 + 赤フラッシュ)。効果音は Web Audio の合成音のみ(外部アセットなし)で、🔊 トグルで ON/OFF でき、設定は localStorage に保存(既定 ON)。演出は CSS アニメーションのみで実装する | could(P3) |
 | F-14 | ミックスモード: レベル選択に「ミックス」を追加し、**選択中トラックの**全カテゴリ・全件から出題する。落下基準速度は中級と同値。ハイスコアは 3 レベルと独立に保存する | could(P3) |
-| F-15 | トラック選択: レベル選択画面でトラック(linux / python / typescript)を切り替えられる。表示中トラックのモード別ハイスコアを表示する。データ未提供のトラックは選択肢に出さない | must(P7) |
+| F-15 | トラック選択: レベル選択画面で登録済みトラック(§4)を切り替えられる。表示中トラックのモード別ハイスコアを表示する。データ未提供のトラックは選択肢に出さない | must(P7) |
 | F-16 | ライセンス表記: 全画面共通のフッターに本アプリが MIT ライセンスであることと著作権表記を明示し、リポジトリの LICENSE へリンクする。フッターは**画面下部に常時固定表示**とし、トラック選択画面を含むどの画面でもスクロールせずに視認できる | must(P8) |
 
 ## 3. 非機能要求
@@ -116,13 +117,109 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 
 集計: 初級 50 / 中級 50 / 上級 50 = 150。
 
+### 4.4 トラック `java`(Java 言語・標準 API)— 150 件
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `java-basic` | 基本構文・キーワード | 18 |
+| 初級 | `java-string` | 文字列操作 | 17 |
+| 初級 | `java-collections` | コレクション基礎 | 15 |
+| 中級 | `java-oop` | クラス・継承 | 14 |
+| 中級 | `java-exception` | 例外処理 | 12 |
+| 中級 | `java-stream` | Stream・ラムダ | 12 |
+| 中級 | `java-util` | 標準ライブラリ | 12 |
+| 上級 | `java-concurrent` | 並行処理 | 9 |
+| 上級 | `java-interface` | 関数型・マーカーインターフェース | 9 |
+| 上級 | `java-io` | 入出力・ファイル | 8 |
+| 上級 | `java-time` | 日付・時刻 | 8 |
+| 上級 | `java-modern` | モダン Java | 8 |
+| 上級 | `java-tools` | ビルド・開発ツール | 8 |
+
+### 4.5 トラック `git`(Git コマンド・概念)— 150 件
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `git-basic` | 基本操作 | 18 |
+| 初級 | `git-branch` | ブランチ・マージ | 17 |
+| 初級 | `git-sync` | リモート同期 | 15 |
+| 中級 | `git-inspect` | 履歴・差分の調査 | 14 |
+| 中級 | `git-undo` | 取り消し・やり直し | 12 |
+| 中級 | `git-stash-tag` | スタッシュ・タグ | 12 |
+| 中級 | `git-config` | 設定・無視ファイル | 12 |
+| 上級 | `git-rewrite` | 履歴改変 | 9 |
+| 上級 | `git-internals` | 内部構造 | 9 |
+| 上級 | `git-search` | 検索・デバッグ | 8 |
+| 上級 | `git-hooks` | フック・自動化 | 8 |
+| 上級 | `git-advanced` | 高度な操作 | 8 |
+| 上級 | `git-collab` | 共同開発 | 8 |
+
+### 4.6 トラック `docker`(Docker / Kubernetes)— 150 件
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `dk-basic` | コンテナ基本操作 | 18 |
+| 初級 | `dk-image` | イメージ・Dockerfile | 17 |
+| 初級 | `dk-compose` | Compose・ボリューム | 15 |
+| 中級 | `dk-k8s-basic` | Kubernetes 基本 | 14 |
+| 中級 | `dk-k8s-workload` | ワークロード | 12 |
+| 中級 | `dk-k8s-net` | ネットワーク・公開 | 12 |
+| 中級 | `dk-registry` | レジストリ・配布 | 12 |
+| 上級 | `dk-k8s-ops` | 運用・スケーリング | 9 |
+| 上級 | `dk-k8s-storage` | ストレージ・設定 | 9 |
+| 上級 | `dk-security` | セキュリティ | 8 |
+| 上級 | `dk-observ` | 監視・ログ | 8 |
+| 上級 | `dk-helm` | Helm・エコシステム | 8 |
+| 上級 | `dk-internals` | 内部構造・ランタイム | 8 |
+
+### 4.7 トラック `htmlcss`(HTML / CSS)— 150 件
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `hc-structure` | 文書構造タグ | 18 |
+| 初級 | `hc-content` | コンテンツ・フォームタグ | 17 |
+| 初級 | `hc-css-basic` | CSS 基本プロパティ | 15 |
+| 中級 | `hc-layout` | レイアウト | 14 |
+| 中級 | `hc-text-color` | 文字・配色 | 12 |
+| 中級 | `hc-attr` | 属性・セマンティクス | 12 |
+| 中級 | `hc-responsive` | レスポンシブ・単位 | 12 |
+| 上級 | `hc-animation` | アニメーション | 9 |
+| 上級 | `hc-selector` | セレクタ・擬似クラス | 9 |
+| 上級 | `hc-modern` | モダン CSS | 8 |
+| 上級 | `hc-a11y` | アクセシビリティ | 8 |
+| 上級 | `hc-graphics` | グラフィック・埋め込み | 8 |
+| 上級 | `hc-function` | 変数・関数 | 8 |
+
+擬似クラス・擬似要素はコロンを除いた名前のみ(例: `hover`)、
+アット規則は `@` を除いた名前のみ(例: `media`)を出題する(N-03 の受理文字内)。
+
+### 4.8 トラック `powershell`(PowerShell コマンドレット)— 150 件
+
+| level | category id | カテゴリ名 | 出題数 |
+|---|---|---|---|
+| 初級 | `ps-basic` | 基本コマンドレット | 18 |
+| 初級 | `ps-pipeline` | パイプライン・整形 | 17 |
+| 初級 | `ps-syntax` | 構文・制御フロー | 15 |
+| 中級 | `ps-system` | システム管理 | 14 |
+| 中級 | `ps-net` | ネットワーク・Web | 12 |
+| 中級 | `ps-data` | データ処理 | 12 |
+| 中級 | `ps-env` | 環境・モジュール | 12 |
+| 上級 | `ps-object` | オブジェクト・型 | 9 |
+| 上級 | `ps-script` | スクリプティング | 9 |
+| 上級 | `ps-security` | セキュリティ | 8 |
+| 上級 | `ps-job` | ジョブ・並列 | 8 |
+| 上級 | `ps-remote` | リモート管理 | 8 |
+| 上級 | `ps-winadmin` | Windows 管理 | 8 |
+
+各表の集計: 初級 50 / 中級 50 / 上級 50 = 150。
+
 ## 5. 品質基準
 
 数値基準(すべてテストにトレースする):
 
 - `data/tracks/*.json`: トラックごとに、件数・レベル配分・カテゴリ配分が §4 の該当表と完全一致 /
-  `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別
-  (linux: `[a-z0-9+._-]+`、python・typescript: `[A-Za-z0-9_.]+`)/
+  `cmd` はトラック内で重複なし / `cmd` の文字種はトラック別:
+  linux: `[a-z0-9+._-]+` / python・typescript・java: `[A-Za-z0-9_.]+` /
+  git・docker: `[A-Za-z0-9+._-]+` / htmlcss: `[a-z0-9-]+` / powershell: `[A-Za-z0-9-]+` /
   `desc` は 8〜40 文字の日本語解説
 - `desc` は本プロジェクトのための**書き下ろしオリジナル文**に限る。既存文書
   (man ページ・docs.python.org・MDN・TypeScript Handbook 等)からの転載・翻訳流用を
@@ -142,7 +239,8 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | P5 | Python トラック: §4.2 の配分でデータ 150 件 | 完了(loop_015) |
 | P6 | TypeScript トラック: §4.3 の配分でデータ 150 件 | 完了(loop_016) |
 | P7 | トラック選択 UI(F-15)+ ハイスコアのトラック×モード化・旧キー読み継ぎ(F-12 改訂) | 完了(loop_017) |
-| P8 | データ出典の文書化(§5 転載禁止規約・docs/data-provenance.md)+ 全画面の MIT ライセンス表記(F-16) | 本ループ(loop_019) |
+| P8 | データ出典の文書化(§5 転載禁止規約・docs/data-provenance.md)+ 全画面の MIT ライセンス表記(F-16) | 完了(loop_019〜021) |
+| P9 | 追加 5 トラック: java(§4.4)・git(§4.5)・docker(§4.6)・htmlcss(§4.7)・powershell(§4.8)、各 150 件 + 基調色(§7.1) | 本ループ群(loop_022〜026) |
 
 ## 7. デザイン(視覚仕様)
 
@@ -187,6 +285,14 @@ Linux の主要コマンド・Python の主要 API・TypeScript の主要構文/
 | linux | `#FCC624`(イエロー) | `#1A1A1A`(ブラック) | `#000000` |
 | python | `#3776AB`(ブルー) | `#FFFFFF` | `#FFD343`(イエロー) |
 | typescript | `#3178C6`(ブルー) | `#FFFFFF` | `#1E2D3D`(ダークブルー) |
+| java | `#007396`(Java ブルー) | `#FFFFFF` | `#ED8B00`(オレンジ) |
+| git | `#F05032`(Git オレンジ) | `#1A1A1A` | `#000000` |
+| docker | `#2496ED`(Docker ブルー) | `#1A1A1A` | `#326CE5`(Kubernetes ブルー) |
+| htmlcss | `#E34F26`(HTML5 オレンジ) | `#000000` | `#1572B6`(CSS3 ブルー) |
+| powershell | `#012456`(PowerShell 紺) | `#FFFFFF` | `#5391FE`(ライトブルー) |
+
+git・docker・htmlcss の main 上に白文字を置くとコントラスト比が 4.5:1 を下回るため
+(git 橙×白 ≈ 3.6)、文字色は黒系とする(§7 コントラスト規定)。
 
 適用方式: 選択画面・ゲーム画面のルート要素に `track-{id}` クラスを付与し、
 スコープ付き CSS カスタムプロパティとして上表を定義する。適用箇所:
