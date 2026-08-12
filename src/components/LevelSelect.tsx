@@ -41,6 +41,30 @@ const LEVEL_DESC: Record<TrackId, Record<PlayLevel, string>> = {
     advanced: "PyTorch・Transformers・GBDT・実験運用ほか 50 問",
     mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
   },
+  pyauto: {
+    beginner: "Excel・ファイル整理・CSV 処理の基本 50 問",
+    intermediate: "HTTP/API・スクレイピング・ブラウザ・定期実行の 50 問",
+    advanced: "メール通知・PDF/画像・GUI・堅牢化ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  r: {
+    beginner: "ベクトル・データフレーム・tidyverse の基本 50 問",
+    intermediate: "apply 族・統計解析・分布・ggplot2 の 50 問",
+    advanced: "文字列・モデリング・レポート・環境ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  react: {
+    beginner: "フック・コンポーネント・状態管理の基本 50 問",
+    intermediate: "ルーティング・Next.js・スタイリング・フォームの 50 問",
+    advanced: "パフォーマンス・テスト・アニメーションほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
+  aws: {
+    beginner: "主要サービス・S3・IAM の基本 50 問",
+    intermediate: "コンピュート・ネットワーク・DB・CLI/SDK の 50 問",
+    advanced: "IaC・監視・セキュリティ・コスト・設計ほか 50 問",
+    mix: "全 13 カテゴリ・150 問から出題(落下速度は中級相当)",
+  },
   typescript: {
     beginner: "基本型・配列・文字列メソッドの基本 50 問",
     intermediate: "Object/JSON・非同期・クラス・コレクションの 50 問",
@@ -86,6 +110,12 @@ const TAGLINE: Record<TrackId, string> = {
   python:
     "落ちてくる Python の関数・メソッドを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   pyml: "落ちてくる Python 機械学習ライブラリの API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  pyauto:
+    "落ちてくる Python 業務自動化の API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  r: "落ちてくる R の関数・パッケージを、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  react:
+    "落ちてくる React / フロントエンドの API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
+  aws: "落ちてくる AWS のサービス名・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   typescript:
     "落ちてくる TypeScript の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",
   java: "落ちてくる Java の構文・API を、底に着く前にタイプして Enter。150 語を遊びながら覚える。",

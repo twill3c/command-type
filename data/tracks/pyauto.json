@@ -1,0 +1,832 @@
+{
+  "version": "1.0.0",
+  "spec_ref": "SPEC.md §4.11",
+  "track": {
+    "id": "pyauto",
+    "name": "Python 自動化"
+  },
+  "levels": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "categories": [
+    {
+      "id": "pyauto-excel",
+      "name": "Excel 操作(openpyxl)",
+      "level": "beginner"
+    },
+    {
+      "id": "pyauto-files",
+      "name": "ファイル・フォルダ整理",
+      "level": "beginner"
+    },
+    {
+      "id": "pyauto-csvtext",
+      "name": "CSV・テキスト処理",
+      "level": "beginner"
+    },
+    {
+      "id": "pyauto-http",
+      "name": "HTTP・API 連携",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyauto-scrape",
+      "name": "Web スクレイピング",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyauto-browser",
+      "name": "ブラウザ自動化",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyauto-schedule",
+      "name": "日付・スケジュール実行",
+      "level": "intermediate"
+    },
+    {
+      "id": "pyauto-mail",
+      "name": "メール・通知",
+      "level": "advanced"
+    },
+    {
+      "id": "pyauto-pdfimg",
+      "name": "PDF・画像処理",
+      "level": "advanced"
+    },
+    {
+      "id": "pyauto-gui",
+      "name": "GUI 操作自動化",
+      "level": "advanced"
+    },
+    {
+      "id": "pyauto-cli",
+      "name": "CLI 化・設定",
+      "level": "advanced"
+    },
+    {
+      "id": "pyauto-proc",
+      "name": "外部プロセス実行",
+      "level": "advanced"
+    },
+    {
+      "id": "pyauto-robust",
+      "name": "堅牢化・リトライ",
+      "level": "advanced"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "load_workbook",
+      "desc": "既存の Excel ブックを読み込む",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "Workbook",
+      "desc": "新しい Excel ブックを作るクラス",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "active",
+      "desc": "現在アクティブなシートを取得する属性",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "worksheets",
+      "desc": "ブック内の全シートのリスト",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "create_sheet",
+      "desc": "新しいシートを追加する",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "cell",
+      "desc": "行番号・列番号でセルへアクセスする",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "iter_rows",
+      "desc": "行単位でセルを順に走査する",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "append",
+      "desc": "行データをシートの末尾に追加する",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "save",
+      "desc": "ブックをファイルへ保存する",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "max_row",
+      "desc": "データがある最終行の番号を返す属性",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "max_column",
+      "desc": "データがある最終列の番号を返す属性",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "column_letter",
+      "desc": "列番号をアルファベットへ変換する",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "merge_cells",
+      "desc": "指定範囲のセルを結合する",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "freeze_panes",
+      "desc": "ウィンドウ枠を固定する設定",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "auto_filter",
+      "desc": "オートフィルタを設定する属性",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "number_format",
+      "desc": "セルの表示形式を設定する属性",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "Font",
+      "desc": "文字の書体・太さ・色を設定するクラス",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "PatternFill",
+      "desc": "セルの塗りつぶしを設定するクラス",
+      "category": "pyauto-excel"
+    },
+    {
+      "cmd": "glob.glob",
+      "desc": "パターンに一致するパスを列挙する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "Path.rglob",
+      "desc": "サブフォルダも含めて再帰的に探索する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "Path.mkdir",
+      "desc": "ディレクトリを作成する(parents 可)",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "Path.rename",
+      "desc": "ファイルやフォルダの名前を変更する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "Path.suffix",
+      "desc": "ファイルの拡張子を返す属性",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "Path.stem",
+      "desc": "拡張子を除いたファイル名を返す属性",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "Path.exists",
+      "desc": "パスが存在するかを判定する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "shutil.copytree",
+      "desc": "フォルダを丸ごと複製する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "shutil.rmtree",
+      "desc": "フォルダを中身ごと削除する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "shutil.make_archive",
+      "desc": "フォルダを ZIP 等の書庫にする",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "zipfile.ZipFile",
+      "desc": "ZIP アーカイブを読み書きするクラス",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "extractall",
+      "desc": "アーカイブの全ファイルを展開する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "namelist",
+      "desc": "アーカイブ内のファイル名を一覧する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "os.walk",
+      "desc": "フォルダ階層を上から順にたどる",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "os.scandir",
+      "desc": "エントリを属性付きで高速に列挙する",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "tempfile",
+      "desc": "一時ファイル・フォルダを安全に作る",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "send2trash",
+      "desc": "削除をゴミ箱送りにして安全にする",
+      "category": "pyauto-files"
+    },
+    {
+      "cmd": "csv.reader",
+      "desc": "CSV を行のリストとして読み込む",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "csv.writer",
+      "desc": "リストを CSV として書き出す",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "csv.DictReader",
+      "desc": "CSV をヘッダ付き辞書として読む",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "csv.DictWriter",
+      "desc": "辞書のリストを CSV として書く",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "writerow",
+      "desc": "1 行分のデータを書き込む",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "writerows",
+      "desc": "複数行をまとめて書き込む",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "writeheader",
+      "desc": "ヘッダ行を書き込む",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "fieldnames",
+      "desc": "列名(ヘッダ)の並びを指定する",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "delimiter",
+      "desc": "区切り文字(タブ等)を指定する引数",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "encoding",
+      "desc": "文字コード(utf-8 等)を指定する引数",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "newline",
+      "desc": "改行の扱いを制御する open の引数",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "readlines",
+      "desc": "ファイルを行のリストとして読む",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "writelines",
+      "desc": "文字列のリストをまとめて書く",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "chardet",
+      "desc": "文字コードを推定するライブラリ",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "textwrap",
+      "desc": "テキストの折り返し・整形を行う",
+      "category": "pyauto-csvtext"
+    },
+    {
+      "cmd": "requests.get",
+      "desc": "GET リクエストを送って応答を得る",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "requests.post",
+      "desc": "POST リクエストでデータを送信する",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "status_code",
+      "desc": "応答の HTTP ステータスコード",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "raise_for_status",
+      "desc": "エラー応答なら例外を送出する",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "response.json",
+      "desc": "応答の JSON をオブジェクトへ変換",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "response.text",
+      "desc": "応答本文を文字列として取得する",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "headers",
+      "desc": "リクエスト・応答のヘッダ情報",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "params",
+      "desc": "URL のクエリパラメータを渡す引数",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "timeout",
+      "desc": "応答を待つ上限秒数を指定する引数",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "requests.Session",
+      "desc": "接続や Cookie を使い回すセッション",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "auth",
+      "desc": "ベーシック認証等の資格情報を渡す引数",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "cookies",
+      "desc": "クッキーの送受信を扱う属性",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "stream",
+      "desc": "大きな応答を逐次受信する指定",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "verify",
+      "desc": "TLS 証明書検証の有無を指定する引数",
+      "category": "pyauto-http"
+    },
+    {
+      "cmd": "BeautifulSoup",
+      "desc": "HTML を解析して要素を探すライブラリ",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "html.parser",
+      "desc": "標準添付の HTML パーサ指定",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "find",
+      "desc": "条件に合う最初の要素を返す",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "find_all",
+      "desc": "条件に合う要素をすべて返す",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "select",
+      "desc": "CSS セレクタで要素を検索する",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "select_one",
+      "desc": "CSS セレクタで最初の要素を返す",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "get_text",
+      "desc": "タグを除いたテキストを取り出す",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "attrs",
+      "desc": "要素の属性を辞書として参照する",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "lxml",
+      "desc": "高速な XML/HTML パーサライブラリ",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "robots.txt",
+      "desc": "クロール可否を示す規約ファイル",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "sitemap",
+      "desc": "サイト内 URL の一覧を載せる地図",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "httpx",
+      "desc": "非同期対応の HTTP クライアント",
+      "category": "pyauto-scrape"
+    },
+    {
+      "cmd": "webdriver",
+      "desc": "ブラウザを操作する Selenium の中核",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "find_element",
+      "desc": "ページ内の要素を 1 つ見つける",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "send_keys",
+      "desc": "入力欄へキー入力を送り込む",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "click",
+      "desc": "ボタンやリンクをクリックする",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "WebDriverWait",
+      "desc": "条件成立まで明示的に待機する",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "expected_conditions",
+      "desc": "待機条件(表示・クリック可)の集合",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "headless",
+      "desc": "画面を出さずにブラウザを動かす設定",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "page.goto",
+      "desc": "Playwright で URL へ移動する",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "page.fill",
+      "desc": "Playwright で入力欄へ文字を入れる",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "page.screenshot",
+      "desc": "ページのスクリーンショットを撮る",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "sync_playwright",
+      "desc": "Playwright を同期 API で開始する",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "locator",
+      "desc": "要素を遅延評価で指す Playwright の参照",
+      "category": "pyauto-browser"
+    },
+    {
+      "cmd": "schedule.every",
+      "desc": "「毎分・毎日」等の定期実行を組む",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "schedule.run_pending",
+      "desc": "期限が来たジョブを実行する",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "dateutil",
+      "desc": "日付の解析・計算を強化するライブラリ",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "relativedelta",
+      "desc": "「1 か月後」等の相対的な日時差",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "rrule",
+      "desc": "繰り返し規則(毎週月曜等)を定義する",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "croniter",
+      "desc": "cron 式から次回実行時刻を計算する",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "apscheduler",
+      "desc": "本格的なジョブスケジューラライブラリ",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "BackgroundScheduler",
+      "desc": "裏で動くスケジューラクラス",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "add_job",
+      "desc": "スケジューラへジョブを登録する",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "cron",
+      "desc": "時刻指定の定期実行を表す方式",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "interval",
+      "desc": "一定間隔での繰り返し実行を表す方式",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "isoformat",
+      "desc": "日時を ISO 8601 文字列にする",
+      "category": "pyauto-schedule"
+    },
+    {
+      "cmd": "smtplib",
+      "desc": "SMTP でメールを送信する標準ライブラリ",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "MIMEText",
+      "desc": "テキスト本文のメールを組み立てる",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "MIMEMultipart",
+      "desc": "添付付きメールを組み立てる",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "attach",
+      "desc": "メールへ本文や添付を追加する",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "sendmail",
+      "desc": "組み立てたメールを送信する",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "starttls",
+      "desc": "接続を TLS 暗号化へ切り替える",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "imaplib",
+      "desc": "IMAP で受信メールを操作する",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "slack_sdk",
+      "desc": "Slack へ通知を送る公式 SDK",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "chat_postMessage",
+      "desc": "Slack チャンネルへ投稿する API",
+      "category": "pyauto-mail"
+    },
+    {
+      "cmd": "pypdf",
+      "desc": "PDF の結合・分割・抽出ライブラリ",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "PdfReader",
+      "desc": "PDF を読み込むクラス",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "PdfWriter",
+      "desc": "PDF を組み立てて書き出すクラス",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "extract_text",
+      "desc": "ページから文字列を抽出する",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "Image.open",
+      "desc": "Pillow で画像ファイルを開く",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "resize",
+      "desc": "画像を指定サイズへ拡大・縮小する",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "crop",
+      "desc": "画像の一部を切り抜く",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "convert",
+      "desc": "画像のモード(RGB 等)を変換する",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "thumbnail",
+      "desc": "縦横比を保ってサムネイルを作る",
+      "category": "pyauto-pdfimg"
+    },
+    {
+      "cmd": "pyautogui.click",
+      "desc": "画面上の座標をクリックする",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "moveTo",
+      "desc": "マウスカーソルを指定座標へ動かす",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "hotkey",
+      "desc": "Ctrl+C 等のキー同時押しを送る",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "typewrite",
+      "desc": "キーボード入力を 1 字ずつ送る",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "screenshot",
+      "desc": "画面全体のスクリーンショットを撮る",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "locateOnScreen",
+      "desc": "画像と一致する画面位置を探す",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "position",
+      "desc": "現在のマウス座標を取得する",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "FAILSAFE",
+      "desc": "画面隅への退避で緊急停止する設定",
+      "category": "pyauto-gui"
+    },
+    {
+      "cmd": "argparse",
+      "desc": "コマンドライン引数を解析する標準ライブラリ",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "ArgumentParser",
+      "desc": "引数の仕様を定義するクラス",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "add_argument",
+      "desc": "受け付ける引数・オプションを追加",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "parse_args",
+      "desc": "実際の引数を解析して取り出す",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "logging.basicConfig",
+      "desc": "ログ出力の基本設定を行う",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "getLogger",
+      "desc": "名前付きロガーを取得する",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "dotenv",
+      "desc": ".env ファイルで設定を管理する仕組み",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "load_dotenv",
+      "desc": ".env の内容を環境変数へ読み込む",
+      "category": "pyauto-cli"
+    },
+    {
+      "cmd": "subprocess.run",
+      "desc": "外部コマンドを実行して結果を得る",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "capture_output",
+      "desc": "標準出力・標準エラーを取り込む指定",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "check_call",
+      "desc": "失敗したら例外にする実行方法",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "check_output",
+      "desc": "出力を文字列として受け取る実行",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "Popen",
+      "desc": "プロセスを非同期に起動するクラス",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "communicate",
+      "desc": "入出力をやり取りして終了を待つ",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "returncode",
+      "desc": "プロセスの終了コードを保持する属性",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "shlex",
+      "desc": "コマンド文字列を安全に分割する",
+      "category": "pyauto-proc"
+    },
+    {
+      "cmd": "tenacity",
+      "desc": "リトライ処理を宣言的に書くライブラリ",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "retry",
+      "desc": "失敗時に再試行させるデコレータ",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "stop_after_attempt",
+      "desc": "再試行回数の上限を決める",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "wait_exponential",
+      "desc": "待ち時間を指数的に延ばす",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "backoff",
+      "desc": "再試行間隔を空ける戦略の総称",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "TimeoutError",
+      "desc": "時間切れを表す組み込み例外",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "contextlib.suppress",
+      "desc": "特定の例外を握りつぶす文脈",
+      "category": "pyauto-robust"
+    },
+    {
+      "cmd": "atexit",
+      "desc": "終了時に後片付け処理を登録する",
+      "category": "pyauto-robust"
+    }
+  ]
+}

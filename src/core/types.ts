@@ -4,10 +4,14 @@ export type TrackId =
   | "sql"
   | "python"
   | "pyml"
+  | "pyauto"
+  | "r"
   | "typescript"
+  | "react"
   | "java"
   | "git"
   | "docker"
+  | "aws"
   | "htmlcss"
   | "powershell";
 

@@ -4,6 +4,7 @@ import htmlcss from "../../data/tracks/htmlcss.json";
 import java from "../../data/tracks/java.json";
 import linux from "../../data/tracks/linux.json";
 import powershell from "../../data/tracks/powershell.json";
+import pyauto from "../../data/tracks/pyauto.json";
 import pyml from "../../data/tracks/pyml.json";
 import python from "../../data/tracks/python.json";
 import sql from "../../data/tracks/sql.json";
@@ -28,6 +29,7 @@ export const datasets: ReadonlyMap<TrackId, Dataset> = new Map([
   ["sql", sql as Dataset],
   ["python", python as Dataset],
   ["pyml", pyml as Dataset],
+  ["pyauto", pyauto as Dataset],
   ["typescript", typescript as Dataset],
   ["java", java as Dataset],
   ["git", git as Dataset],

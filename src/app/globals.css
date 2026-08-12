@@ -227,6 +227,30 @@ button {
   --track-sub: #7f2a18;
 }
 
+.track-pyauto {
+  --track-main: #217346;
+  --track-fg: #ffffff;
+  --track-sub: #a9d08e;
+}
+
+.track-r {
+  --track-main: #276dc3;
+  --track-fg: #ffffff;
+  --track-sub: #a7a9ac;
+}
+
+.track-react {
+  --track-main: #61dafb;
+  --track-fg: #000000;
+  --track-sub: #087ea4;
+}
+
+.track-aws {
+  --track-main: #ff9900;
+  --track-fg: #000000;
+  --track-sub: #232f3e;
+}
+
 .track-tabs {
   display: flex;
   flex-wrap: wrap;
