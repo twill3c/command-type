@@ -5,9 +5,10 @@ import { Footer } from "../Footer";
 describe("T-034: ライセンス表記フッター(F-16)", () => {
   const html = renderToStaticMarkup(<Footer />);
 
-  it("MIT License の明示と著作権者名がある", () => {
-    expect(html).toContain("MIT License");
-    expect(html).toContain("坂田哲朗");
+  it("統一書式「MIT License © 2026 坂田哲朗 ・ GitHub」で表示する", () => {
+    const text = html.replace(/<[^>]+>/g, "");
+    expect(text).toContain("MIT License");
+    expect(text).toContain("© 2026 坂田哲朗 ・ GitHub");
   });
 
   it("LICENSE へのリンクがある", () => {

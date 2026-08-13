@@ -7,7 +7,7 @@ export function Footer() {
       <a href={`${REPO}/blob/main/LICENSE`} target="_blank" rel="noreferrer">
         MIT License
       </a>{" "}
-      © 2026 坂田哲朗 ·{" "}
+      © 2026 坂田哲朗 ・{" "}
       <a href={REPO} target="_blank" rel="noreferrer">
         GitHub
       </a>
