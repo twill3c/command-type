@@ -11,6 +11,10 @@ export function Footer() {
       <a href={REPO} target="_blank" rel="noreferrer">
         GitHub
       </a>
+      {" ・ "}
+      <a href="https://app-menu-amber.vercel.app" target="_blank" rel="noopener">
+        App Menu
+      </a>
     </footer>
   );
 }
